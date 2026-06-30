@@ -188,6 +188,69 @@ body{
   color:var(--text);
 }
 
+.settlements {
+  margin-top: 14px;
+  border-top: 1px solid var(--border);
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.settlement {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.settlement-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  gap: 10px;
+}
+.settlement-name {
+  font-size: .92rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.settlement-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.settlement-tag {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: .7rem;
+}
+.settlement-tag.capital {
+  border-color: #5a4a10;
+  color: var(--gold);
+  background: #1a1500;
+}
+.settlement-chevron {
+  color: var(--muted);
+  font-size: .8rem;
+  flex-shrink: 0;
+  transition: transform .2s;
+}
+.settlement.open .settlement-chevron { transform: rotate(180deg); }
+.settlement-body {
+  display: none;
+  padding: 0 14px 12px;
+  font-size: .88rem;
+  color: #d5d8de;
+  line-height: 1.65;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.settlement.open .settlement-body { display: block; }
+
 /* ══════════════════════════════
    SECTION 2: RACES
 ══════════════════════════════ */
@@ -471,6 +534,7 @@ body{
   <div class="section-label">The Great Powers</div>
   <div class="nation-grid">
 
+    <!-- GOLDCOLLAR -->
     <div class="nation-card">
       <div class="nation-card-top">
         <div>
@@ -486,9 +550,44 @@ body{
         <span class="tag">Social Standing</span>
       </div>
       <p class="nation-desc" style="margin:12px 0 0;">Home to several prestigious mage colleges and a thriving market for enchanted goods. Artificers sell their wares openly in Petsburg, and magic items scavenged from ruins fetch high prices at auction. The surrounding countryside hides old Smooth One structures beneath overgrown hills, drawing adventurers and treasure hunters, as well as bandits and plunderers.</p>
-      <div class="nation-leader">Leaders: <span>Queen Daisy (Golden Retriever lineage) and King Wrinkles (Sphinx Cat), the Dual Monarchs</span></div>
+      <div class="settlements">
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Petsburg</span>
+            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Port City</span><span class="settlement-tag">Mage College</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A sprawling waterfront capital of layered districts, marble facades, and canal markets. The seat of the Dual Monarchs, home to Goldcollar's most prestigious mage college, and the beating commercial heart of the known world. Every nation has a trade embassy here. The city smells like salt water, street food, and old money.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Brindle</span>
+            <div class="settlement-tags"><span class="settlement-tag">Trade Hub</span><span class="settlement-tag">Crossroads Town</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A busy inland town at the junction of three major roads, Brindle has no particular culture of its own, which is precisely why every culture passes through it. Its markets carry goods from all six nations, and its inns are full of merchants, couriers, and people who would prefer not to say where they are going.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Pawcroft</span>
+            <div class="settlement-tags"><span class="settlement-tag">Farming Village</span><span class="settlement-tag">Ruin-Adjacent</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A quiet agricultural village in Goldcollar's interior, Pawcroft sits at the edge of a half-excavated Smooth One ruin the locals call the Underbuild. Scholars come regularly to study it. Occasionally something comes out of it instead. The villagers are politely tired of both.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Velour</span>
+            <div class="settlement-tags"><span class="settlement-tag">Luxury Resort</span><span class="settlement-tag">Noble Retreat</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A coastal town of white stone and imported silk, Velour exists almost entirely to serve the Goldcollar aristocracy on holiday. Its permanent population is small; its seasonal population is enormous and demanding. The best forgers of fake noble papers in the continent operate quietly out of a laundry on the south end of town.</div>
+        </div>
+      </div>
+      <div class="nation-leader" style="margin-top:14px;">Leaders: <span>Queen Daisy (Golden Retriever lineage) and King Wrinkles (Sphinx Cat), the Dual Monarchs</span></div>
     </div>
 
+    <!-- CARROVIA -->
     <div class="nation-card">
       <div class="nation-card-top">
         <div>
@@ -497,16 +596,51 @@ body{
         </div>
         <div class="nation-badge">The East</div>
       </div>
-      <p class="nation-desc">Once known for it's swift knights and beautiful meadows, this kingdom of rabbits and ravens has grown cold and insular in recent years. A thick mist now hugs it's borders, and travelers who cross into Carrovia rarely speak warmly of the experience.</p>
+      <p class="nation-desc">Once known for its swift knights and beautiful meadows, this kingdom of rabbits and ravens has grown cold and insular in recent years. A thick mist now hugs its borders, and travelers who cross into Carrovia rarely speak warmly of the experience.</p>
       <div class="nation-values">
         <span class="tag">Tradition</span>
         <span class="tag">Insular</span>
         <span class="tag">Martial Pride</span>
       </div>
       <p class="nation-desc" style="margin:12px 0 0;">The mists at Carrovia's borders are not natural, and locals whisper that stranger things walk the autumn woods after dark. Undead have been sighted near old ruins in the eastern reaches, and the Count's court has grown quiet on the subject. Those who investigate rarely file a complete report.</p>
-      <div class="nation-leader">Leader: <span>Count Barnaby von Hop</span></div>
+      <div class="settlements">
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Hopswall</span>
+            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Fortress City</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">The seat of Count Barnaby von Hop, Hopswall is a city of old stone, narrow streets, and a castle that has never fallen to siege. It was once a place of festivals and renowned autumn markets. Now the markets run shorter hours, the festivals have been quietly cancelled, and the castle gates close before dark. The Count does not receive visitors without appointment, and appointments are not being granted.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Thistlemere</span>
+            <div class="settlement-tags"><span class="settlement-tag">Border Town</span><span class="settlement-tag">Mist-Touched</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">The last town before the mist thickens into something you cannot see through. Thistlemere does steady business in lanterns, rope, and maps that are increasingly out of date. Its residents have a habit of not asking questions about travelers coming or going, which suits most of its visitors perfectly.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Ashfen</span>
+            <div class="settlement-tags"><span class="settlement-tag">Abandoned</span><span class="settlement-tag">Eastern Reach</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">Once a prosperous farming settlement on Carrovia's eastern border, Ashfen was evacuated eighteen months ago following a series of incidents that the Count's office described only as a sanitation concern. Travelers report lights in the windows at night. Nobody official has gone to investigate.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Meadowrun</span>
+            <div class="settlement-tags"><span class="settlement-tag">Market Town</span><span class="settlement-tag">Western Border</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">The most accessible town in Carrovia for outsiders, sitting close enough to the Goldcollar border that it retains some of its old openness. Merchants still trade here, and the locals are more willing to talk than those deeper in the country. What they say, mostly, is that things were better before the mist came and that they try not to think about it.</div>
+        </div>
+      </div>
+      <div class="nation-leader" style="margin-top:14px;">Leader: <span>Count Barnaby von Hop</span></div>
     </div>
 
+    <!-- WHISKERBURROW -->
     <div class="nation-card">
       <div class="nation-card-top">
         <div>
@@ -515,16 +649,51 @@ body{
         </div>
         <div class="nation-badge">The Heartland</div>
       </div>
-      <p class="nation-desc">A cozy, communal nation of mice, otters, and badgers. Whiskerburrow is home to the finest academic minds in Everden and it's most dependable farmers. The people here act slowly, but are quicker to think than most. Whiscarians will happily argue about the true nature of the Great Awakening over three cups of tea.</p>
+      <p class="nation-desc">A cozy, communal nation of mice, otters, and badgers. Whiskerburrow is home to the finest academic minds in Everden and its most dependable farmers. The people here act slowly but think quickly. Whiscarians will happily argue about the true nature of the Great Awakening over three cups of tea.</p>
       <div class="nation-values">
         <span class="tag">Academics</span>
         <span class="tag">Storytelling</span>
         <span class="tag">Community</span>
       </div>
       <p class="nation-desc" style="margin:12px 0 0;">Whiskerburrow's college of natural philosophy is the oldest academic institution in Everden, producing more druids and wizards per capita than any other nation. Magic here tends toward the scholarly and the careful. The surrounding farmland is dotted with low, ancient ruins that scholars have catalogued but not fully explored.</p>
-      <div class="nation-leader">Governance: <span>A council of democraticly elected Elders</span></div>
+      <div class="settlements">
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Denhollow</span>
+            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">University City</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A low, sprawling city built as much underground as above it, Denhollow is warm in winter, cool in summer, and full of arguing scholars at all times of year. Its university district contains more libraries than taverns, which most residents consider a point of pride and most visitors find alarming. The Great Archive is here, the largest collection of written knowledge in Everden.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Rivermouse</span>
+            <div class="settlement-tags"><span class="settlement-tag">Fishing Village</span><span class="settlement-tag">River Port</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A cheerful little settlement on the Stillwater River, Rivermouse exports more smoked fish than any other town in Whiskerburrow and has an opinion about it. The annual Rivermouse Smoking Festival draws visitors from three nations and is, by universal agreement, a very good time.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Thornset</span>
+            <div class="settlement-tags"><span class="settlement-tag">Farming Community</span><span class="settlement-tag">Ruin Site</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A collective farming settlement that also happens to sit atop the most extensively studied Smooth One ruin in Whiskerburrow. The farmers and the scholars who camp in their fields every summer have reached a careful arrangement: the scholars stay out of the turnip rows and the farmers stay out of the dig sites. It mostly holds.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Brackendam</span>
+            <div class="settlement-tags"><span class="settlement-tag">Mill Town</span><span class="settlement-tag">Trade Stop</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A practical, no-frills town built around a watermill and a granary. Brackendam feeds a significant portion of the surrounding region and is proud of the fact without being showy about it. It has one inn, one tavern, and one very old badger who claims to have met someone who met someone who was there for the Great Awakening.</div>
+        </div>
+      </div>
+      <div class="nation-leader" style="margin-top:14px;">Governance: <span>A council of democratically elected Elders</span></div>
     </div>
 
+    <!-- IRON-TUSK -->
     <div class="nation-card">
       <div class="nation-card-top">
         <div>
@@ -533,16 +702,51 @@ body{
         </div>
         <div class="nation-badge">The Mountains</div>
       </div>
-      <p class="nation-desc">A mountainous industrial nation ruled by boars and horses. If something in Everden is made of steel, there is a good chance it came from an Iron-Tusk forge. The people here do not waste words, and they are suspicious of anyone who does. Their cities are built to last a thousand years. They were only a few years ago in vicious war with the nation of Moonhowl.</p>
+      <p class="nation-desc">A mountainous industrial nation ruled by boars and horses. If something in Everden is made of steel, there is a good chance it came from an Iron-Tusk forge. The people here do not waste words, and they are suspicious of anyone who does. Their cities are built to last a thousand years. They were only a few years ago in a vicious war with Moonhowl.</p>
       <div class="nation-values">
         <span class="tag">Strength</span>
         <span class="tag">Industry</span>
         <span class="tag">Craftsmanship</span>
       </div>
       <p class="nation-desc" style="margin:12px 0 0;">Magic in Iron-Tusk is practical above all else: artificers are employed directly by the Forge Council, and enchanted tools are standard issue in the deepest mines. Those mines occasionally break through into something older than the Smooth Ones, and what lives in those deeper places is not well understood.</p>
-      <div class="nation-leader">Governance: <span>The Forge Council, headed by the Grand Tusk</span></div>
+      <div class="settlements">
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Greygorge</span>
+            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Forge City</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">Built into the face of a mountain and spreading down into the gorge below it, Greygorge is loud, hot, and perpetually lit by the glow of a hundred forges. The Forge Council meets here in the Iron Hall, a building that has no decorative features whatsoever, which its architects considered a statement. The city exports more weapons, tools, and armored goods than anywhere else in Everden.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Sootpass</span>
+            <div class="settlement-tags"><span class="settlement-tag">Mining Town</span><span class="settlement-tag">Deep Excavation</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A mining settlement high in the mountains where the ore veins run deep and the shafts run deeper. Three tunnels in Sootpass have been sealed by official order for reasons the Forge Council describes as structural. The miners who sealed them will not discuss what they found. The artificers sent to assess the situation filed their report directly to the Grand Tusk and it has not been made public.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Ironfoot</span>
+            <div class="settlement-tags"><span class="settlement-tag">Border Garrison</span><span class="settlement-tag">Military Post</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A fortified garrison town on the border nearest to Moonhowl, Ironfoot has been in a state of tense readiness since the war ended. It is not exactly at peace, and everyone stationed there knows it. The local tavern is called the Ceasefire, which the regulars find either ironic or optimistic depending on the night.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Hammerholm</span>
+            <div class="settlement-tags"><span class="settlement-tag">Artisan Quarter</span><span class="settlement-tag">Trade City</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">Where Greygorge makes things in bulk, Hammerholm makes them beautifully. The city is home to Iron-Tusk's master craftspeople, whose individual commissions are sought by nobles across the continent. A sword from a Hammerholm smith costs more than most people earn in a year and is worth every coin.</div>
+        </div>
+      </div>
+      <div class="nation-leader" style="margin-top:14px;">Governance: <span>The Forge Council, headed by the Grand Tusk</span></div>
     </div>
 
+    <!-- SUNREACH -->
     <div class="nation-card">
       <div class="nation-card-top">
         <div>
@@ -551,16 +755,51 @@ body{
         </div>
         <div class="nation-badge">The South</div>
       </div>
-      <p class="nation-desc">A region that's home to many reptile and amphibian-kin who guard and worship the ruins of the Smooth Ones, and a large variety of biomes including deserts, swamps, and rainforests. Outsiders are tolerated, but welcomed is a different question. It's people are slow to trust and impossible to rush. The jungle and desert swallow adventurers regularly. Here, Dragons, of which two are known, are worshiped openly. Yddross, dragon of the rainforest, and Egyyt, dragon of the desert. They don't seem hostile, but nobody speaks their language.</p>
+      <p class="nation-desc">A region home to many reptile and amphibian-kin who guard and worship the ruins of the Smooth Ones, spanning a large variety of biomes including deserts, swamps, and rainforests. Outsiders are tolerated, but welcomed is a different question. Its people are slow to trust and impossible to rush. The jungle and desert swallow adventurers regularly. Two dragons are known and worshiped openly here: Yddross, dragon of the rainforest, and Egyyt, dragon of the desert. They do not seem hostile, but nobody speaks their language.</p>
       <div class="nation-values">
         <span class="tag">Stoicism</span>
         <span class="tag">Tradition</span>
         <span class="tag">Sun-Worship</span>
       </div>
-      <p class="nation-desc" style="margin:12px 0 0;">Sunreach holds the largest concentration of Smooth One ruins on the continent, and it's mage college, the Otto Tomize Academy of Thaumaturgy, teaches magic drawn directly from studying them.</p>
-      <div class="nation-leader">Governance: <span>The Sun Council, a body of ancient ritual keepers</span></div>
+      <p class="nation-desc" style="margin:12px 0 0;">Sunreach holds the largest concentration of Smooth One ruins on the continent, and its mage college, the Otto Tomize Academy of Thaumaturgy, teaches magic drawn directly from studying them.</p>
+      <div class="settlements">
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Solanthis</span>
+            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Temple City</span><span class="settlement-tag">Mage College</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">An open city of wide plazas and sun-facing architecture, Solanthis is built around a central temple complex that predates the Awakening by an unknown number of centuries. The Otto Tomize Academy of Thaumaturgy operates here, drawing students from across the continent. The Sun Council meets at the temple's highest point, at noon, every day, without exception.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Scalemoor</span>
+            <div class="settlement-tags"><span class="settlement-tag">Swamp Settlement</span><span class="settlement-tag">Ruin-Keeper</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A settlement of toadfolk and swamp-dwelling lizardkin built on raised platforms above the waterline. Scalemoor sits adjacent to some of the densest and least-explored Smooth One ruins in Sunreach, which the locals guard with a seriousness that discourages idle curiosity. They will sell you supplies. They will not sell you access.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">The Dustgate</span>
+            <div class="settlement-tags"><span class="settlement-tag">Desert Outpost</span><span class="settlement-tag">Egyyt's Territory</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A fortified outpost at the edge of Sunreach's great desert, the Dustgate is the last reliable source of water, shelter, and information before the dunes begin. It sits within visible distance of one of Egyyt's favored resting sites: a Smooth One structure half-buried in sand that the dragon has occupied for as long as anyone can remember. Pilgrims come here specifically to see the dragon from a safe distance. Most agree the distance is not quite safe enough.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Verdant Deep</span>
+            <div class="settlement-tags"><span class="settlement-tag">Rainforest Village</span><span class="settlement-tag">Yddross-Adjacent</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">A village so thoroughly grown into the rainforest canopy that first-time visitors frequently walk past it without noticing. The residents of Verdant Deep have coexisted with Yddross for generations and treat the dragon with a reverence that is completely calm, which outsiders find more unsettling than fear would be. Yddross has never harmed anyone here. The villagers say this is because they have always been respectful. They say it in a tone that implies the conversation is over.</div>
+        </div>
+      </div>
+      <div class="nation-leader" style="margin-top:14px;">Governance: <span>The Sun Council, a body of ancient ritual keepers</span></div>
     </div>
 
+    <!-- MOONHOWL -->
     <div class="nation-card">
       <div class="nation-card-top">
         <div>
@@ -569,14 +808,48 @@ body{
         </div>
         <div class="nation-badge">The Frontier</div>
       </div>
-      <p class="nation-desc">A wild, nomadic territory of wolves, foxes, and bears who patrol the frigid edge of the civilized world. Here, might is right, and only the strong survive. Leadership is decentralized here, and cities fend for themselves, only working together in extraordinary circumstances. Moonhowl is renowned for it's hunters, marksman, and gladiators. The nation banded together to wage with Iron-Tusk not that many years ago.</p>
+      <p class="nation-desc">A wild, nomadic territory of wolves, foxes, and bears who patrol the frigid edge of the civilized world. Here, might is right, and only the strong survive. Leadership is decentralized, and cities fend for themselves, only working together in extraordinary circumstances. Moonhowl is renowned for its hunters, marksmen, and gladiators. The nation banded together to wage war with Iron-Tusk not many years ago.</p>
       <div class="nation-values">
         <span class="tag">Survival</span>
         <span class="tag">Freedom</span>
         <span class="tag">Instinct</span>
       </div>
       <p class="nation-desc" style="margin:12px 0 0;">Magic in Moonhowl is shamanic and instinctive, passed down through oral tradition rather than college study. The frozen north is home to enormous creatures that would qualify as monsters anywhere else, and big game hunters make their reputations tracking them. Strange lights have been seen above the northern glaciers that no one has been able to explain.</p>
-      <div class="nation-leader">Governance: <span>Pack Alphas; no central authority</span></div>
+      <div class="settlements">
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Fangmeet</span>
+            <div class="settlement-tags"><span class="settlement-tag capital">Largest Settlement</span><span class="settlement-tag">Gladiator City</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">Moonhowl has no official capital, but Fangmeet is where the Pack Alphas gather when something requires them to be in the same place, which they prefer to keep rare. It is built around an enormous open arena where disputes, tournaments, and exhibitions are settled publicly. The city is loud, crowded during fight season, and has more taverns per resident than anywhere else in Everden. Outsiders are welcome as long as they can handle themselves.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Coldsnap</span>
+            <div class="settlement-tags"><span class="settlement-tag">Hunting Outpost</span><span class="settlement-tag">Far North</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">The northernmost permanent settlement in Everden, Coldsnap exists to support the hunters who track the continent's largest and most dangerous Silent creatures across the glacial plains. It is a place of practical expertise and very little small talk. Hunters who make it back from the deep ice with a kill are celebrated here in a way they would not be anywhere else. Hunters who do not make it back are remembered by name.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">Emberclaw</span>
+            <div class="settlement-tags"><span class="settlement-tag">Craftwork Town</span><span class="settlement-tag">Trade Post</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">Moonhowl's reputation for fine craftwork lives largely in Emberclaw, where artisans work bone, hide, and salvaged Smooth One materials into goods that sell for surprising prices in southern markets. It is also one of the few Moonhowl settlements that actively courts outside traders, which the other settlements consider slightly embarrassing and which Emberclaw considers pragmatic.</div>
+        </div>
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">The Pale Road</span>
+            <div class="settlement-tags"><span class="settlement-tag">Nomadic Route</span><span class="settlement-tag">Not a Settlement</span></div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">Technically not a settlement at all, the Pale Road is a seasonal migration route used by Moonhowl's nomadic packs. At any given time several hundred people are living and moving along it, with temporary camps that appear and vanish within days. Traders who learn its rough schedule can intercept it for commerce. Those who intercept it without being invited generally regret the decision.</div>
+        </div>
+      </div>
+      <div class="nation-leader" style="margin-top:14px;">Governance: <span>Pack Alphas; no central authority</span></div>
     </div>
 
   </div>
@@ -585,32 +858,22 @@ body{
   <div class="nation-card" style="max-width:640px;">
     <p class="nation-desc" style="margin:0;">Not every animal woke up. While you stand upright and wear clothes, many of your cousins remained the Silent: non-sentient beasts of the wild. Hunting Silent animals for food is a reality of life in Everden, but it is a grim one. Most folk would never eat a Silent animal of a similar species to their own, and the line between Awakened and Silent is a subject of genuine philosophical anxiety in every nation.</p>
   </div>
-  <div class="section-label" style="margin-top:44px;">Other nations of Everden</div>
+
+  <div class="section-label" style="margin-top:44px;">Other Nations of Everden</div>
   <div class="nation-card" style="max-width:640px;">
     <p class="nation-desc" style="margin:0;">You may wish to create a character that does not fit neatly into the listed playable races or list of nations, but Everden is an expansive world, and there are plenty of nations and animalfolk outside of what I've listed. I encourage you to work with me to make your idea a reality!</p>
   </div>
 
   <div class="section-label" style="margin-top:44px;">Magic in Everden</div>
-<div class="nation-card" style="max-width:640px;">
-  <p class="nation-desc" style="margin:0;">Magic exists in Everden, though it is not so common that anyone takes it for granted. Mage colleges operate in Goldcollar, Sunreach, and Whiskerburrow. Sorcerers with magic bloodlines appear most often in noble families, though they are not unheard of among commoners. Artificers sell enchanted goods in Petsburg and a handful of other major cities, but many of the most interesting magic items in the world were pulled out of Smooth One ruins by people who were probably not supposed to be there. Anyone with magical ability or skill in alchemy will never struggle to find work, whether in a royal court or running their own business. Player characters, naturally, tend to find adventure more compelling than either.</p>
-</div>
-
-<div class="section-label" style="margin-top:44px;">Monsters and Dangers</div>
-<div class="nation-card" style="max-width:640px;">
-  <p class="nation-desc" style="margin:0;">Everden is not a safe world. The Silent are not the only threat in the wilderness: creatures that would be at home in any dungeon lurk in the ruins of the Smooth Ones, in deep caves, in old forests, and in places that have not seen light in a very long time. Most populated areas are reasonably secure, but the ruins are another matter entirely. Dragons exist. They are rare, largely confined to the deep wilderness and the interior of Sunreach, and the subject of significant academic disagreement about their origins. Whether they predate the Smooth Ones or are somehow their legacy is a question nobody has managed to ask one directly and survive to report on.</p>
-</div>
-</div>
-
-<!-- ══════════════════════════════
-     SECTION: RACES
-══════════════════════════════ -->
-<div id="sec-races" class="section-wrap">
-  <div class="section-label" style="margin-top:0;">Playable Species</div>
-  <div class="search-wrap">
-    <input class="search" type="text" id="search" placeholder="Search races..." oninput="renderRaces()" />
+  <div class="nation-card" style="max-width:640px;">
+    <p class="nation-desc" style="margin:0;">Magic exists in Everden, though it is not so common that anyone takes it for granted. Mage colleges operate in Goldcollar, Sunreach, and Whiskerburrow. Sorcerers with magic bloodlines appear most often in noble families, though they are not unheard of among commoners. Artificers sell enchanted goods in Petsburg and a handful of other major cities, but many of the most interesting magic items in the world were pulled out of Smooth One ruins by people who were probably not supposed to be there. Anyone with magical ability or skill in alchemy will never struggle to find work, whether in a royal court or running their own business. Player characters, naturally, tend to find adventure more compelling than either.</p>
   </div>
-  <div id="race-grid" class="race-grid"></div>
-  <div id="race-detail" class="detail"></div>
+
+  <div class="section-label" style="margin-top:44px;">Monsters and Dangers</div>
+  <div class="nation-card" style="max-width:640px;">
+    <p class="nation-desc" style="margin:0;">Everden is not a safe world. The Silent are not the only threat in the wilderness: creatures that would be at home in any dungeon lurk in the ruins of the Smooth Ones, in deep caves, in old forests, and in places that have not seen light in a very long time. Most populated areas are reasonably secure, but the ruins are another matter entirely. Dragons exist. They are rare, largely confined to the deep wilderness and the interior of Sunreach, and the subject of significant academic disagreement about their origins. Whether they predate the Smooth Ones or are somehow their legacy is a question nobody has managed to ask one directly and survive to report on.</p>
+  </div>
+
 </div>
 
 <!-- ══════════════════════════════
