@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Everden Player Guide</title>
+
+<style>
+:root{
+  --bg:#111315;
+  --bg2:#1a1d21;
+  --card:#1b1f24;
+  --border:#2a3038;
+  --text:#f3f4f6;
+  --muted:#a1a8b3;
+  --accent:#7dd3fc;
+  --accent2:#38bdf8;
+  --shadow:0 10px 30px rgba(0,0,0,.25);
+  --radius:18px;
+  --gold:#f5c842;
+  --gold2:#e0a800;
+  --amber:#d97706;
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+
+body{
+  background:linear-gradient(to bottom,#101214,#171a1f);
+  color:var(--text);
+  font-family:Inter,system-ui,sans-serif;
+  line-height:1.5;
+  padding:0;
+}
+
+/* ── NAV ── */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(17,19,21,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  display:flex;
+  gap:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{ display:none; }
+.nav-btn{
+  flex-shrink:0;
+  background:none;
+  border:none;
+  color:var(--muted);
+  font-size:.85rem;
+  font-weight:600;
+  letter-spacing:.04em;
+  padding:14px 20px;
+  cursor:pointer;
+  border-bottom:2px solid transparent;
+  transition:.15s;
+  white-space:nowrap;
+}
+.nav-btn:hover{ color:var(--text); }
+.nav-btn.active{ color:var(--accent2); border-bottom-color:var(--accent2); }
+
+/* ── SECTIONS ── */
+.section-wrap{
+  display:none;
+  max-width:1200px;
+  margin:0 auto;
+  padding:32px 20px 60px;
+}
+.section-wrap.active{ display:block; }
+
+/* ── HERO ── */
+.hero{
+  text-align:center;
+  padding:60px 20px 40px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:36px;
+}
+.hero-eyebrow{
+  font-size:.78rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:700;
+  margin-bottom:14px;
+}
+.hero-title{
+  font-size:clamp(2.4rem,7vw,4rem);
+  font-weight:800;
+  letter-spacing:-.03em;
+  line-height:1.05;
+  margin-bottom:16px;
+}
+.hero-sub{
+  color:var(--muted);
+  font-size:1rem;
+  max-width:560px;
+  margin:0 auto;
+  line-height:1.7;
+}
+
+/* ── SHARED LABELS ── */
+.section-label{
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:.78rem;
+  color:var(--muted);
+  margin-bottom:14px;
+  margin-top:36px;
+  font-weight:700;
+}
+.section-label:first-child{ margin-top:0; }
+
+/* ══════════════════════════════
+   SECTION 1: NATIONS
+══════════════════════════════ */
+.nation-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:18px;
+}
+.nation-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+.nation-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:12px;
+}
+.nation-name{
+  font-size:1.2rem;
+  font-weight:700;
+  line-height:1.2;
+}
+.nation-subtitle{
+  color:var(--muted);
+  font-size:.88rem;
+  margin-top:4px;
+}
+.nation-badge{
+  flex-shrink:0;
+  background:#1e2730;
+  border:1px solid #32404d;
+  color:var(--accent);
+  padding:5px 11px;
+  border-radius:999px;
+  font-size:.75rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+.nation-desc{
+  color:#d5d8de;
+  font-size:.93rem;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+.nation-values{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:12px;
+}
+.tag{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  color:var(--muted);
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.75rem;
+}
+.nation-leader{
+  font-size:.82rem;
+  color:var(--muted);
+  border-top:1px solid var(--border);
+  padding-top:10px;
+}
+.nation-leader span{
+  color:var(--text);
+}
+
+/* ══════════════════════════════
+   SECTION 2: RACES
+══════════════════════════════ */
+.search-wrap{
+  position:sticky;
+  top:49px;
+  z-index:50;
+  margin-bottom:24px;
+  backdrop-filter:blur(10px);
+}
+.search{
+  width:100%;
+  padding:14px 18px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:rgba(27,31,36,.92);
+  color:var(--text);
+  font-size:1rem;
+  outline:none;
+  box-shadow:var(--shadow);
+}
+.search:focus{ border-color:var(--accent2); }
+
+.race-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  cursor:pointer;
+  transition:.18s ease;
+  box-shadow:var(--shadow);
+}
+.card:hover{ transform:translateY(-3px); border-color:#3b4450; }
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+  margin-bottom:12px;
+}
+.card-name{ font-size:1.25rem; font-weight:700; }
+.card-animal{ color:var(--muted); font-size:.92rem; }
+.speed{
+  flex-shrink:0;
+  background:#222933;
+  color:var(--accent);
+  border:1px solid #32404d;
+  padding:6px 10px;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:600;
+}
+.pills{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+.pill{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  color:var(--muted);
+  padding:5px 10px;
+  border-radius:999px;
+  font-size:.75rem;
+}
+.preview{ display:flex; flex-direction:column; gap:10px; }
+.preview-trait{
+  border-top:1px solid var(--border);
+  padding-top:10px;
+  font-size:.92rem;
+  color:#d8dbe0;
+}
+.preview-trait strong{ color:white; }
+.more{ color:var(--muted); font-size:.8rem; }
+
+.detail{ display:none; }
+.detail.active{ display:block; }
+.detail-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+.detail-header{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:20px;
+}
+.detail-title{
+  font-size:clamp(2rem,6vw,3rem);
+  font-weight:800;
+  line-height:1;
+}
+.detail-sub{ color:var(--muted); margin-top:8px; }
+.back{
+  background:none;
+  border:none;
+  color:var(--accent);
+  font-size:1rem;
+  margin-bottom:18px;
+  cursor:pointer;
+}
+.lore{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  padding:18px;
+  border-radius:18px;
+  color:#d5d8de;
+  margin-bottom:24px;
+  line-height:1.7;
+}
+.traits{ display:flex; flex-direction:column; gap:14px; }
+.full-trait{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  line-height:1.65;
+  color:#d9dce2;
+}
+.full-trait strong{ color:white; }
+.origin{
+  background:var(--bg2);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  color:#d9dce2;
+}
+.empty{ text-align:center; padding:60px 20px; color:var(--muted); }
+
+/* ══════════════════════════════
+   SECTION 3: PANTHEON
+══════════════════════════════ */
+.god-grid{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.god-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:0;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  transition:.15s;
+}
+.god-card:hover{ border-color:#3b4450; }
+.god-card-header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:18px 20px;
+}
+.god-icon{
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.3rem;
+  flex-shrink:0;
+}
+.god-names{ flex:1; min-width:0; }
+.god-name{ font-size:1.05rem; font-weight:700; }
+.god-epithet{ color:var(--muted); font-size:.83rem; font-style:italic; margin-top:2px; }
+.god-chevron{
+  color:var(--muted);
+  font-size:.9rem;
+  transition:transform .2s;
+  flex-shrink:0;
+}
+.god-card.open .god-chevron{ transform:rotate(180deg); }
+.god-body{
+  display:none;
+  padding:0 20px 20px;
+  border-top:1px solid var(--border);
+}
+.god-card.open .god-body{ display:block; }
+.god-body p{
+  font-size:.93rem;
+  line-height:1.72;
+  color:#d5d8de;
+  margin-top:16px;
+}
+.god-body p em{
+  color:var(--muted);
+  font-style:italic;
+}
+.god-body .worshipers{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:14px;
+}
+
+/* ══════════════════════════════
+   SECTION 4: LANGUAGES
+══════════════════════════════ */
+.lang-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:18px;
+}
+.lang-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  box-shadow:var(--shadow);
+}
+.lang-card.restricted{
+  border-color:#3d2a10;
+  background:#1a1610;
+}
+.lang-name{ font-size:1.15rem; font-weight:700; margin-bottom:4px; }
+.lang-script{
+  font-size:.78rem;
+  color:var(--muted);
+  margin-bottom:12px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.lang-desc{
+  font-size:.92rem;
+  color:#d5d8de;
+  line-height:1.68;
+}
+.lang-restrict{
+  margin-top:12px;
+  background:#2d1a06;
+  border:1px solid #5a3a10;
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:.8rem;
+  color:#f5c842;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width:700px){
+  body{ padding:0; }
+  .section-wrap{ padding:20px 14px 50px; }
+  .race-grid, .nation-grid, .lang-grid{ grid-template-columns:1fr; gap:14px; }
+  .card{ padding:18px; }
+  .detail-card{ padding:20px; border-radius:20px; }
+  .detail-title{ font-size:2rem; }
+  .search{ font-size:16px; padding:14px 16px; }
+  .card-top{ flex-direction:column; align-items:flex-start; }
+  .speed{ align-self:flex-start; }
+  .nav-btn{ padding:12px 14px; font-size:.78rem; }
+  .hero{ padding:36px 16px 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('nations',this)">Nations</button>
+  <button class="nav-btn" onclick="showSection('races',this)">Races</button>
+  <button class="nav-btn" onclick="showSection('pantheon',this)">Panthereon</button>
+  <button class="nav-btn" onclick="showSection('languages',this)">Languages</button>
+</nav>
+
+<!-- ══════════════════════════════
+     SECTION: NATIONS
+══════════════════════════════ -->
+<div id="sec-nations" class="section-wrap active">
+  <div class="hero">
+    <div class="hero-eyebrow">Welcome to</div>
+    <h1 class="hero-title">Everden</h1>
+    <p class="hero-sub">Long ago, the world belonged to the Smooth Ones. When they vanished, the Great Awakening began. Once-mindless animals stood upright, spoke their first words, and inherited everything. This is the world they built.</p>
+  </div>
+
+  <div class="section-label">The Great Powers</div>
+  <div class="nation-grid">
+
+    <div class="nation-card">
+      <div class="nation-card-top">
+        <div>
+          <div class="nation-name">Goldcollar</div>
+          <div class="nation-subtitle">Where you begin</div>
+        </div>
+        <div class="nation-badge">The Heart of Everden</div>
+      </div>
+      <p class="nation-desc">A sophisticated union of cats and dogs, though home to many folk. The masters of trade, luxury, and diplomacy, Goldcollar is the closest thing Everden has to a cosmopolitan heart. Its capital, Petsburg, is a waterfront city where fortunes are made and lost over a single evening's dinner.</p>
+      <div class="nation-values">
+        <span class="tag">Elegance</span>
+        <span class="tag">Commerce</span>
+        <span class="tag">Social Standing</span>
+      </div>
+      <p class="nation-desc" style="margin:12px 0 0;">Home to several prestigious mage colleges and a thriving market for enchanted goods. Artificers sell their wares openly in Petsburg, and magic items scavenged from ruins fetch high prices at auction. The surrounding countryside hides old Smooth One structures beneath overgrown hills, drawing adventurers and treasure hunters, as well as bandits and plunderers.</p>
+      <div class="nation-leader">Leaders: <span>Queen Daisy (Golden Retriever lineage) and King Wrinkles (Sphinx Cat), the Dual Monarchs</span></div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-top">
+        <div>
+          <div class="nation-name">Carrovia</div>
+          <div class="nation-subtitle">The Land of Eternal Autumn</div>
+        </div>
+        <div class="nation-badge">The East</div>
+      </div>
+      <p class="nation-desc">Once known for it's swift knights and beautiful meadows, this kingdom of rabbits and ravens has grown cold and insular in recent years. A thick mist now hugs it's borders, and travelers who cross into Carrovia rarely speak warmly of the experience.</p>
+      <div class="nation-values">
+        <span class="tag">Tradition</span>
+        <span class="tag">Insular</span>
+        <span class="tag">Martial Pride</span>
+      </div>
+      <p class="nation-desc" style="margin:12px 0 0;">The mists at Carrovia's borders are not natural, and locals whisper that stranger things walk the autumn woods after dark. Undead have been sighted near old ruins in the eastern reaches, and the Count's court has grown quiet on the subject. Those who investigate rarely file a complete report.</p>
+      <div class="nation-leader">Leader: <span>Count Barnaby von Hop</span></div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-top">
+        <div>
+          <div class="nation-name">Whiskerburrow</div>
+          <div class="nation-subtitle">The Home of Scholars</div>
+        </div>
+        <div class="nation-badge">The Heartland</div>
+      </div>
+      <p class="nation-desc">A cozy, communal nation of mice, otters, and badgers. Whiskerburrow is home to the finest academic minds in Everden and it's most dependable farmers. The people here act slowly, but are quicker to think than most. Whiscarians will happily argue about the true nature of the Great Awakening over three cups of tea.</p>
+      <div class="nation-values">
+        <span class="tag">Academics</span>
+        <span class="tag">Storytelling</span>
+        <span class="tag">Community</span>
+      </div>
+      <p class="nation-desc" style="margin:12px 0 0;">Whiskerburrow's college of natural philosophy is the oldest academic institution in Everden, producing more druids and wizards per capita than any other nation. Magic here tends toward the scholarly and the careful. The surrounding farmland is dotted with low, ancient ruins that scholars have catalogued but not fully explored.</p>
+      <div class="nation-leader">Governance: <span>A council of democraticly elected Elders</span></div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-top">
+        <div>
+          <div class="nation-name">Iron-Tusk</div>
+          <div class="nation-subtitle">The Industrial Power</div>
+        </div>
+        <div class="nation-badge">The Mountains</div>
+      </div>
+      <p class="nation-desc">A mountainous industrial nation ruled by boars and horses. If something in Everden is made of steel, there is a good chance it came from an Iron-Tusk forge. The people here do not waste words, and they are suspicious of anyone who does. Their cities are built to last a thousand years. They were only a few years ago in vicious war with the nation of Moonhowl.</p>
+      <div class="nation-values">
+        <span class="tag">Strength</span>
+        <span class="tag">Industry</span>
+        <span class="tag">Craftsmanship</span>
+      </div>
+      <p class="nation-desc" style="margin:12px 0 0;">Magic in Iron-Tusk is practical above all else: artificers are employed directly by the Forge Council, and enchanted tools are standard issue in the deepest mines. Those mines occasionally break through into something older than the Smooth Ones, and what lives in those deeper places is not well understood.</p>
+      <div class="nation-leader">Governance: <span>The Forge Council, headed by the Grand Tusk</span></div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-top">
+        <div>
+          <div class="nation-name">Sunreach</div>
+          <div class="nation-subtitle">The Ancient Jungle</div>
+        </div>
+        <div class="nation-badge">The South</div>
+      </div>
+      <p class="nation-desc">A region that's home to many reptile and amphibian-kin who guard and worship the ruins of the Smooth Ones, and a large variety of biomes including deserts, swamps, and rainforests. Outsiders are tolerated, but welcomed is a different question. It's people are slow to trust and impossible to rush. The jungle and desert swallow adventurers regularly. Here, Dragons, of which two are known, are worshiped openly. Yddross, dragon of the rainforest, and Egyyt, dragon of the desert. They don't seem hostile, but nobody speaks their language.</p>
+      <div class="nation-values">
+        <span class="tag">Stoicism</span>
+        <span class="tag">Tradition</span>
+        <span class="tag">Sun-Worship</span>
+      </div>
+      <p class="nation-desc" style="margin:12px 0 0;">Sunreach holds the largest concentration of Smooth One ruins on the continent, and it's mage college, the Otto Tomize Academy of Thaumaturgy, teaches magic drawn directly from studying them.</p>
+      <div class="nation-leader">Governance: <span>The Sun Council, a body of ancient ritual keepers</span></div>
+    </div>
+
+    <div class="nation-card">
+      <div class="nation-card-top">
+        <div>
+          <div class="nation-name">Moonhowl</div>
+          <div class="nation-subtitle">The Frozen North</div>
+        </div>
+        <div class="nation-badge">The Frontier</div>
+      </div>
+      <p class="nation-desc">A wild, nomadic territory of wolves, foxes, and bears who patrol the frigid edge of the civilized world. Here, might is right, and only the strong survive. Leadership is decentralized here, and cities fend for themselves, only working together in extraordinary circumstances. Moonhowl is renowned for it's hunters, marksman, and gladiators. The nation banded together to wage with Iron-Tusk not that many years ago.</p>
+      <div class="nation-values">
+        <span class="tag">Survival</span>
+        <span class="tag">Freedom</span>
+        <span class="tag">Instinct</span>
+      </div>
+      <p class="nation-desc" style="margin:12px 0 0;">Magic in Moonhowl is shamanic and instinctive, passed down through oral tradition rather than college study. The frozen north is home to enormous creatures that would qualify as monsters anywhere else, and big game hunters make their reputations tracking them. Strange lights have been seen above the northern glaciers that no one has been able to explain.</p>
+      <div class="nation-leader">Governance: <span>Pack Alphas; no central authority</span></div>
+    </div>
+
+  </div>
+
+  <div class="section-label" style="margin-top:44px;">A Note on the Silent</div>
+  <div class="nation-card" style="max-width:640px;">
+    <p class="nation-desc" style="margin:0;">Not every animal woke up. While you stand upright and wear clothes, many of your cousins remained the Silent: non-sentient beasts of the wild. Hunting Silent animals for food is a reality of life in Everden, but it is a grim one. Most folk would never eat a Silent animal of a similar species to their own, and the line between Awakened and Silent is a subject of genuine philosophical anxiety in every nation.</p>
+  </div>
+  <div class="section-label" style="margin-top:44px;">Other nations of Everden</div>
+  <div class="nation-card" style="max-width:640px;">
+    <p class="nation-desc" style="margin:0;">You may wish to create a character that does not fit neatly into the listed playable races or list of nations, but Everden is an expansive world, and there are plenty of nations and animalfolk outside of what I've listed. I encourage you to work with me to make your idea a reality!</p>
+  </div>
+
+  <div class="section-label" style="margin-top:44px;">Magic in Everden</div>
+<div class="nation-card" style="max-width:640px;">
+  <p class="nation-desc" style="margin:0;">Magic exists in Everden, though it is not so common that anyone takes it for granted. Mage colleges operate in Goldcollar, Sunreach, and Whiskerburrow. Sorcerers with magic bloodlines appear most often in noble families, though they are not unheard of among commoners. Artificers sell enchanted goods in Petsburg and a handful of other major cities, but many of the most interesting magic items in the world were pulled out of Smooth One ruins by people who were probably not supposed to be there. Anyone with magical ability or skill in alchemy will never struggle to find work, whether in a royal court or running their own business. Player characters, naturally, tend to find adventure more compelling than either.</p>
+</div>
+
+<div class="section-label" style="margin-top:44px;">Monsters and Dangers</div>
+<div class="nation-card" style="max-width:640px;">
+  <p class="nation-desc" style="margin:0;">Everden is not a safe world. The Silent are not the only threat in the wilderness: creatures that would be at home in any dungeon lurk in the ruins of the Smooth Ones, in deep caves, in old forests, and in places that have not seen light in a very long time. Most populated areas are reasonably secure, but the ruins are another matter entirely. Dragons exist. They are rare, largely confined to the deep wilderness and the interior of Sunreach, and the subject of significant academic disagreement about their origins. Whether they predate the Smooth Ones or are somehow their legacy is a question nobody has managed to ask one directly and survive to report on.</p>
+</div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION: RACES
+══════════════════════════════ -->
+<div id="sec-races" class="section-wrap">
+  <div class="section-label" style="margin-top:0;">Playable Species</div>
+  <div class="search-wrap">
+    <input class="search" type="text" id="search" placeholder="Search races..." oninput="renderRaces()" />
+  </div>
+  <div id="race-grid" class="race-grid"></div>
+  <div id="race-detail" class="detail"></div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION: PANTHEON
+══════════════════════════════ -->
+<div id="sec-pantheon" class="section-wrap">
+  <p>The people of Everden worship a large variety of gods and goddesses. Click on a god to learn more.</p>
+
+  <div class="section-label" style="margin-top:10;">Light and Life</div>
+  <div class="god-grid">
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#2a2010;">🌅</div>
+        <div class="god-names">
+          <div class="god-name">The Dawnthumper</div>
+          <div class="god-epithet">He Who Greets the Morning</div>
+          <!-- Lathander -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Depicted as a golden rabbit standing upright on a hilltop, ears raised toward a sunrise, the Dawnthumper is the patron of new beginnings, spring harvests, and swift legs. He is said to have thumped the ground three times at the moment of the Great Awakening, sending the tremor of consciousness through every burrow and warren in the land. His temples face east, and services are held at dawn, often beginning before the sun has fully crested the horizon.</p>
+        <p>The horsefolk of Iron-Tusk have begun to adopt their own vision of this god, calling him the Dawntrotter and depicting him as a blazingly fast steed. Their depictions often focus more on his speed and power, as well as his flowing mane.</p>
+        <p><em>"Thump once for what was lost. Thump twice for what is here. Thump thrice for what is coming." - Common Carrovian morning prayer</em></p>
+        <div class="worshipers"><span class="tag">Rabbitfolk (Carrovia)</span><span class="tag">Horsefolk (Iron-Tusk)</span><span class="tag">Farmers</span><span class="tag">Midwives</span><span class="tag">Travelers</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0a2018;">🌿</div>
+        <div class="god-names">
+          <div class="god-name">The Still Pool</div>
+          <div class="god-epithet">Lady of the Quiet Water</div>
+          <!-- Eldath -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Revered as a peaceful otter floating in an ancient, reflective lake, the Still Pool is the goddess of peace, sanctuary, and hidden places. Her shrines are built beside ponds and slow rivers, never on moving water. She is the patron deity of Whiskerburrow, and her clergy will tell you that their philosophy of community and careful listening  reflects her nature perfectly. To harm someone who has claimed sanctuary at one of her shrines is considered a grave sin.</p>
+        <p><em>Whiskerburrow scholars debate endlessly whether the Still Pool predates the Great Awakening, or whether the Awakening itself was her doing, a gift of quiet understanding poured into every creature.</em></p>
+        <div class="worshipers"><span class="tag">Otterfolk (Whiskerburrow)</span><span class="tag">Scholars</span><span class="tag">Healers</span><span class="tag">Pacifists</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0f1f0a;">🌾</div>
+        <div class="god-names">
+          <div class="god-name">The Great Sow</div>
+          <div class="god-epithet">Mother of Plenty</div>
+          <!-- Chauntea -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Carved into the every grain silo in Iron-Tusk and Whiskerburrow, the Great Sow is depicted as a large boar whose belly is always full and whose hooves bless every field. She demands labor, patience, and callused hands, but those who work the land faithfully are never without her favor. Her festivals are lively, raucous, and involve enormous communal feasts.</p>
+        <p><em>"You don't pray to the Great Sow. You plant, grow, and harvest, and she notices."</em></p>
+        <div class="worshipers"><span class="tag">Boarfolk (Iron-Tusk)</span><span class="tag">Mousefolk (Whiskerburrow)</span><span class="tag">Farmers</span><span class="tag">Brewers</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0f1f0a;">❤️</div>
+        <div class="god-names">
+          <div class="god-name">The Love Bird</div>
+          <div class="god-epithet">Protector of Beauty and Passion</div>
+          <!-- Sune -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Depicted as two swans interlocked, their necks forming the shape of a heart. The Love Bird is a goddess of beauty in all its forms. Be they sights, sounds, smells, tastes, or feelings, the experience of pleasure is her domain. The feeling of love at first sight is said to be a direct divine intervention of the love bird, caused by an arrow shot by her cherrubic swan archers. Newlyweds of every nation and species give an offering of silks, perfumes, and beautiful trinkets to her temples to bless their marriage.</p>
+        <p><em>"Beauty is more than skin deep; it issues from the core of one's being and shows one's fair (or foul) face to the world." - Lovebirdian saying.</em></p>
+        <div class="worshipers"><span class="tag">Loving couples</span><span class="tag">Birdfolk</span><span class="tag">Artists</span><span class="tag">Priests</span></div>
+      </div>
+    </div>
+    
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#2a1520;">🦚</div>
+        <div class="god-names">
+          <div class="god-name">The Prismatic Peahen</div>
+          <div class="god-epithet">Goddess of Pride and Party Animals</div>
+          <!-- Lliira -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Depicted as a peafowl of such magnificent color that early temple murals had to be repainted twice because artists kept running out of pigment. Although her colors and plumage outshine even the most resplendant peacock, she is understood to be a peahen. This aspect has made her beloved by queer animalfolk across Everden, and a symbol of pride, acceptance, and understanding. Her clergy, called Party Animals, believe that pride, properly understood, is not a sin at all, but a form of worship. They're well-loved most everywhere for their love of bright, colorful parties and parades, held to celebrate even the most humdrum of occasions.</p>
+        <p><em>"Wait, it's the one month anniversary of your 25th birthday? Why didn't you say so sooner? Sounds like it's time to PAAAAARTY!" - Something you're likely to hear if you're friends with a Party Animal</em></p>
+        <div class="worshipers"><span class="tag">Party lovers</span><span class="tag">Performers</span><span class="tag">Queer folk</span><span class="tag">Anyone who has ever made an entrance</span></div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <div class="section-label">Knowledge, Craft and Commerce</div>
+  <div class="god-grid">
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0e1825;">📜</div>
+        <div class="god-names">
+          <div class="god-name">The Ink-Nosed One</div>
+          <div class="god-epithet">Keeper of the Written Word</div>
+          <!-- Deneir -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>A small, perpetually distracted mouse with an ink-stained snout and spectacles made from smoothed glass. The Ink-Nosed One is the patron of scribes, cartographers, and anyone whose life depends on the written word. The Whiskerburrow Archive considers itself his temple, and their Archivists are his clergy. He is said to have hidden pieces of the Smooth One's history in plain sight, waiting for someone clever enough to read them.</p>
+        <div class="worshipers"><span class="tag">Mousefolk (Whiskerburrow)</span><span class="tag">Mages</span><span class="tag">Cartographers</span><span class="tag">Awakening Scholars</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#221a05;">🪙</div>
+        <div class="god-names">
+          <div class="god-name">The Golden Collars</div>
+          <div class="god-epithet">Patron of the Worthy Deal</div>
+          <!-- Wuakeen -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Depicted as a regal two-headed creature with one cat head and one dog head. She is the goddess of honest commerce, fair trade, and the social contract. Her temples look much like banks, because they are banks. Merchants swear their contracts before her priests, and debts acknowledged under her seal are considered sacred obligations. The Dual Monarchs of Petsburg are her stewards, though the Church takes pains to remain above politics. The nation of Goldcollar takes it's name from her.</p>
+        <p><em>She makes no distinction between the wealthy merchant and the market mouse, only between those who honor their deals and those who do not.</em></p>
+        <div class="worshipers"><span class="tag">Catfolk (Goldcollar)</span><span class="tag">Dogfolk (Goldcollar)</span><span class="tag">Merchants</span><span class="tag">Bankers</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#1a1025;">🦊</div>
+        <div class="god-names">
+          <div class="god-name">Cunning Reynard</div>
+          <div class="god-epithet">The Fox Who Walks Between</div>
+          <!-- Mask -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Although some in Everden malign him as a god of thieves, he is more a god of the space between truth and lie, of cleverness and trickery. Reynard is a lean red fox in a green cloak, always smiling, always up to something. His worship is officially tolerated in Goldcollar, where lawyers quietly maintain a small shrine in most courthouses, and openly celebrated in Moonhowl, where cunning is survival. He has no formal temples, only back rooms, whisper-networks, and the smile shared between people who both know they are being clever at each other.</p>
+        <div class="worshipers"><span class="tag">Foxfolk (Moonhowl)</span><span class="tag">Spies</span><span class="tag">Catfolk</span><span class="tag">Lawyers</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#1a1510;">🥾</div>
+        <div class="god-names">
+          <div class="god-name">Puss-in-Boots</div>
+          <div class="god-epithet">The Cat Who Made His Own Luck</div>
+          <!-- Tymora -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Where Reynard works in shadows and half-truths, Puss-in-Boots operates entirely in the open, with complete audacity. He is depicted as a swaggering cat in tall boots and a wide-brimmed hat, rapier sword at his hip, and he is celebrated for his dashing mortal deeds before ascending to godhood. He holds domain over good fortune, skill, victory, and adventurers. He is the patron of the ambitious poor, the self-made, and anyone who has ever refused to accept the status quo. His followers believe that confidence and conviction are their own form of magic. Devotees have no interest in lies. Their texts say he prefers to tell people exactly what he intends and then do it before they have a chance to tell him no.</p>
+        <p><em>"He never pretended to be something he wasn't. He simply insisted on becoming it." - Pusserian saying</em></p>
+        <div class="worshipers"><span class="tag">Catfolk (Goldcollar)</span><span class="tag">Rogues</span><span class="tag">Gamblers</span><span class="tag">The ambitious poor</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0a1a18;">🦜</div>
+        <div class="god-names">
+          <div class="god-name">The First Voice</div>
+          <div class="god-epithet">He Who Spoke and Was Heard</div>
+          <!-- Oghma -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>The god who granted animalkind their voices after the Great Awakening, or so his followers say. He is depicted as a parrot of every color perched on a branch that stretches across the entire sky. The First Voice governs language, lore, and the beauty of music and dance. His clergy are called Listeners, and they collect oral histories obsessively. There is a deep rivalry between his Listeners and the Ink-Nosed One's Archivists over what forms of recorded knowledge are more important.</p>
+        <div class="worshipers"><span class="tag">Birdfolk</span><span class="tag">Bards</span><span class="tag">Historians</span><span class="tag">Linguists</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Iron, the Hunt, and Justice</div>
+  <div class="god-grid">
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#1f1010;">⚔️</div>
+        <div class="god-names">
+          <div class="god-name">The Forge Boar</div>
+          <div class="god-epithet">He Who Does Not Yield</div>
+          <!-- Tempus -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Often depicted as a massive boar with a scarred eyes and a broken tusk reforged in black iron, giving the nation of Iron-Tusk it's name. He is the god of honorable warfare, the forge, and the will to endure. His clergy are called Tuskers, warrior priests who wield hammers and blades. They consider retreat a theological question requiring intense deliberation. He respects strength and despises cowardice, but has no love for cruelty. He is said to have given the first horse their iron shoes, enabling the great cavalry charges that made other nations respect the military might of Boar and Horsefolk.</p>
+        <div class="worshipers"><span class="tag">Boarfolk (Iron-Tusk)</span><span class="tag">Horsefolk (Iron-Tusk)</span><span class="tag">Soldiers</span><span class="tag">Smiths</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0d1a0d;">🐺</div>
+        <div class="god-names">
+          <div class="god-name">Shakiri</div>
+          <div class="god-epithet">First Hunter, Last Witness</div>
+          <!-- Mielikki -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>A beautiful she-wolf who moves with a deliberate grace. Shakiri is the patron of hunters, rangers, and those who venture into the wild places where the Silent still roam in great and dangerous numbers. Her teachings are simple: take only what is needed, honor the kill, and waste nothing. Moonhowl's young hunters dedicate their first successful Silent hunt to her. She also governs the difficult question of what separates the Awakened from the Silent, a topic her clergy address with nuance.</p>
+        <p><em>"There's a she wolf in your closet. Let it out so it can breathe" - Ancient Shakirian saying regarding realeasing your inner strength.</em></p>
+        <div class="worshipers"><span class="tag">Wolffolk (Moonhowl)</span><span class="tag">Rangers</span><span class="tag">Hunters</span><span class="tag">Druids</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0e1520;">⚖️</div>
+        <div class="god-names">
+          <div class="god-name">The Blind Hound</div>
+          <div class="god-epithet">He Who Judges</div>
+          <!-- Tyr -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Depicted as a long haired white dog with a blindfold across his eyes and one paw missing, the Blind Hound is the god of justice. The missing paw is not a wound his followers mourn, it's believed he gave it willingly to seal away something dangerous, and he would do it again. His devotees are judges, city watchfolk, and paladins, who must parse the separation between morality and law, the difference between the letter of the law and the spirit. He is not a gentle god, and his justice upon the wicked can be brutal. Worshipers of The Blind Hound are often looked at with distrust or scorn by those with more nuanced views on ethics and justice.</p>
+        <p><em>"A good dog is a hammer in the hand of The Blind One" - Common criticism of the Hound's followers.</em></p>
+        <div class="worshipers"><span class="tag">Caninefolk (Goldcollar)</span><span class="tag">City Watch</span><span class="tag">Judges</span><span class="tag">Paladins</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Sun, Moon and Primal Forces</div>
+  <div class="god-grid">
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#221800;">☀️</div>
+        <div class="god-names">
+          <div class="god-name">The Blinding Crest</div>
+          <div class="god-epithet">Lord of the Unveiled Sky</div>
+          <!-- Amaunator -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Whereas the Dawnthumper is the sun as hope and beginning, the Blinding Crest is the sun as law and judgment. He is depicted as a massive frilled lizard with scales of glimmering gold and eyes too bright to look at directly. The people of Sunreach believe the Smooth Ones vanished because they built their towers so tall they blocked his light. His temples are open to the sky, and his rites are performed at high noon. His clergy can be intense company.</p>
+        <p><em>Theologians in Whiskerburrow believe the Dawnthumper and the Blinding Crest are the same divine entity, simply perceived differently across cultures. The clergy of both gods find this suggestion blasphemous.</em></p>
+        <div class="worshipers"><span class="tag">Lizardfolk (Sunreach)</span><span class="tag">Toadfolk (Sunreach)</span><span class="tag">Sun Priests</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#141020;">🌕</div>
+        <div class="god-names">
+          <div class="god-name">The Lunar Queen</div>
+          <div class="god-epithet">She Who Lights the Night</div>
+          <!-- Selune -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>Depicted as a luminous white moth drifting across a night sky, trailing moon-dust from her wings. She is the goddess of the moon, navigation, and the comfort of darkness. It is said that her moon-dust created the stars in the sky, and sailors use those stars to navigate, and night-shift workers whisper thanks when the moon is full. She has a devoted following among wolf-kin and dogfolk, who howl insticively at the full moon as a form of worship.</p>
+        <p><em>She and the Night Queen are considered theological opposites, and devotees of the Lunar Queen have an intense dislike of the Night Queen.</em></p>
+        <div class="worshipers"><span class="tag">Wolffolk (Moonhowl)</span><span class="tag">Sailors</span><span class="tag">Night Travelers</span><span class="tag">Midwives</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Death, Shadows, and Darker Powers</div>
+  <div class="god-grid">
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#141414;">🪦</div>
+        <div class="god-names">
+          <div class="god-name">The Patient Badger</div>
+          <div class="god-epithet">He Who Waits at the End of Every Tunnel</div>
+          <!-- Kelemvor -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>An enormous, still badger seated in a chamber of black stone, lantern in one great paw and scales in the other. He is not feared, merely respected, much as one respects the coming of winter. The Patient Badger judges the dead fairly and without emotion. His clergy are the undertakers, gravediggers, and hospice keepers of Everden, and among the most unfairly disliked clerics in any city. He has jurisdiction over the undead, which he considers an abomination against the natural order, and he acts on that opinion with some force.</p>
+        <div class="worshipers"><span class="tag">Badgerfolk (Whiskerburrow)</span><span class="tag">Gravediggers</span><span class="tag">Judges</span><span class="tag">Molefolk</span></div>
+      </div>
+    </div>
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#1f0f0f;">🌑</div>
+        <div class="god-names">
+          <div class="god-name">The Night Queen</div>
+          <div class="god-epithet">Lady of Silken Ruin</div>
+          <!-- Shar -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>A black cat dressed in violet silk, half-hidden in shadow. The Night Queen is the goddess of secrets kept too long, grief that has rotted into turmoil, and the comfort of despair. She is not entirely evil; her clergy provide genuine solace to those in mourning, and she claims domain over secrets hidden by the darkness. However, her darkest teachings concern loss, and the idea that what is gone is in some ways more real than what remains. Her faith has grown more popular in Carrovia in recent years.</p>
+        <p><em>She and the Lunar Queen are considered theological opposites, though scholars note they serve some of the same mourners. Devotees despise followers of the Lunar Queen.</em></p>
+        <div class="worshipers"><span class="tag">Catfolk (some, in secret)</span><span class="tag">Grieving Nobility</span><span class="tag">Spies</span><span class="tag">Carrovia (recent surge)</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-label">Outlawed and Feared</div>
+  <div class="god-grid">
+
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:#0f0f0f;">🐍</div>
+        <div class="god-names">
+          <div class="god-name">The Viper Beneath</div>
+          <div class="god-epithet">He Who Ate the Smooth Ones</div>
+          <!-- Bhaal -->
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        <p>No one worships the Viper Beneath openly, and his name is not uttered in polite company. The theology is simple but terrible: he is not a god of murder so much as a god of inevitability, the belief that all things end in death. His cult has no temples, only cells. The only confirmed sign of his influence is the shape of a serpent, carved into the scene of a grizzly killing.</p>
+        <div class="worshipers"><span class="tag">Outlawed (all nations)</span><span class="tag">Hidden Cells</span><span class="tag">Nihilists</span></div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-top:44px;">Other Powers</div>
+    <div class="nation-card" style="max-width:640px;">
+      <p class="nation-desc" style="margin:0;">The gods listed here are the most widely known across Everden, but they are not the only powers worthy of worship (or making a deal for power with). Local spirits, ancient beings, forgotten names, and stranger things exist at the edges of the known world. If none of the listed gods feel right for your character, talk to me and we can work something out together.</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION: LANGUAGES
+══════════════════════════════ -->
+<div id="sec-languages" class="section-wrap">
+  <div class="section-label" style="margin-top:0;">Languages of Everden</div>
+  <p style="color:var(--muted);font-size:.93rem;margin-bottom:24px;line-height:1.7;">Everden has it's own set of languages. Use these instead of the PHB language list during character creation. <b>Your character knows Collartongue and ONE other language from this list.</b> Your class and other features may give you additional languages, such as Druidic or Thieves' Cant.</p>
+
+  <div class="lang-grid">
+
+    <div class="lang-card" style="border-color:#2a3a1a;">
+      <div class="lang-name">Collartongue</div>
+      <div class="lang-script">Script: Repurposed Smooth One lettering - Common to all</div>
+      <p class="lang-desc">The common trade tongue of Goldcollar and most of the civilized world. It evolved from several older languages over centuries of commerce. Every character speaks this by default. If someone in Everden speaks one language, it is this one.</p>
+      <div class="lang-restrict">Treat Collartongue like Common during character creation.</div>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-name">Whispersqueak</div>
+      <div class="lang-script">Script: Flowing cursive</div>
+      <p class="lang-desc">The native tongue of Carrovia and Whiskerburrow, spoken by rabbits, mice, and most small prey-folk. Used by academics, poets, and keepers of Great Awakening lore. It carries more vocabulary for concepts of memory, loss, and community than any other language in Everden.</p>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-name">Ironmouth</div>
+      <div class="lang-script">Script: Runic</div>
+      <p class="lang-desc">The language of boars, horses, and the industrial folk of Iron-Tusk. Clipped, efficient, and loud. Foreigners often describe it as sounding permanently impatient. Its runic script was designed to be carved into metal, and most Ironmouth signage still is.</p>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-name">Scalese</div>
+      <div class="lang-script">Script: Pictographic</div>
+      <p class="lang-desc">Spoken by lizards, toads, and the ancient peoples of Sunreach. One of the oldest living languages in Everden, with roots that may predate the Awakening itself. Its pictographic script is found on ruin walls throughout the jungle, some of it predating anything scholars can reliably date.</p>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-name">Howltongue</div>
+      <div class="lang-script">Script: None (oral tradition only)</div>
+      <p class="lang-desc">The language of wolves, foxes, and the nomadic peoples of Moonhowl. Heavily tonal, making it notoriously difficult for outsiders to learn. A wrong pitch can change a greeting into an insult. Most Moonhowl folk use collartongue for writing, but only if strictly necessary.</p>
+    </div>
+
+    <div class="lang-card">
+      <div class="lang-name">Plumesong</div>
+      <div class="lang-script">Script: Musical Notation</div>
+      <p class="lang-desc">Spoken by birds of all kinds. Contains sounds that no non-avian throat can fully reproduce, meaning most non-speakers learn only a rough approximation. Native speakers can always tell when they are being spoken to by an outsider, and they find it charming in the way that is almost condescending.</p>
+    </div>
+
+    <div class="lang-card restricted">
+      <div class="lang-name">Smoothtalk</div>
+      <div class="lang-script">Script: Classical Roman-style lettering</div>
+      <p class="lang-desc">A dead language. The writing of the Smooth Ones, found today only in ruin inscriptions and crumbling ancient texts. Nobody speaks it natively or knows for certain what it actually sounded like. Scholars reconstruct it's pronunciation from best guesses and argue about it constantly.</p>
+      <div class="lang-restrict">Requires 14 Intelligence or higher to learn.</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* ── NAV ── */
+function showSection(id, btn){
+  document.querySelectorAll('.section-wrap').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── RACES ── */
+const races=[
+{id:0,name:"Lapine",animal:"Rabbit / hare",size:"Small or Medium",speed:35,traits:[
+{n:"Keen Senses",d:"You have proficiency in the Perception skill."},
+{n:"Lucky Foot",d:"When you roll a 1 on a d20 Test, you can reroll the die and must use the new roll. You can use this trait a number of times equal to your Proficiency Bonus, and you regain all uses when you finish a Long Rest."},
+{n:"Leaping Lunge",d:"Your long jump and high jump distance is tripled."},
+{n:"Darkvision",d:"You have Darkvision with a range of 60 feet."},
+{n:"Startled Sprint",d:"As a Bonus Action, you can move up to your Speed without provoking Opportunity Attacks. Once you use this trait, you can't use it again until you finish a Short or Long Rest."}
+],feat:"Alert or Speedy",lore:"Lapines are quick-witted, quick-footed folk who have built close-knit warrens across rolling meadowlands. Their long ears pick up the subtlest sounds, and their instinct to bolt at danger serves them as well in diplomacy as in battle. Many lapines are wanderers by nature, and their natural luck has saved more than a few from the teeth of fate."},
+{id:1,name:"Murinae",animal:"Mouse / rat / squirrel",size:"Small (Mouse) or Medium (Rat and Squirrel)",speed:30,traits:[
+{n:"Keen Senses",d:"You have proficiency in the Perception skill."},
+{n:"Nimble Escape",d:"You can take the Disengage or Hide action as a Bonus Action."},
+{n:"Hoarding Instinct",d:"You can always determine the shortest path to a hidden or stored object you personally concealed."},
+{n:"Whisker Sense(Mouse, Rat) OR Scamper",d:"Mouse/Rat: You have Blindsight with a range of 10 feet, allowing you to detect creatures by vibration and scent even in darkness. Squirrel: You have a climb speed equal to your walk speed."},
+{n:"Scurry",d:"You can move through the space of any creature Large or bigger without it counting as Difficult Terrain. Opportunity Attacks against you are made with disadvantage while you are moving through another creature's space."}
+],feat:"Skulker or Magic Initiate",lore:"The Murinae are the most numerous folk in the known lands, found in every city, burrow, and forgotten cellar. Their size is no weakness: generations of survival have made them resourceful, observant, and extraordinarily hard to catch. Rat-kind Murinae often carry a reputation for cunning and commerce; mouse-kind for warmth and community. Squirrels are well liked by all kinds for their chipper demeanors."},
+{id:2,name:"Vulpine",animal:"Fox / wolf",size:"Medium",speed:30,traits:[
+{n:"Cunning Mind",d:"You have proficiency in the Deception or Persuasion skill (your choice)."},
+{n:"Pack Sense",d:"You have advantage on Perception checks that rely on smell. You always know the direction of creatures you have previously scented within the past hour, as long as they are within 1 mile."},
+{n:"Chase",d:"Once per turn, when you move at least 20 feet toward a creature, your next attack roll against it gains advantage."},
+{n:"Foxfire Cunning (Fox) OR Pack Tactics (Wolf)",d:"Fox: When you roll Deception or Persuasion, you can add your Proficiency Bonus to the roll a second time. You can't use this feature again until you complete a long or short rest. Wolf: You have advantage on attack rolls against a creature if at least one of your allies is within 5 feet of that creature and isn't Incapacitated."},
+{n:"Darkvision",d:"You have Darkvision with a range of 60 feet."}
+],feat:"Actor (fox) or Inspiring Leader (wolf)",lore:"Vulpines split loosely into two cultures: solitary foxkind, who prize cleverness and self-reliance, and wolfkind, who build fierce, loyal packs. Both share sharp senses and a magnetic confidence that makes them natural leaders... or dangerous schemers."},
+{id:3,name:"Musteline",animal:"Badger / mole / otter / weasel",size:"Small or Medium",speed:30,traits:[
+{n:"Tenacious",d:"When you are reduced to 0 Hit Points but not killed outright, you can drop to 1 Hit Point instead. You can't use this trait again until you finish a Long Rest."},
+{n:"Darkvision",d:"You have Darkvision with a range of 60 feet."},
+{n:"Burrower (Badger/Mole) OR Swimmer (Otter) OR Slippery (Weasel)",d:"Badger/Mole: You have a Burrow speed of 15 feet. Otter: You have a Swim speed equal to your Speed and can hold your breath for up to 15 minutes. Weasel: Ability checks made to escape a Grapple or shackles are made with advantage, and you can squeeze through spaces a creature one size smaller than you could occupy."},
+{n:"Scrappy",d:"When a creature misses you with a melee attack, you can use your reaction to move 5 feet without provoking Opportunity Attacks."},
+{n:"Musk",d:"As a Reaction when you are hit by a melee attack, you can release a noxious spray. The attacker must succeed on a Constitution saving throw (DC = 8 + your Proficiency Bonus + your Constitution modifier) or be Poisoned until the end of their next turn."}
+],feat:"Tough or Tavern Brawler",lore:"The Mustelinae are as varied as the streams and burrows they inhabit, but all share a fierce, tenacious quality that makes them formidable regardless of size. Badger-folk are stolid and territorial; otter-folk are jovial wanderers who follow the rivers; weasel-folk are slender, fast, and considerably more devious than their otter cousins care to admit."},
+{id:4,name:"Avian",animal:"Crow / owl / sparrow / peacock",size:"Small or Medium",speed:30,traits:[
+{n:"Flight",d:"As a bonus action, you can launch yourself 10 ft into the air and gain a fly speed equal to your walk speed for 30 seconds. Your hands must remain empty during this time or your flight will end. After this flight ends, you may glide while descending to the ground at a rate of 10 ft per second / 60 ft per round, and take no fall damage. You can't use this ability again until you complete a short rest."},
+{n:"Sharp Eyes",d:"You have proficiency in the Perception skill. If you already have this proficiency, you gain Expertise in it instead."},
+{n:"Corvid Cunning (Crow) OR Owl's Wisdom (Owl) OR Flock Instinct (Sparrow) OR Distracting Plumage (Peacock)",d:"Crow: You can mimic the voice of any creature you have heard within the past day, and you have advantage on History checks to recall information. Owl: You have advantage on Wisdom (Insight) checks and can cast Detect Magic once per Long Rest without a spell slot (Wisdom is your spellcasting modifier). Sparrow: When you use the Help action, the target gains a bonus to their d20 roll equal to your Proficiency Bonus. Peacock: When an ally you can see is being attacked, as a reaction you can unfurl your peacock plumage, imposing disadvantage on the attack. You can do this only once during an encounter."},
+{n:"Skywise",d:"You always know which direction is north, the current time of day, and roughly how far you've traveled within the past 24 hours."},
+{n:"Hollow Bones",d:"You have resistance to falling damage. However, your carrying capacity is halved."}
+],feat:"Observant (owl/crow) or Healer (sparrow)",lore:"Avian-kind soar above the concerns of ground-bound folk, sometimes literally. Crow-folk are treasure-hunters and talespinners, fascinated by shiny objects and secret lore. Owl-folk are scholars and seers, moving through the night with uncanny silence. Sparrow-folk are the most sociable, building vast communal roosts and renowned for their generosity. Peacocks are known for their bright, colorful performances and parades, as well as their irresistible charms."},
+{id:5,name:"Ranine",animal:"Frog / toad",size:"Small or Medium",speed:30,traits:[
+{n:"Amphibious",d:"You can breathe air and water. You have a swim speed equal to your walk speed."},
+{n:"Leaping Lunge",d:"Your long jump and high jump distance is tripled."},
+{n:"Sticky Tongue",d:"As a Bonus Action, you can make a ranged attack (range 15 feet) using your tongue against an object or a creature of your size or smaller that is not being held. On a hit, the target is pulled up to 10 feet toward you, and if it is an object weighing 10 lbs. or less, it lands in your free hand."},
+{n:"Slick Skin",d:"You have advantage on saving throws and ability checks to avoid or escape being Grappled or Restrained."},
+{n:"Darkvision",d:"You have Darkvision with a range of 60 feet."}
+],feat:"Athlete or War Caster",lore:"The Ranine are a patient, meditative people who strike with sudden explosive speed when provoked. Frog-folk tend to be lithe and impulsive; toad-folk are broader, slower to anger, and deeply philosophical. Both cultures center on oral tradition; their songs and stories are among the oldest in the known world."},
+{id:6,name:"Lacertine",animal:"Lizard / gecko / skink",size:"Medium",speed:30,traits:[
+{n:"Natural Armor",d:"You have tough, scaly skin. When unarmored, your AC equals 13 + your Dexterity modifier. You can use a shield and still benefit from this trait (this does not stack with unarmored defense skills from classes like barbarian and monk)."},
+{n:"Wall Crawler",d:"You have a Climb speed equal to your walking speed, and you can climb on difficult surfaces including upside-down on ceilings without needing to make an ability check."},
+{n:"Regenerate Tail",d:"If you are Grappled or Restrained, you can use your Reaction to drop your tail, immediately ending those conditions. Your tail regrows at the end of your next Long Rest."},
+{n:"Darkvision",d:"You have Darkvision with a range of 60 feet."},
+{n:"Hold Breath",d:"You can hold your breath for up to 15 minutes."}
+],feat:"Athlete or Sentinel",lore:"Lacertines are among the most adaptable of the animalfolk, as comfortable on a sunbaked wall as in a dripping cave. Their calm, cold-blooded temperament reads as indifference to warmer-blooded folk, but Lacertines simply process the world at their own pace. They are renowned stoneworkers, acrobats, and scouts."},
+{id:7,name:"Ursine",animal:"Bear",size:"Medium (tall)",speed:30,traits:[
+{n:"Powerful Build",d:"You count as one size larger when determining carrying capacity and the weight you can push, drag, or lift. You also have advantage on saving throws against being knocked Prone."},
+{n:"Bear's Endurance",d:"Your Hit Point maximum increases by 1, and it increases by 1 again whenever you gain a level."},
+{n:"Claws",d:"Your claws are natural weapons. You can make one Claw attack as an action or bonus action (1d6 + Strength modifier slashing). This is not a Light weapon."},
+{n:"Intimidating Presence",d:"You have proficiency in the Intimidation skill. You can attempt to Frighten a creature as an Action (Wisdom saving throw, DC = 8 + Proficiency Bonus + Charisma modifier). On a failed save, the creature is Frightened of you until the end of your next turn. Once you use this Bonus Action feature, you can't do so again until you finish a Short or Long Rest."},
+{n:"Ursine Resilience",d:"You have advantage on saving throws against being Poisoned, and you have resistance to poison damage."}
+],feat:"Tough or Great Weapon Master",lore:"Ursine-folk are the great pillars of the animalfolk world: massive, deliberate, and possessed of a deep patience that can, when finally exhausted, become terrifying. They are storytellers and memory-keepers as much as warriors, and an ursine elder's word carries the weight of history. Younger ursines are often found wandering far from their home territories, driven by a restlessness that fades only with age."},
+{id:8,name:"Equine",animal:"Horse",size:"Medium (tall)",speed:35,traits:[
+{n:"Fleet-Footed",d:"When you take the Dash action, you can move an additional number of feet equal to 5 times your Proficiency Bonus."},
+{n:"Powerful Build",d:"You count as one size larger when determining carrying capacity and the weight you can push, drag, or lift."},
+{n:"Open Stride",d:"Moving through nonmagical Difficult Terrain costs you no extra movement while Dashing."},
+{n:"Surefooted",d:"You have advantage on saving throws and ability checks against effects that would knock you Prone or move you against your will. Difficult terrain does not slow your Dash action."},
+{n:"Enduring March",d:"You require only 4 hours of sleep to gain the benefits of a Long Rest (you spend the other hours in light activity). You have advantage on Constitution saving throws against Exhaustion from forced marching or strenuous travel."}
+],feat:"Charger or Athlete",lore:"Equine-folk are the great travellers and traders of the animalfolk lands, their roads and caravans stitching distant communities together. They are proud of their freedom above all else, and an equine pressed into servitude is a dangerous creature. They're known for an easy sociability and an instinct for reading people that makes them natural diplomats and merchants. Whatever you do, never ask to ride upon their backs."},
+{id:9,name:"Cervine",animal:"Deer / boar",size:"Medium",speed:30,traits:[
+{n:"Bounding Charge",d:"Opportunity attacks against you are made with disadvantage"},
+{n:"Powerful Build",d:"You count as one size larger when determining carrying capacity and the weight you can push, drag, or lift."},
+{n:"Fleet of Hoof",d:"Difficult terrain costs you no extra movement when you Dash."},
+{n:"Stag's Presence (Deer) OR Boar's Fury (Boar)",d:"Deer: You can cast Calm Emotions without a spell slot (Wisdom, Intelligence, or Charisma is your spellcasting ability). Once you use this feature, you can't use it again until completing a long rest. Boar: When you are reduced to half your maximum Hit Points or lower, you have advantage on melee attack rolls."},
+{n:"Keen Smell",d:"You have advantage on Perception checks that rely on smell."}
+],feat:"Charger or Sentinel",lore:"Cervines command respect in most communities simply by walking into a room. Deer-folk are graceful diplomats and keepers of ancient forest law; boar-folk are stubborn, courageous, and notoriously hard to stop once they have decided on a course of action."},
+{id:10,name:"Canine",animal:"Dog",size:"Medium",speed:30,traits:[
+{n:"Loyal Bond",d:"Choose one creature as your Bonded Companion at the end of each Long Rest. While within 30 feet of your Bonded Companion, they have advantage on saving throws against being Frightened. If your companion drops to 0 Hit Points, you can use your Reaction to move up to your Speed toward them without provoking Opportunity Attacks."},
+{n:"Tracker's Nose",d:"You have advantage on Wisdom (Perception) and Wisdom (Survival) checks that rely on smell. You can follow a scent trail up to 24 hours old, even through rain or other adverse conditions."},
+{n:"Protective Instinct",d:"When an ally within 5 feet of you is hit by an attack, you can impose disadvantage on the attack roll as a Reaction. You can use this trait a number of times equal to your Proficiency Bonus after each long rest."},
+{n:"Brave",d:"You have advantage on saving throws against being Frightened."},
+{n:"Pack Coordination",d:"Once per turn when you hit a creature that another ally hit within the last 6 seconds, you deal an additional 1d4 damage of the same type."}
+],feat:"Inspiring Leader or Shield Master",lore:"Canine-folk are the great loyalists of Everden, building communities of fierce devotion and mutual protection. They are found in every role from town guard to wandering merchant, and their reputation for keeping their word has made them prized partners in any enterprise. A canine's friendship is not easily won, but once given, it is lifelong."},
+{id:11,name:"Feline",animal:"Cat",size:"Small or Medium",speed:35,traits:[
+{n:"Always Land",d:"You never take falling damage from falls of 30 feet or less, and you land on your feet. For greater falls, reduce the damage as if the fall were 30 feet shorter."},
+{n:"Retractable Claws",d:"Your claws are natural weapons. You can make one Claw attack as an action or bonus action (1d4 + Strength or Dexterity modifier slashing). You can retract them at will; when retracted, your footsteps make no sound when barefoot."},
+{n:"Nine Lives",d:"When you are reduced to 0 Hit Points but not killed outright, you can set your Hit Points to 9 instead. You can't use this trait again until you finish a Long Rest. You may only use this trait 9 times total, ever."},
+{n:"Darkvision",d:"You have Darkvision with a range of 60 feet."},
+{n:"Uncanny Curiosity",d:"You have proficiency in the Investigation skill. You have advantage on Intelligence (Investigation) checks to examine objects, mechanisms, or documents you can physically handle."}
+],feat:"Skulker or Alert",lore:"Feline-folk are infuriatingly self-possessed. Serene in crisis, curious at the worst moments, and possessed of an independence that their allies sometimes call unhelpful. Domestic cat-folk are urban sophisticates who move through cities like shadows; wilder cat-folk such as lynx or bobcat lineages tend toward solitary ranger lives deep in unclaimed territory."}
+];
+
+function showGrid(){
+  document.getElementById('race-grid').style.display='grid';
+  const d=document.getElementById('race-detail');
+  d.classList.remove('active');
+  d.innerHTML='';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function showDetail(id){
+  const r=races.find(x=>x.id===id);
+  document.getElementById('race-grid').style.display='none';
+  const detail=document.getElementById('race-detail');
+  detail.classList.add('active');
+  detail.innerHTML=`
+    <button class="back" onclick="showGrid()">← Back to all races</button>
+    <div class="detail-card">
+      <div class="detail-header">
+        <div>
+          <div class="detail-title">${r.name}</div>
+          <div class="detail-sub">${r.animal} · ${r.size} · ${r.speed} ft speed</div>
+        </div>
+        <div class="pills"><div class="pill">${r.traits.length} Traits</div></div>
+      </div>
+      <div class="lore">${r.lore}</div>
+      <div class="section">
+        <div class="section-label">Species Traits</div>
+        <div class="traits">
+          ${r.traits.map(t=>`<div class="full-trait"><strong>${t.n}.</strong> ${t.d}</div>`).join('')}
+        </div>
+      </div>
+      <div class="section">
+        <div class="section-label">Base Information</div>
+        <div class="origin">Creature Type: Humanoid<br>Move Speed: ${r.speed} ft</div>
+      </div>
+    </div>
+  `;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderRaces(){
+  const q=document.getElementById('search').value.toLowerCase();
+  const filtered=races.filter(r=>!q||r.name.toLowerCase().includes(q)||r.animal.toLowerCase().includes(q));
+  const grid=document.getElementById('race-grid');
+  if(!filtered.length){ grid.innerHTML='<div class="empty">No races found.</div>'; return; }
+  grid.innerHTML=filtered.map(r=>`
+    <div class="card" onclick="showDetail(${r.id})">
+      <div class="card-top">
+        <div><div class="card-name">${r.name}</div><div class="card-animal">${r.animal}</div></div>
+        <div class="speed">${r.speed} ft</div>
+      </div>
+      <div class="pills"><div class="pill">${r.size}</div><div class="pill">${r.traits.length} traits</div></div>
+      <div class="preview">
+        ${r.traits.slice(0,2).map(t=>`<div class="preview-trait"><strong>${t.n}.</strong> ${t.d.substring(0,90)}${t.d.length>90?'…':''}</div>`).join('')}
+        <div class="more">+ ${r.traits.length-2} more traits</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+renderRaces();
+</script>
+</body>
+</html>
