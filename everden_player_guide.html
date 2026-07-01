@@ -510,784 +510,892 @@ body{
   .hero{ padding:36px 16px 28px; }
 }
 </style>
-</head>
-<body>
 
-<!-- NAV -->
-<nav class="nav">
-  <button class="nav-btn active" onclick="showSection('nations',this)">Nations</button>
-  <button class="nav-btn" onclick="showSection('races',this)">Races</button>
-  <button class="nav-btn" onclick="showSection('pantheon',this)">Panthereon</button>
-  <button class="nav-btn" onclick="showSection('languages',this)">Languages</button>
-</nav>
+<script id="everden-content">
+/* ══════════════════════════════
+   EVERDEN CONTENT DATA
+   Edit the text/cards below to change what appears on the page.
+   Rendering logic lives in the script at the bottom of the file.
+══════════════════════════════ */
+const CONTENT = {
+  "hero": {
+    "eyebrow": "Welcome to",
+    "title": "Everden",
+    "sub": "Long ago, the world belonged to the Smooth Ones. When they vanished, the Great Awakening began. Once-mindless animals stood upright, spoke their first words, and inherited everything. This is the world they built."
+  },
+  "nationsGridLabel": "The Great Powers",
+  "languagesLabel": "Languages of Everden",
+  "nations": [
+    {
+      "name": "Goldcollar",
+      "subtitle": "Where you begin",
+      "badge": "The Heart of Everden",
+      "desc": [
+        "A sophisticated union of cats and dogs, though home to many folk. The masters of trade, luxury, and diplomacy, Goldcollar is the closest thing Everden has to a cosmopolitan heart. Its capital, Petsburg, is a waterfront city where fortunes are made and lost over a single evening's dinner.",
+        "Home to multiple mage colleges and a thriving market for enchanted goods. Artificers sell their wares openly in Petsburg, and magic items scavenged from ruins fetch high prices at auction. The surrounding countryside hides old Smooth One structures beneath overgrown hills, drawing adventurers and treasure hunters, as well as bandits and plunderers."
+      ],
+      "values": [
+        "Elegance",
+        "Commerce",
+        "Social Standing"
+      ],
+      "settlements": [
+        {
+          "name": "Petsburg",
+          "tags": [
+            {
+              "capital": true,
+              "text": "Capital"
+            },
+            {
+              "capital": false,
+              "text": "Port City"
+            },
+            {
+              "capital": false,
+              "text": "Mage College"
+            }
+          ],
+          "body": "A sprawling waterfront capital with multiple districts of varying wealth, from run-down slums to pristine neighborhoods for the wealthy. Petsburg is the seat of the Dual Monarchs, home to Goldcollar's most prestigious mage college (The Dewclaw Institute of the Arcane), and overall just the beating commercial heart of Everden. Every nation has a trade embassy here. The city smells like salt water, street food, and most importantly, money."
+        },
+        {
+          "name": "Brindlewood",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Trade Hub"
+            },
+            {
+              "capital": false,
+              "text": "Crossroads Town"
+            }
+          ],
+          "body": "A busy inland town at the junction of three major roads, Brindle has no particular culture of its own, often seen as merely an extension of Petsburg, as it's the last stop on the way for many travelers. Its markets carry goods from all six nations, and its inns are full of merchants, couriers, and people who would prefer not to say where they are going."
+        },
+        {
+          "name": "Pawcroft",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Farming Village"
+            },
+            {
+              "capital": false,
+              "text": "Ruin-Adjacent"
+            }
+          ],
+          "body": "A quiet agricultural village in Goldcollar's interior, Pawcroft sits at the edge of a half-excavated Smooth One ruin the locals call the Underbuild. Scholars come regularly to study it. Occasionally something comes out of it instead. The villagers are politely tired of both."
+        },
+        {
+          "name": "Velour",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Luxury Resort"
+            },
+            {
+              "capital": false,
+              "text": "Noble Retreat"
+            }
+          ],
+          "body": "A coastal town of white stone and imported silk, Velour exists almost entirely to serve the Goldcollar aristocracy on holiday. Its permanent population is small; its seasonal population is enormous and demanding. The best forgers of fake noble papers in the continent operate quietly out of a laundry on the south end of town."
+        }
+      ],
+      "leaderLabel": "Leaders: ",
+      "leaderText": "Queen Daisy (Golden Retriever lineage) and King Wrinkles (Sphinx Cat), the Dual Monarchs"
+    },
+    {
+      "name": "Carrovia",
+      "subtitle": "The Land of Eternal Autumn",
+      "badge": "The East",
+      "desc": [
+        "Once known for its swift knights and beautiful meadows, this kingdom of rabbits and ravens has grown cold and insular in recent years. A thick mist now hugs its borders, and travelers who cross into Carrovia rarely speak warmly of the experience.",
+        "The mists at Carrovia's borders are not natural, and locals whisper that stranger things walk the autumn woods after dark. Undead have been sighted near old ruins in the eastern reaches, and the Count's court has grown quiet on the subject. Those who investigate rarely file a complete report."
+      ],
+      "values": [
+        "Tradition",
+        "Insular",
+        "Martial Pride"
+      ],
+      "settlements": [
+        {
+          "name": "Hopswall",
+          "tags": [
+            {
+              "capital": true,
+              "text": "Capital"
+            },
+            {
+              "capital": false,
+              "text": "Fortress City"
+            }
+          ],
+          "body": "The seat of Count Barnaby von Hop, Hopswall is a city of old stone, narrow streets, and a castle that has never fallen to siege. It was once a place of festivals and renowned autumn markets. Now the markets run shorter hours, the festivals have been quietly cancelled, and the castle gates close before dark. The Count does not receive visitors without appointment, and appointments are not being granted."
+        },
+        {
+          "name": "Thistlemere",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Border Town"
+            },
+            {
+              "capital": false,
+              "text": "Mist-Touched"
+            }
+          ],
+          "body": "The last town before the mist thickens into something you cannot see through. Thistlemere does steady business in lanterns, rope, and maps that are increasingly out of date. Its residents have a habit of not asking questions about travelers coming or going, which suits most of its visitors perfectly."
+        },
+        {
+          "name": "Ashfen",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Abandoned"
+            },
+            {
+              "capital": false,
+              "text": "Eastern Reach"
+            }
+          ],
+          "body": "Once a prosperous farming settlement on Carrovia's eastern border, Ashfen was evacuated eighteen months ago following a series of incidents that the Count's office described only as a sanitation concern. Travelers report lights in the windows at night. Nobody official has gone to investigate."
+        },
+        {
+          "name": "Meadowrun",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Market Town"
+            },
+            {
+              "capital": false,
+              "text": "Western Border"
+            }
+          ],
+          "body": "The most accessible town in Carrovia for outsiders, sitting close enough to the Goldcollar border that it retains some of its old openness. Merchants still trade here, and the locals are more willing to talk than those deeper in the country. What they say, mostly, is that things were better before the mist came and that they try not to think about it."
+        }
+      ],
+      "leaderLabel": "Leader: ",
+      "leaderText": "Count Barnaby von Hop"
+    },
+    {
+      "name": "Whiskerburrow",
+      "subtitle": "The Home of Scholars",
+      "badge": "The Heartland",
+      "desc": [
+        "A cozy, communal nation of mice, otters, and badgers. Whiskerburrow is home to the finest academic minds in Everden and its most dependable farmers. The people here act slowly but think quickly. Whiscarians will happily argue about the true nature of the Great Awakening over three cups of tea.",
+        "Whiskerburrow's college of natural philosophy is the oldest academic institution in Everden, producing more druids and wizards per capita than any other nation. Magic here tends toward the scholarly and the careful. The surrounding farmland is dotted with low, ancient ruins that scholars have catalogued but not fully explored."
+      ],
+      "values": [
+        "Academics",
+        "Storytelling",
+        "Community"
+      ],
+      "settlements": [
+        {
+          "name": "Denhollow",
+          "tags": [
+            {
+              "capital": true,
+              "text": "Capital"
+            },
+            {
+              "capital": false,
+              "text": "University City"
+            }
+          ],
+          "body": "A low, sprawling city built as much underground as above it, Denhollow is warm in winter, cool in summer, and full of arguing scholars at all times of year. Its university district contains more libraries than taverns, which most residents consider a point of pride and most visitors find alarming. The Great Archive is here, the largest collection of written knowledge in Everden."
+        },
+        {
+          "name": "Rivermouse",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Fishing Village"
+            },
+            {
+              "capital": false,
+              "text": "River Port"
+            }
+          ],
+          "body": "A cheerful little settlement on the Stillwater River, Rivermouse exports more smoked fish than any other town in Whiskerburrow and has an opinion about it. The annual Rivermouse Smoking Festival draws visitors from three nations and is, by universal agreement, a very good time."
+        },
+        {
+          "name": "Thornset",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Farming Community"
+            },
+            {
+              "capital": false,
+              "text": "Ruin Site"
+            }
+          ],
+          "body": "A collective farming settlement that also happens to sit atop the most extensively studied Smooth One ruin in Whiskerburrow. The farmers and the scholars who camp in their fields every summer have reached a careful arrangement: the scholars stay out of the turnip rows and the farmers stay out of the dig sites. It mostly holds."
+        },
+        {
+          "name": "Brackendam",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Mill Town"
+            },
+            {
+              "capital": false,
+              "text": "Trade Stop"
+            }
+          ],
+          "body": "A practical, no-frills town built around a watermill and a granary. Brackendam feeds a significant portion of the surrounding region and is proud of the fact without being showy about it. It has one inn, one tavern, and one very old badger who claims to have met someone who met someone who was there for the Great Awakening."
+        }
+      ],
+      "leaderLabel": "Governance: ",
+      "leaderText": "A council of democratically elected Elders"
+    },
+    {
+      "name": "Iron-Tusk",
+      "subtitle": "The Industrial Power",
+      "badge": "The Mountains",
+      "desc": [
+        "A mountainous industrial nation ruled by boars and horses. If something in Everden is made of steel, there is a good chance it came from an Iron-Tusk forge. The people here do not waste words, and they are suspicious of anyone who does. Their cities are built to last a thousand years. They were only a few years ago in a vicious war with Moonhowl.",
+        "Magic in Iron-Tusk is practical above all else: artificers are employed directly by the Forge Council, and enchanted tools are standard issue in the deepest mines. Those mines occasionally break through into something older than the Smooth Ones, and what lives in those deeper places is not well understood."
+      ],
+      "values": [
+        "Strength",
+        "Industry",
+        "Craftsmanship"
+      ],
+      "settlements": [
+        {
+          "name": "Greygorge",
+          "tags": [
+            {
+              "capital": true,
+              "text": "Capital"
+            },
+            {
+              "capital": false,
+              "text": "Forge City"
+            }
+          ],
+          "body": "Built into the face of a mountain and spreading down into the gorge below it, Greygorge is loud, hot, and perpetually lit by the glow of a hundred forges. The Forge Council meets here in the Iron Hall, a building that has no decorative features whatsoever, which its architects considered a statement. The city exports more weapons, tools, and armored goods than anywhere else in Everden."
+        },
+        {
+          "name": "Sootpass",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Mining Town"
+            },
+            {
+              "capital": false,
+              "text": "Deep Excavation"
+            }
+          ],
+          "body": "A mining settlement high in the mountains where the ore veins run deep and the shafts run deeper. Three tunnels in Sootpass have been sealed by official order for reasons the Forge Council describes as structural. The miners who sealed them will not discuss what they found. The artificers sent to assess the situation filed their report directly to the Grand Tusk and it has not been made public."
+        },
+        {
+          "name": "Ironfoot",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Border Garrison"
+            },
+            {
+              "capital": false,
+              "text": "Military Post"
+            }
+          ],
+          "body": "A fortified garrison town on the border nearest to Moonhowl, Ironfoot has been in a state of tense readiness since the war ended. It is not exactly at peace, and everyone stationed there knows it. The local tavern is called the Ceasefire, which the regulars find either ironic or optimistic depending on the night."
+        },
+        {
+          "name": "Hammerholm",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Artisan Quarter"
+            },
+            {
+              "capital": false,
+              "text": "Trade City"
+            }
+          ],
+          "body": "Where Greygorge makes things in bulk, Hammerholm makes them beautifully. The city is home to Iron-Tusk's master craftspeople, whose individual commissions are sought by nobles across the continent. A sword from a Hammerholm smith costs more than most people earn in a year and is worth every coin."
+        }
+      ],
+      "leaderLabel": "Governance: ",
+      "leaderText": "The Forge Council, headed by the Grand Tusk"
+    },
+    {
+      "name": "Sunreach",
+      "subtitle": "The Ancient Jungle",
+      "badge": "The South",
+      "desc": [
+        "A region home to many reptile and amphibian-kin who guard and worship the ruins of the Smooth Ones, spanning a large variety of biomes including deserts, swamps, and rainforests. Outsiders are tolerated, but welcomed is a different question. Its people are slow to trust and impossible to rush. The jungle and desert swallow adventurers regularly. Two dragons are known and worshiped openly here: Yddross, dragon of the rainforest, and Egyyt, dragon of the desert. They do not seem hostile, but nobody speaks their language.",
+        "Sunreach holds the largest concentration of Smooth One ruins on the continent, and its mage college, the Otto Tomize Academy of Thaumaturgy, teaches magic drawn directly from studying them."
+      ],
+      "values": [
+        "Stoicism",
+        "Tradition",
+        "Sun-Worship"
+      ],
+      "settlements": [
+        {
+          "name": "Solanthis",
+          "tags": [
+            {
+              "capital": true,
+              "text": "Capital"
+            },
+            {
+              "capital": false,
+              "text": "Temple City"
+            },
+            {
+              "capital": false,
+              "text": "Mage College"
+            }
+          ],
+          "body": "An open city of wide plazas and sun-facing architecture, Solanthis is built around a central temple complex that predates the Awakening by an unknown number of centuries. The Otto Tomize Academy of Thaumaturgy operates here, drawing students from across the continent. The Sun Council meets at the temple's highest point, at noon, every day, without exception."
+        },
+        {
+          "name": "Scalemoor",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Swamp Settlement"
+            },
+            {
+              "capital": false,
+              "text": "Ruin-Keeper"
+            }
+          ],
+          "body": "A settlement of toadfolk and swamp-dwelling lizardkin built on raised platforms above the waterline. Scalemoor sits adjacent to some of the densest and least-explored Smooth One ruins in Sunreach, which the locals guard with a seriousness that discourages idle curiosity. They will sell you supplies. They will not sell you access."
+        },
+        {
+          "name": "The Dustgate",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Desert Outpost"
+            },
+            {
+              "capital": false,
+              "text": "Egyyt's Territory"
+            }
+          ],
+          "body": "A fortified outpost at the edge of Sunreach's great desert, the Dustgate is the last reliable source of water, shelter, and information before the dunes begin. It sits within visible distance of one of Egyyt's favored resting sites: a Smooth One structure half-buried in sand that the dragon has occupied for as long as anyone can remember. Pilgrims come here specifically to see the dragon from a safe distance. Most agree the distance is not quite safe enough."
+        },
+        {
+          "name": "Verdant Deep",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Rainforest Village"
+            },
+            {
+              "capital": false,
+              "text": "Yddross-Adjacent"
+            }
+          ],
+          "body": "A village so thoroughly grown into the rainforest canopy that first-time visitors frequently walk past it without noticing. The residents of Verdant Deep have coexisted with Yddross for generations and treat the dragon with a reverence that is completely calm, which outsiders find more unsettling than fear would be. Yddross has never harmed anyone here. The villagers say this is because they have always been respectful. They say it in a tone that implies the conversation is over."
+        }
+      ],
+      "leaderLabel": "Governance: ",
+      "leaderText": "The Sun Council, a body of ancient ritual keepers"
+    },
+    {
+      "name": "Moonhowl",
+      "subtitle": "The Frozen North",
+      "badge": "The Frontier",
+      "desc": [
+        "A wild, nomadic territory of wolves, foxes, and bears who patrol the frigid edge of the civilized world. Here, might is right, and only the strong survive. Leadership is decentralized, and cities fend for themselves, only working together in extraordinary circumstances. Moonhowl is renowned for its hunters, marksmen, and gladiators. The nation banded together to wage war with Iron-Tusk not many years ago.",
+        "Magic in Moonhowl is shamanic and instinctive, passed down through oral tradition rather than college study. The frozen north is home to enormous creatures that would qualify as monsters anywhere else, and big game hunters make their reputations tracking them. Strange lights have been seen above the northern glaciers that no one has been able to explain."
+      ],
+      "values": [
+        "Survival",
+        "Freedom",
+        "Instinct"
+      ],
+      "settlements": [
+        {
+          "name": "Fangmeet",
+          "tags": [
+            {
+              "capital": true,
+              "text": "Largest Settlement"
+            },
+            {
+              "capital": false,
+              "text": "Gladiator City"
+            }
+          ],
+          "body": "Moonhowl has no official capital, but Fangmeet is where the Pack Alphas gather when something requires them to be in the same place, which they prefer to keep rare. It is built around an enormous open arena where disputes, tournaments, and exhibitions are settled publicly. The city is loud, crowded during fight season, and has more taverns per resident than anywhere else in Everden. Outsiders are welcome as long as they can handle themselves."
+        },
+        {
+          "name": "Coldsnap",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Hunting Outpost"
+            },
+            {
+              "capital": false,
+              "text": "Far North"
+            }
+          ],
+          "body": "The northernmost permanent settlement in Everden, Coldsnap exists to support the hunters who track the continent's largest and most dangerous Silent creatures across the glacial plains. It is a place of practical expertise and very little small talk. Hunters who make it back from the deep ice with a kill are celebrated here in a way they would not be anywhere else. Hunters who do not make it back are remembered by name."
+        },
+        {
+          "name": "Emberclaw",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Craftwork Town"
+            },
+            {
+              "capital": false,
+              "text": "Trade Post"
+            }
+          ],
+          "body": "Moonhowl's reputation for fine craftwork lives largely in Emberclaw, where artisans work bone, hide, and salvaged Smooth One materials into goods that sell for surprising prices in southern markets. It is also one of the few Moonhowl settlements that actively courts outside traders, which the other settlements consider slightly embarrassing and which Emberclaw considers pragmatic."
+        },
+        {
+          "name": "The Pale Road",
+          "tags": [
+            {
+              "capital": false,
+              "text": "Nomadic Route"
+            },
+            {
+              "capital": false,
+              "text": "Not a Settlement"
+            }
+          ],
+          "body": "Technically not a settlement at all, the Pale Road is a seasonal migration route used by Moonhowl's nomadic packs. At any given time several hundred people are living and moving along it, with temporary camps that appear and vanish within days. Traders who learn its rough schedule can intercept it for commerce. Those who intercept it without being invited generally regret the decision."
+        }
+      ],
+      "leaderLabel": "Governance: ",
+      "leaderText": "Pack Alphas; no central authority"
+    }
+  ],
+  "nationNotes": [
+    {
+      "label": "A Note on the Silent",
+      "text": "Not every animal woke up. While you stand upright and wear clothes, many of your cousins remained the Silent: non-sentient beasts of the wild. Hunting Silent animals for food is a reality of life in Everden, but it is a grim one. Most folk would never eat a Silent animal of a similar species to their own, and the line between Awakened and Silent is a subject of genuine philosophical anxiety in every nation."
+    },
+    {
+      "label": "Other Nations of Everden",
+      "text": "You may wish to create a character that does not fit neatly into the listed playable races or list of nations, but Everden is an expansive world, and there are plenty of nations and animalfolk outside of what I've listed. I encourage you to work with me to make your idea a reality!"
+    },
+    {
+      "label": "Magic in Everden",
+      "text": "Magic exists in Everden, though it is not so common that anyone takes it for granted. Mage colleges operate in Goldcollar, Sunreach, and Whiskerburrow. Sorcerers with magic bloodlines appear most often in noble families, though they are not unheard of among commoners. Artificers sell enchanted goods in Petsburg and a handful of other major cities, but many of the most interesting magic items in the world were pulled out of Smooth One ruins by people who were probably not supposed to be there. Anyone with magical ability or skill in alchemy will never struggle to find work, whether in a royal court or running their own business. Player characters, naturally, tend to find adventure more compelling than either."
+    },
+    {
+      "label": "Monsters and Dangers",
+      "text": "Everden is not a safe world. The Silent are not the only threat in the wilderness: creatures that would be at home in any dungeon lurk in the ruins of the Smooth Ones, in deep caves, in old forests, and in places that have not seen light in a very long time. Most populated areas are reasonably secure, but the ruins are another matter entirely. Dragons exist. They are rare, largely confined to the deep wilderness and the interior of Sunreach, and the subject of significant academic disagreement about their origins. Whether they predate the Smooth Ones or are somehow their legacy is a question nobody has managed to ask one directly and survive to report on."
+    }
+  ],
+  "pantheon": {
+    "intro": "The people of Everden worship a large variety of gods and goddesses. Click on a god to learn more.",
+    "groups": [
+      {
+        "title": "Light and Life",
+        "gods": [
+          {
+            "iconBg": "#2a2010",
+            "icon": "🌅",
+            "name": "The Dawnthumper",
+            "epithet": "He Who Greets the Morning",
+            "original": "Lathander",
+            "paragraphs": [
+              "Depicted as a golden rabbit standing upright on a hilltop, ears raised toward a sunrise, the Dawnthumper is the patron of new beginnings, spring harvests, and swift legs. He is said to have thumped the ground three times at the moment of the Great Awakening, sending the tremor of consciousness through every burrow and warren in the land. His temples face east, and services are held at dawn, often beginning before the sun has fully crested the horizon.",
+              "The horsefolk of Iron-Tusk have begun to adopt their own vision of this god, calling him the Dawntrotter and depicting him as a blazingly fast steed. Their depictions often focus more on his speed and power, as well as his flowing mane.",
+              "<em>\"Thump once for what was lost. Thump twice for what is here. Thump thrice for what is coming.\" - Common Carrovian morning prayer</em>"
+            ],
+            "worshipers": [
+              "Rabbitfolk (Carrovia)",
+              "Horsefolk (Iron-Tusk)",
+              "Farmers",
+              "Midwives",
+              "Travelers"
+            ]
+          },
+          {
+            "iconBg": "#0a2018",
+            "icon": "🌿",
+            "name": "The Still Pool",
+            "epithet": "Lady of the Quiet Water",
+            "original": "Eldath",
+            "paragraphs": [
+              "Revered as a peaceful otter floating in an ancient, reflective lake, the Still Pool is the goddess of peace, sanctuary, and hidden places. Her shrines are built beside ponds and slow rivers, never on moving water. She is the patron deity of Whiskerburrow, and her clergy will tell you that their philosophy of community and careful listening  reflects her nature perfectly. To harm someone who has claimed sanctuary at one of her shrines is considered a grave sin.",
+              "<em>Whiskerburrow scholars debate endlessly whether the Still Pool predates the Great Awakening, or whether the Awakening itself was her doing, a gift of quiet understanding poured into every creature.</em>"
+            ],
+            "worshipers": [
+              "Otterfolk (Whiskerburrow)",
+              "Scholars",
+              "Healers",
+              "Pacifists"
+            ]
+          },
+          {
+            "iconBg": "#0f1f0a",
+            "icon": "🌾",
+            "name": "The Great Sow",
+            "epithet": "Mother of Plenty",
+            "original": "Chauntea",
+            "paragraphs": [
+              "Carved into the every grain silo in Iron-Tusk and Whiskerburrow, the Great Sow is depicted as a large boar whose belly is always full and whose hooves bless every field. She demands labor, patience, and callused hands, but those who work the land faithfully are never without her favor. Her festivals are lively, raucous, and involve enormous communal feasts.",
+              "<em>\"You don't pray to the Great Sow. You plant, grow, and harvest, and she notices.\"</em>"
+            ],
+            "worshipers": [
+              "Boarfolk (Iron-Tusk)",
+              "Mousefolk (Whiskerburrow)",
+              "Farmers",
+              "Brewers"
+            ]
+          },
+          {
+            "iconBg": "#0f1f0a",
+            "icon": "❤️",
+            "name": "The Love Bird",
+            "epithet": "Protector of Beauty and Passion",
+            "original": "Sune",
+            "paragraphs": [
+              "Depicted as two swans interlocked, their necks forming the shape of a heart. The Love Bird is a goddess of beauty in all its forms. Be they sights, sounds, smells, tastes, or feelings, the experience of pleasure is her domain. The feeling of love at first sight is said to be a direct divine intervention of the love bird, caused by an arrow shot by her cherrubic swan archers. Newlyweds of every nation and species give an offering of silks, perfumes, and beautiful trinkets to her temples to bless their marriage.",
+              "<em>\"Beauty is more than skin deep; it issues from the core of one's being and shows one's fair (or foul) face to the world.\" - Lovebirdian saying.</em>"
+            ],
+            "worshipers": [
+              "Loving couples",
+              "Birdfolk",
+              "Artists",
+              "Priests"
+            ]
+          },
+          {
+            "iconBg": "#2a1520",
+            "icon": "🦚",
+            "name": "The Prismatic Peahen",
+            "epithet": "Goddess of Pride and Party Animals",
+            "original": "Lliira",
+            "paragraphs": [
+              "Depicted as a peafowl of such magnificent color that early temple murals had to be repainted twice because artists kept running out of pigment. Although her colors and plumage outshine even the most resplendant peacock, she is understood to be a peahen. This aspect has made her beloved by queer animalfolk across Everden, and a symbol of pride, acceptance, and understanding. Her clergy, called Party Animals, believe that pride, properly understood, is not a sin at all, but a form of worship. They're well-loved most everywhere for their love of bright, colorful parties and parades, held to celebrate even the most humdrum of occasions.",
+              "<em>\"Wait, it's the one month anniversary of your 25th birthday? Why didn't you say so sooner? Sounds like it's time to PAAAAARTY!\" - Something you're likely to hear if you're friends with a Party Animal</em>"
+            ],
+            "worshipers": [
+              "Party lovers",
+              "Performers",
+              "Queer folk",
+              "Anyone who has ever made an entrance"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Knowledge, Craft and Commerce",
+        "gods": [
+          {
+            "iconBg": "#0e1825",
+            "icon": "📜",
+            "name": "The Ink-Nosed One",
+            "epithet": "Keeper of the Written Word",
+            "original": "Deneir",
+            "paragraphs": [
+              "A small, perpetually distracted mouse with an ink-stained snout and spectacles made from smoothed glass. The Ink-Nosed One is the patron of scribes, cartographers, and anyone whose life depends on the written word. The Whiskerburrow Archive considers itself his temple, and their Archivists are his clergy. He is said to have hidden pieces of the Smooth One's history in plain sight, waiting for someone clever enough to read them."
+            ],
+            "worshipers": [
+              "Mousefolk (Whiskerburrow)",
+              "Mages",
+              "Cartographers",
+              "Awakening Scholars"
+            ]
+          },
+          {
+            "iconBg": "#221a05",
+            "icon": "🪙",
+            "name": "The Golden Collars",
+            "epithet": "Patron of the Worthy Deal",
+            "original": "Wuakeen",
+            "paragraphs": [
+              "Depicted as a regal two-headed creature with one cat head and one dog head. She is the goddess of honest commerce, fair trade, and the social contract. Her temples look much like banks, because they are banks. Merchants swear their contracts before her priests, and debts acknowledged under her seal are considered sacred obligations. The Dual Monarchs of Petsburg are her stewards, though the Church takes pains to remain above politics. The nation of Goldcollar takes it's name from her.",
+              "<em>She makes no distinction between the wealthy merchant and the market mouse, only between those who honor their deals and those who do not.</em>"
+            ],
+            "worshipers": [
+              "Catfolk (Goldcollar)",
+              "Dogfolk (Goldcollar)",
+              "Merchants",
+              "Bankers"
+            ]
+          },
+          {
+            "iconBg": "#1a1025",
+            "icon": "🦊",
+            "name": "Cunning Reynard",
+            "epithet": "The Fox Who Walks Between",
+            "original": "Mask",
+            "paragraphs": [
+              "Although some in Everden malign him as a god of thieves, he is more a god of the space between truth and lie, of cleverness and trickery. Reynard is a lean red fox in a green cloak, always smiling, always up to something. His worship is officially tolerated in Goldcollar, where lawyers quietly maintain a small shrine in most courthouses, and openly celebrated in Moonhowl, where cunning is survival. He has no formal temples, only back rooms, whisper-networks, and the smile shared between people who both know they are being clever at each other."
+            ],
+            "worshipers": [
+              "Foxfolk (Moonhowl)",
+              "Spies",
+              "Catfolk",
+              "Lawyers"
+            ]
+          },
+          {
+            "iconBg": "#1a1510",
+            "icon": "🥾",
+            "name": "Puss-in-Boots",
+            "epithet": "The Cat Who Made His Own Luck",
+            "original": "Tymora",
+            "paragraphs": [
+              "Where Reynard works in shadows and half-truths, Puss-in-Boots operates entirely in the open, with complete audacity. He is depicted as a swaggering cat in tall boots and a wide-brimmed hat, rapier sword at his hip, and he is celebrated for his dashing mortal deeds before ascending to godhood. He holds domain over good fortune, skill, victory, and adventurers. He is the patron of the ambitious poor, the self-made, and anyone who has ever refused to accept the status quo. His followers believe that confidence and conviction are their own form of magic. Devotees have no interest in lies. Their texts say he prefers to tell people exactly what he intends and then do it before they have a chance to tell him no.",
+              "<em>\"He never pretended to be something he wasn't. He simply insisted on becoming it.\" - Pusserian saying</em>"
+            ],
+            "worshipers": [
+              "Catfolk (Goldcollar)",
+              "Rogues",
+              "Gamblers",
+              "The ambitious poor"
+            ]
+          },
+          {
+            "iconBg": "#0a1a18",
+            "icon": "🦜",
+            "name": "The First Voice",
+            "epithet": "He Who Spoke and Was Heard",
+            "original": "Oghma",
+            "paragraphs": [
+              "The god who granted animalkind their voices after the Great Awakening, or so his followers say. He is depicted as a parrot of every color perched on a branch that stretches across the entire sky. The First Voice governs language, lore, and the beauty of music and dance. His clergy are called Listeners, and they collect oral histories obsessively. There is a deep rivalry between his Listeners and the Ink-Nosed One's Archivists over what forms of recorded knowledge are more important."
+            ],
+            "worshipers": [
+              "Birdfolk",
+              "Bards",
+              "Historians",
+              "Linguists"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Iron, the Hunt, and Justice",
+        "gods": [
+          {
+            "iconBg": "#1f1010",
+            "icon": "⚔️",
+            "name": "The Forge Boar",
+            "epithet": "He Who Does Not Yield",
+            "original": "Tempus",
+            "paragraphs": [
+              "Often depicted as a massive boar with a scarred eyes and a broken tusk reforged in black iron, giving the nation of Iron-Tusk it's name. He is the god of honorable warfare, the forge, and the will to endure. His clergy are called Tuskers, warrior priests who wield hammers and blades. They consider retreat a theological question requiring intense deliberation. He respects strength and despises cowardice, but has no love for cruelty. He is said to have given the first horse their iron shoes, enabling the great cavalry charges that made other nations respect the military might of Boar and Horsefolk."
+            ],
+            "worshipers": [
+              "Boarfolk (Iron-Tusk)",
+              "Horsefolk (Iron-Tusk)",
+              "Soldiers",
+              "Smiths"
+            ]
+          },
+          {
+            "iconBg": "#0d1a0d",
+            "icon": "🐺",
+            "name": "Shakiri",
+            "epithet": "First Hunter, Last Witness",
+            "original": "Mielikki",
+            "paragraphs": [
+              "A beautiful she-wolf who moves with a deliberate grace. Shakiri is the patron of hunters, rangers, and those who venture into the wild places where the Silent still roam in great and dangerous numbers. Her teachings are simple: take only what is needed, honor the kill, and waste nothing. Moonhowl's young hunters dedicate their first successful Silent hunt to her. She also governs the difficult question of what separates the Awakened from the Silent, a topic her clergy address with nuance.",
+              "<em>\"There's a she wolf in your closet. Let it out so it can breathe\" - Ancient Shakirian saying regarding realeasing your inner strength.</em>"
+            ],
+            "worshipers": [
+              "Wolffolk (Moonhowl)",
+              "Rangers",
+              "Hunters",
+              "Druids"
+            ]
+          },
+          {
+            "iconBg": "#0e1520",
+            "icon": "⚖️",
+            "name": "The Blind Hound",
+            "epithet": "He Who Judges",
+            "original": "Tyr",
+            "paragraphs": [
+              "Depicted as a long haired white dog with a blindfold across his eyes and one paw missing, the Blind Hound is the god of justice. The missing paw is not a wound his followers mourn, it's believed he gave it willingly to seal away something dangerous, and he would do it again. His devotees are judges, city watchfolk, and paladins, who must parse the separation between morality and law, the difference between the letter of the law and the spirit. He is not a gentle god, and his justice upon the wicked can be brutal. Worshipers of The Blind Hound are often looked at with distrust or scorn by those with more nuanced views on ethics and justice.",
+              "<em>\"A good dog is a hammer in the hand of The Blind One\" - Common criticism of the Hound's followers.</em>"
+            ],
+            "worshipers": [
+              "Caninefolk (Goldcollar)",
+              "City Watch",
+              "Judges",
+              "Paladins"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Sun, Moon and Primal Forces",
+        "gods": [
+          {
+            "iconBg": "#221800",
+            "icon": "☀️",
+            "name": "The Blinding Crest",
+            "epithet": "Lord of the Unveiled Sky",
+            "original": "Amaunator",
+            "paragraphs": [
+              "Whereas the Dawnthumper is the sun as hope and beginning, the Blinding Crest is the sun as law and judgment. He is depicted as a massive frilled lizard with scales of glimmering gold and eyes too bright to look at directly. The people of Sunreach believe the Smooth Ones vanished because they built their towers so tall they blocked his light. His temples are open to the sky, and his rites are performed at high noon. His clergy can be intense company.",
+              "<em>Theologians in Whiskerburrow believe the Dawnthumper and the Blinding Crest are the same divine entity, simply perceived differently across cultures. The clergy of both gods find this suggestion blasphemous.</em>"
+            ],
+            "worshipers": [
+              "Lizardfolk (Sunreach)",
+              "Toadfolk (Sunreach)",
+              "Sun Priests"
+            ]
+          },
+          {
+            "iconBg": "#141020",
+            "icon": "🌕",
+            "name": "The Lunar Queen",
+            "epithet": "She Who Lights the Night",
+            "original": "Selune",
+            "paragraphs": [
+              "Depicted as a luminous white moth drifting across a night sky, trailing moon-dust from her wings. She is the goddess of the moon, navigation, and the comfort of darkness. It is said that her moon-dust created the stars in the sky, and sailors use those stars to navigate, and night-shift workers whisper thanks when the moon is full. She has a devoted following among wolf-kin and dogfolk, who howl insticively at the full moon as a form of worship.",
+              "<em>She and the Night Queen are considered theological opposites, and devotees of the Lunar Queen have an intense dislike of the Night Queen.</em>"
+            ],
+            "worshipers": [
+              "Wolffolk (Moonhowl)",
+              "Sailors",
+              "Night Travelers",
+              "Midwives"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Death, Shadows, and Darker Powers",
+        "gods": [
+          {
+            "iconBg": "#141414",
+            "icon": "🪦",
+            "name": "The Patient Badger",
+            "epithet": "He Who Waits at the End of Every Tunnel",
+            "original": "Kelemvor",
+            "paragraphs": [
+              "An enormous, still badger seated in a chamber of black stone, lantern in one great paw and scales in the other. He is not feared, merely respected, much as one respects the coming of winter. The Patient Badger judges the dead fairly and without emotion. His clergy are the undertakers, gravediggers, and hospice keepers of Everden, and among the most unfairly disliked clerics in any city. He has jurisdiction over the undead, which he considers an abomination against the natural order, and he acts on that opinion with some force."
+            ],
+            "worshipers": [
+              "Badgerfolk (Whiskerburrow)",
+              "Gravediggers",
+              "Judges",
+              "Molefolk"
+            ]
+          },
+          {
+            "iconBg": "#1f0f0f",
+            "icon": "🌑",
+            "name": "The Night Queen",
+            "epithet": "Lady of Silken Ruin",
+            "original": "Shar",
+            "paragraphs": [
+              "A black cat dressed in violet silk, half-hidden in shadow. The Night Queen is the goddess of secrets kept too long, grief that has rotted into turmoil, and the comfort of despair. She is not entirely evil; her clergy provide genuine solace to those in mourning, and she claims domain over secrets hidden by the darkness. However, her darkest teachings concern loss, and the idea that what is gone is in some ways more real than what remains. Her faith has grown more popular in Carrovia in recent years.",
+              "<em>She and the Lunar Queen are considered theological opposites, though scholars note they serve some of the same mourners. Devotees despise followers of the Lunar Queen.</em>"
+            ],
+            "worshipers": [
+              "Catfolk (some, in secret)",
+              "Grieving Nobility",
+              "Spies",
+              "Carrovia (recent surge)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Outlawed and Feared",
+        "gods": [
+          {
+            "iconBg": "#0f0f0f",
+            "icon": "🐍",
+            "name": "The Viper Beneath",
+            "epithet": "He Who Ate the Smooth Ones",
+            "original": "Bhaal",
+            "paragraphs": [
+              "No one worships the Viper Beneath openly, and his name is not uttered in polite company. The theology is simple but terrible: he is not a god of murder so much as a god of inevitability, the belief that all things end in death. His cult has no temples, only cells. The only confirmed sign of his influence is the shape of a serpent, carved into the scene of a grizzly killing."
+            ],
+            "worshipers": [
+              "Outlawed (all nations)",
+              "Hidden Cells",
+              "Nihilists"
+            ]
+          }
+        ]
+      }
+    ],
+    "otherPowersText": "The gods listed here are the most widely known across Everden, but they are not the only powers worthy of worship (or making a deal for power with). Local spirits, ancient beings, forgotten names, and stranger things exist at the edges of the known world. If none of the listed gods feel right for your character, talk to me and we can work something out together."
+  },
+  "languages": {
+    "intro": "Everden has it's own set of languages. Use these instead of the PHB language list during character creation. <b>Your character knows Collartongue and ONE other language from this list.</b> Your class and other features may give you additional languages, such as Druidic or Thieves' Cant.",
+    "list": [
+      {
+        "extraClass": "",
+        "style": "border-color:#2a3a1a;",
+        "name": "Collartongue",
+        "script": "Script: Repurposed Smooth One lettering - Common to all",
+        "desc": "The common trade tongue of Goldcollar and most of the civilized world. It evolved from several older languages over centuries of commerce. Every character speaks this by default. If someone in Everden speaks one language, it is this one.",
+        "restrict": "Treat Collartongue like Common during character creation."
+      },
+      {
+        "extraClass": "",
+        "style": "",
+        "name": "Whispersqueak",
+        "script": "Script: Flowing cursive",
+        "desc": "The native tongue of Carrovia and Whiskerburrow, spoken by rabbits, mice, and most small prey-folk. Used by academics, poets, and keepers of Great Awakening lore. It carries more vocabulary for concepts of memory, loss, and community than any other language in Everden.",
+        "restrict": null
+      },
+      {
+        "extraClass": "",
+        "style": "",
+        "name": "Ironmouth",
+        "script": "Script: Runic",
+        "desc": "The language of boars, horses, and the industrial folk of Iron-Tusk. Clipped, efficient, and loud. Foreigners often describe it as sounding permanently impatient. Its runic script was designed to be carved into metal, and most Ironmouth signage still is.",
+        "restrict": null
+      },
+      {
+        "extraClass": "",
+        "style": "",
+        "name": "Scalese",
+        "script": "Script: Pictographic",
+        "desc": "Spoken by lizards, toads, and the ancient peoples of Sunreach. One of the oldest living languages in Everden, with roots that may predate the Awakening itself. Its pictographic script is found on ruin walls throughout the jungle, some of it predating anything scholars can reliably date.",
+        "restrict": null
+      },
+      {
+        "extraClass": "",
+        "style": "",
+        "name": "Howltongue",
+        "script": "Script: None (oral tradition only)",
+        "desc": "The language of wolves, foxes, and the nomadic peoples of Moonhowl. Heavily tonal, making it notoriously difficult for outsiders to learn. A wrong pitch can change a greeting into an insult. Most Moonhowl folk use collartongue for writing, but only if strictly necessary.",
+        "restrict": null
+      },
+      {
+        "extraClass": "",
+        "style": "",
+        "name": "Plumesong",
+        "script": "Script: Musical Notation",
+        "desc": "Spoken by birds of all kinds. Contains sounds that no non-avian throat can fully reproduce, meaning most non-speakers learn only a rough approximation. Native speakers can always tell when they are being spoken to by an outsider, and they find it charming in the way that is almost condescending.",
+        "restrict": null
+      },
+      {
+        "extraClass": "restricted",
+        "style": "",
+        "name": "Smoothtalk",
+        "script": "Script: Classical Roman-style lettering",
+        "desc": "A dead language. The writing of the Smooth Ones, found today only in ruin inscriptions and crumbling ancient texts. Nobody speaks it natively or knows for certain what it actually sounded like. Scholars reconstruct it's pronunciation from best guesses and argue about it constantly.",
+        "restrict": "Requires 14 Intelligence or higher to learn."
+      }
+    ]
+  }
+};
 
-<!-- ══════════════════════════════
-     SECTION: NATIONS
-══════════════════════════════ -->
-<div id="sec-nations" class="section-wrap active">
-  <div class="hero">
-    <div class="hero-eyebrow">Welcome to</div>
-    <h1 class="hero-title">Everden</h1>
-    <p class="hero-sub">Long ago, the world belonged to the Smooth Ones. When they vanished, the Great Awakening began. Once-mindless animals stood upright, spoke their first words, and inherited everything. This is the world they built.</p>
-  </div>
-
-  <div class="section-label">The Great Powers</div>
-  <div class="nation-grid">
-
-    <!-- GOLDCOLLAR -->
-    <div class="nation-card">
-      <div class="nation-card-top">
-        <div>
-          <div class="nation-name">Goldcollar</div>
-          <div class="nation-subtitle">Where you begin</div>
-        </div>
-        <div class="nation-badge">The Heart of Everden</div>
-      </div>
-      <p class="nation-desc">A sophisticated union of cats and dogs, though home to many folk. The masters of trade, luxury, and diplomacy, Goldcollar is the closest thing Everden has to a cosmopolitan heart. Its capital, Petsburg, is a waterfront city where fortunes are made and lost over a single evening's dinner.</p>
-      <div class="nation-values">
-        <span class="tag">Elegance</span>
-        <span class="tag">Commerce</span>
-        <span class="tag">Social Standing</span>
-      </div>
-      <p class="nation-desc" style="margin:12px 0 0;">Home to multiple mage colleges and a thriving market for enchanted goods. Artificers sell their wares openly in Petsburg, and magic items scavenged from ruins fetch high prices at auction. The surrounding countryside hides old Smooth One structures beneath overgrown hills, drawing adventurers and treasure hunters, as well as bandits and plunderers.</p>
-      <div class="settlements">
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Petsburg</span>
-            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Port City</span><span class="settlement-tag">Mage College</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A sprawling waterfront capital with multiple districts of varying wealth, from run-down slums to pristine neighborhoods for the wealthy. Petsburg is the seat of the Dual Monarchs, home to Goldcollar's most prestigious mage college (The Dewclaw Institute of the Arcane), and overall just the beating commercial heart of Everden. Every nation has a trade embassy here. The city smells like salt water, street food, and most importantly, money.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Brindlewood</span>
-            <div class="settlement-tags"><span class="settlement-tag">Trade Hub</span><span class="settlement-tag">Crossroads Town</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A busy inland town at the junction of three major roads, Brindle has no particular culture of its own, often seen as merely an extension of Petsburg, as it's the last stop on the way for many travelers. Its markets carry goods from all six nations, and its inns are full of merchants, couriers, and people who would prefer not to say where they are going.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Pawcroft</span>
-            <div class="settlement-tags"><span class="settlement-tag">Farming Village</span><span class="settlement-tag">Ruin-Adjacent</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A quiet agricultural village in Goldcollar's interior, Pawcroft sits at the edge of a half-excavated Smooth One ruin the locals call the Underbuild. Scholars come regularly to study it. Occasionally something comes out of it instead. The villagers are politely tired of both.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Velour</span>
-            <div class="settlement-tags"><span class="settlement-tag">Luxury Resort</span><span class="settlement-tag">Noble Retreat</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A coastal town of white stone and imported silk, Velour exists almost entirely to serve the Goldcollar aristocracy on holiday. Its permanent population is small; its seasonal population is enormous and demanding. The best forgers of fake noble papers in the continent operate quietly out of a laundry on the south end of town.</div>
-        </div>
-      </div>
-      <div class="nation-leader" style="margin-top:14px;">Leaders: <span>Queen Daisy (Golden Retriever lineage) and King Wrinkles (Sphinx Cat), the Dual Monarchs</span></div>
-    </div>
-
-    <!-- CARROVIA -->
-    <div class="nation-card">
-      <div class="nation-card-top">
-        <div>
-          <div class="nation-name">Carrovia</div>
-          <div class="nation-subtitle">The Land of Eternal Autumn</div>
-        </div>
-        <div class="nation-badge">The East</div>
-      </div>
-      <p class="nation-desc">Once known for its swift knights and beautiful meadows, this kingdom of rabbits and ravens has grown cold and insular in recent years. A thick mist now hugs its borders, and travelers who cross into Carrovia rarely speak warmly of the experience.</p>
-      <div class="nation-values">
-        <span class="tag">Tradition</span>
-        <span class="tag">Insular</span>
-        <span class="tag">Martial Pride</span>
-      </div>
-      <p class="nation-desc" style="margin:12px 0 0;">The mists at Carrovia's borders are not natural, and locals whisper that stranger things walk the autumn woods after dark. Undead have been sighted near old ruins in the eastern reaches, and the Count's court has grown quiet on the subject. Those who investigate rarely file a complete report.</p>
-      <div class="settlements">
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Hopswall</span>
-            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Fortress City</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">The seat of Count Barnaby von Hop, Hopswall is a city of old stone, narrow streets, and a castle that has never fallen to siege. It was once a place of festivals and renowned autumn markets. Now the markets run shorter hours, the festivals have been quietly cancelled, and the castle gates close before dark. The Count does not receive visitors without appointment, and appointments are not being granted.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Thistlemere</span>
-            <div class="settlement-tags"><span class="settlement-tag">Border Town</span><span class="settlement-tag">Mist-Touched</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">The last town before the mist thickens into something you cannot see through. Thistlemere does steady business in lanterns, rope, and maps that are increasingly out of date. Its residents have a habit of not asking questions about travelers coming or going, which suits most of its visitors perfectly.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Ashfen</span>
-            <div class="settlement-tags"><span class="settlement-tag">Abandoned</span><span class="settlement-tag">Eastern Reach</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">Once a prosperous farming settlement on Carrovia's eastern border, Ashfen was evacuated eighteen months ago following a series of incidents that the Count's office described only as a sanitation concern. Travelers report lights in the windows at night. Nobody official has gone to investigate.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Meadowrun</span>
-            <div class="settlement-tags"><span class="settlement-tag">Market Town</span><span class="settlement-tag">Western Border</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">The most accessible town in Carrovia for outsiders, sitting close enough to the Goldcollar border that it retains some of its old openness. Merchants still trade here, and the locals are more willing to talk than those deeper in the country. What they say, mostly, is that things were better before the mist came and that they try not to think about it.</div>
-        </div>
-      </div>
-      <div class="nation-leader" style="margin-top:14px;">Leader: <span>Count Barnaby von Hop</span></div>
-    </div>
-
-    <!-- WHISKERBURROW -->
-    <div class="nation-card">
-      <div class="nation-card-top">
-        <div>
-          <div class="nation-name">Whiskerburrow</div>
-          <div class="nation-subtitle">The Home of Scholars</div>
-        </div>
-        <div class="nation-badge">The Heartland</div>
-      </div>
-      <p class="nation-desc">A cozy, communal nation of mice, otters, and badgers. Whiskerburrow is home to the finest academic minds in Everden and its most dependable farmers. The people here act slowly but think quickly. Whiscarians will happily argue about the true nature of the Great Awakening over three cups of tea.</p>
-      <div class="nation-values">
-        <span class="tag">Academics</span>
-        <span class="tag">Storytelling</span>
-        <span class="tag">Community</span>
-      </div>
-      <p class="nation-desc" style="margin:12px 0 0;">Whiskerburrow's college of natural philosophy is the oldest academic institution in Everden, producing more druids and wizards per capita than any other nation. Magic here tends toward the scholarly and the careful. The surrounding farmland is dotted with low, ancient ruins that scholars have catalogued but not fully explored.</p>
-      <div class="settlements">
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Denhollow</span>
-            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">University City</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A low, sprawling city built as much underground as above it, Denhollow is warm in winter, cool in summer, and full of arguing scholars at all times of year. Its university district contains more libraries than taverns, which most residents consider a point of pride and most visitors find alarming. The Great Archive is here, the largest collection of written knowledge in Everden.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Rivermouse</span>
-            <div class="settlement-tags"><span class="settlement-tag">Fishing Village</span><span class="settlement-tag">River Port</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A cheerful little settlement on the Stillwater River, Rivermouse exports more smoked fish than any other town in Whiskerburrow and has an opinion about it. The annual Rivermouse Smoking Festival draws visitors from three nations and is, by universal agreement, a very good time.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Thornset</span>
-            <div class="settlement-tags"><span class="settlement-tag">Farming Community</span><span class="settlement-tag">Ruin Site</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A collective farming settlement that also happens to sit atop the most extensively studied Smooth One ruin in Whiskerburrow. The farmers and the scholars who camp in their fields every summer have reached a careful arrangement: the scholars stay out of the turnip rows and the farmers stay out of the dig sites. It mostly holds.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Brackendam</span>
-            <div class="settlement-tags"><span class="settlement-tag">Mill Town</span><span class="settlement-tag">Trade Stop</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A practical, no-frills town built around a watermill and a granary. Brackendam feeds a significant portion of the surrounding region and is proud of the fact without being showy about it. It has one inn, one tavern, and one very old badger who claims to have met someone who met someone who was there for the Great Awakening.</div>
-        </div>
-      </div>
-      <div class="nation-leader" style="margin-top:14px;">Governance: <span>A council of democratically elected Elders</span></div>
-    </div>
-
-    <!-- IRON-TUSK -->
-    <div class="nation-card">
-      <div class="nation-card-top">
-        <div>
-          <div class="nation-name">Iron-Tusk</div>
-          <div class="nation-subtitle">The Industrial Power</div>
-        </div>
-        <div class="nation-badge">The Mountains</div>
-      </div>
-      <p class="nation-desc">A mountainous industrial nation ruled by boars and horses. If something in Everden is made of steel, there is a good chance it came from an Iron-Tusk forge. The people here do not waste words, and they are suspicious of anyone who does. Their cities are built to last a thousand years. They were only a few years ago in a vicious war with Moonhowl.</p>
-      <div class="nation-values">
-        <span class="tag">Strength</span>
-        <span class="tag">Industry</span>
-        <span class="tag">Craftsmanship</span>
-      </div>
-      <p class="nation-desc" style="margin:12px 0 0;">Magic in Iron-Tusk is practical above all else: artificers are employed directly by the Forge Council, and enchanted tools are standard issue in the deepest mines. Those mines occasionally break through into something older than the Smooth Ones, and what lives in those deeper places is not well understood.</p>
-      <div class="settlements">
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Greygorge</span>
-            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Forge City</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">Built into the face of a mountain and spreading down into the gorge below it, Greygorge is loud, hot, and perpetually lit by the glow of a hundred forges. The Forge Council meets here in the Iron Hall, a building that has no decorative features whatsoever, which its architects considered a statement. The city exports more weapons, tools, and armored goods than anywhere else in Everden.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Sootpass</span>
-            <div class="settlement-tags"><span class="settlement-tag">Mining Town</span><span class="settlement-tag">Deep Excavation</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A mining settlement high in the mountains where the ore veins run deep and the shafts run deeper. Three tunnels in Sootpass have been sealed by official order for reasons the Forge Council describes as structural. The miners who sealed them will not discuss what they found. The artificers sent to assess the situation filed their report directly to the Grand Tusk and it has not been made public.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Ironfoot</span>
-            <div class="settlement-tags"><span class="settlement-tag">Border Garrison</span><span class="settlement-tag">Military Post</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A fortified garrison town on the border nearest to Moonhowl, Ironfoot has been in a state of tense readiness since the war ended. It is not exactly at peace, and everyone stationed there knows it. The local tavern is called the Ceasefire, which the regulars find either ironic or optimistic depending on the night.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Hammerholm</span>
-            <div class="settlement-tags"><span class="settlement-tag">Artisan Quarter</span><span class="settlement-tag">Trade City</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">Where Greygorge makes things in bulk, Hammerholm makes them beautifully. The city is home to Iron-Tusk's master craftspeople, whose individual commissions are sought by nobles across the continent. A sword from a Hammerholm smith costs more than most people earn in a year and is worth every coin.</div>
-        </div>
-      </div>
-      <div class="nation-leader" style="margin-top:14px;">Governance: <span>The Forge Council, headed by the Grand Tusk</span></div>
-    </div>
-
-    <!-- SUNREACH -->
-    <div class="nation-card">
-      <div class="nation-card-top">
-        <div>
-          <div class="nation-name">Sunreach</div>
-          <div class="nation-subtitle">The Ancient Jungle</div>
-        </div>
-        <div class="nation-badge">The South</div>
-      </div>
-      <p class="nation-desc">A region home to many reptile and amphibian-kin who guard and worship the ruins of the Smooth Ones, spanning a large variety of biomes including deserts, swamps, and rainforests. Outsiders are tolerated, but welcomed is a different question. Its people are slow to trust and impossible to rush. The jungle and desert swallow adventurers regularly. Two dragons are known and worshiped openly here: Yddross, dragon of the rainforest, and Egyyt, dragon of the desert. They do not seem hostile, but nobody speaks their language.</p>
-      <div class="nation-values">
-        <span class="tag">Stoicism</span>
-        <span class="tag">Tradition</span>
-        <span class="tag">Sun-Worship</span>
-      </div>
-      <p class="nation-desc" style="margin:12px 0 0;">Sunreach holds the largest concentration of Smooth One ruins on the continent, and its mage college, the Otto Tomize Academy of Thaumaturgy, teaches magic drawn directly from studying them.</p>
-      <div class="settlements">
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Solanthis</span>
-            <div class="settlement-tags"><span class="settlement-tag capital">Capital</span><span class="settlement-tag">Temple City</span><span class="settlement-tag">Mage College</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">An open city of wide plazas and sun-facing architecture, Solanthis is built around a central temple complex that predates the Awakening by an unknown number of centuries. The Otto Tomize Academy of Thaumaturgy operates here, drawing students from across the continent. The Sun Council meets at the temple's highest point, at noon, every day, without exception.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Scalemoor</span>
-            <div class="settlement-tags"><span class="settlement-tag">Swamp Settlement</span><span class="settlement-tag">Ruin-Keeper</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A settlement of toadfolk and swamp-dwelling lizardkin built on raised platforms above the waterline. Scalemoor sits adjacent to some of the densest and least-explored Smooth One ruins in Sunreach, which the locals guard with a seriousness that discourages idle curiosity. They will sell you supplies. They will not sell you access.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">The Dustgate</span>
-            <div class="settlement-tags"><span class="settlement-tag">Desert Outpost</span><span class="settlement-tag">Egyyt's Territory</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A fortified outpost at the edge of Sunreach's great desert, the Dustgate is the last reliable source of water, shelter, and information before the dunes begin. It sits within visible distance of one of Egyyt's favored resting sites: a Smooth One structure half-buried in sand that the dragon has occupied for as long as anyone can remember. Pilgrims come here specifically to see the dragon from a safe distance. Most agree the distance is not quite safe enough.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Verdant Deep</span>
-            <div class="settlement-tags"><span class="settlement-tag">Rainforest Village</span><span class="settlement-tag">Yddross-Adjacent</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">A village so thoroughly grown into the rainforest canopy that first-time visitors frequently walk past it without noticing. The residents of Verdant Deep have coexisted with Yddross for generations and treat the dragon with a reverence that is completely calm, which outsiders find more unsettling than fear would be. Yddross has never harmed anyone here. The villagers say this is because they have always been respectful. They say it in a tone that implies the conversation is over.</div>
-        </div>
-      </div>
-      <div class="nation-leader" style="margin-top:14px;">Governance: <span>The Sun Council, a body of ancient ritual keepers</span></div>
-    </div>
-
-    <!-- MOONHOWL -->
-    <div class="nation-card">
-      <div class="nation-card-top">
-        <div>
-          <div class="nation-name">Moonhowl</div>
-          <div class="nation-subtitle">The Frozen North</div>
-        </div>
-        <div class="nation-badge">The Frontier</div>
-      </div>
-      <p class="nation-desc">A wild, nomadic territory of wolves, foxes, and bears who patrol the frigid edge of the civilized world. Here, might is right, and only the strong survive. Leadership is decentralized, and cities fend for themselves, only working together in extraordinary circumstances. Moonhowl is renowned for its hunters, marksmen, and gladiators. The nation banded together to wage war with Iron-Tusk not many years ago.</p>
-      <div class="nation-values">
-        <span class="tag">Survival</span>
-        <span class="tag">Freedom</span>
-        <span class="tag">Instinct</span>
-      </div>
-      <p class="nation-desc" style="margin:12px 0 0;">Magic in Moonhowl is shamanic and instinctive, passed down through oral tradition rather than college study. The frozen north is home to enormous creatures that would qualify as monsters anywhere else, and big game hunters make their reputations tracking them. Strange lights have been seen above the northern glaciers that no one has been able to explain.</p>
-      <div class="settlements">
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Fangmeet</span>
-            <div class="settlement-tags"><span class="settlement-tag capital">Largest Settlement</span><span class="settlement-tag">Gladiator City</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">Moonhowl has no official capital, but Fangmeet is where the Pack Alphas gather when something requires them to be in the same place, which they prefer to keep rare. It is built around an enormous open arena where disputes, tournaments, and exhibitions are settled publicly. The city is loud, crowded during fight season, and has more taverns per resident than anywhere else in Everden. Outsiders are welcome as long as they can handle themselves.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Coldsnap</span>
-            <div class="settlement-tags"><span class="settlement-tag">Hunting Outpost</span><span class="settlement-tag">Far North</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">The northernmost permanent settlement in Everden, Coldsnap exists to support the hunters who track the continent's largest and most dangerous Silent creatures across the glacial plains. It is a place of practical expertise and very little small talk. Hunters who make it back from the deep ice with a kill are celebrated here in a way they would not be anywhere else. Hunters who do not make it back are remembered by name.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">Emberclaw</span>
-            <div class="settlement-tags"><span class="settlement-tag">Craftwork Town</span><span class="settlement-tag">Trade Post</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">Moonhowl's reputation for fine craftwork lives largely in Emberclaw, where artisans work bone, hide, and salvaged Smooth One materials into goods that sell for surprising prices in southern markets. It is also one of the few Moonhowl settlements that actively courts outside traders, which the other settlements consider slightly embarrassing and which Emberclaw considers pragmatic.</div>
-        </div>
-        <div class="settlement" onclick="this.classList.toggle('open')">
-          <div class="settlement-header">
-            <span class="settlement-name">The Pale Road</span>
-            <div class="settlement-tags"><span class="settlement-tag">Nomadic Route</span><span class="settlement-tag">Not a Settlement</span></div>
-            <span class="settlement-chevron">▾</span>
-          </div>
-          <div class="settlement-body">Technically not a settlement at all, the Pale Road is a seasonal migration route used by Moonhowl's nomadic packs. At any given time several hundred people are living and moving along it, with temporary camps that appear and vanish within days. Traders who learn its rough schedule can intercept it for commerce. Those who intercept it without being invited generally regret the decision.</div>
-        </div>
-      </div>
-      <div class="nation-leader" style="margin-top:14px;">Governance: <span>Pack Alphas; no central authority</span></div>
-    </div>
-
-  </div>
-
-  <div class="section-label" style="margin-top:44px;">A Note on the Silent</div>
-  <div class="nation-card" style="max-width:640px;">
-    <p class="nation-desc" style="margin:0;">Not every animal woke up. While you stand upright and wear clothes, many of your cousins remained the Silent: non-sentient beasts of the wild. Hunting Silent animals for food is a reality of life in Everden, but it is a grim one. Most folk would never eat a Silent animal of a similar species to their own, and the line between Awakened and Silent is a subject of genuine philosophical anxiety in every nation.</p>
-  </div>
-
-  <div class="section-label" style="margin-top:44px;">Other Nations of Everden</div>
-  <div class="nation-card" style="max-width:640px;">
-    <p class="nation-desc" style="margin:0;">You may wish to create a character that does not fit neatly into the listed playable races or list of nations, but Everden is an expansive world, and there are plenty of nations and animalfolk outside of what I've listed. I encourage you to work with me to make your idea a reality!</p>
-  </div>
-
-  <div class="section-label" style="margin-top:44px;">Magic in Everden</div>
-  <div class="nation-card" style="max-width:640px;">
-    <p class="nation-desc" style="margin:0;">Magic exists in Everden, though it is not so common that anyone takes it for granted. Mage colleges operate in Goldcollar, Sunreach, and Whiskerburrow. Sorcerers with magic bloodlines appear most often in noble families, though they are not unheard of among commoners. Artificers sell enchanted goods in Petsburg and a handful of other major cities, but many of the most interesting magic items in the world were pulled out of Smooth One ruins by people who were probably not supposed to be there. Anyone with magical ability or skill in alchemy will never struggle to find work, whether in a royal court or running their own business. Player characters, naturally, tend to find adventure more compelling than either.</p>
-  </div>
-
-  <div class="section-label" style="margin-top:44px;">Monsters and Dangers</div>
-  <div class="nation-card" style="max-width:640px;">
-    <p class="nation-desc" style="margin:0;">Everden is not a safe world. The Silent are not the only threat in the wilderness: creatures that would be at home in any dungeon lurk in the ruins of the Smooth Ones, in deep caves, in old forests, and in places that have not seen light in a very long time. Most populated areas are reasonably secure, but the ruins are another matter entirely. Dragons exist. They are rare, largely confined to the deep wilderness and the interior of Sunreach, and the subject of significant academic disagreement about their origins. Whether they predate the Smooth Ones or are somehow their legacy is a question nobody has managed to ask one directly and survive to report on.</p>
-  </div>
-
-</div>
-
-<!-- ══════════════════════════════
-     SECTION: PANTHEON
-══════════════════════════════ -->
-<div id="sec-pantheon" class="section-wrap">
-  <p>The people of Everden worship a large variety of gods and goddesses. Click on a god to learn more.</p>
-
-  <div class="section-label" style="margin-top:10;">Light and Life</div>
-  <div class="god-grid">
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#2a2010;">🌅</div>
-        <div class="god-names">
-          <div class="god-name">The Dawnthumper</div>
-          <div class="god-epithet">He Who Greets the Morning</div>
-          <!-- Lathander -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Depicted as a golden rabbit standing upright on a hilltop, ears raised toward a sunrise, the Dawnthumper is the patron of new beginnings, spring harvests, and swift legs. He is said to have thumped the ground three times at the moment of the Great Awakening, sending the tremor of consciousness through every burrow and warren in the land. His temples face east, and services are held at dawn, often beginning before the sun has fully crested the horizon.</p>
-        <p>The horsefolk of Iron-Tusk have begun to adopt their own vision of this god, calling him the Dawntrotter and depicting him as a blazingly fast steed. Their depictions often focus more on his speed and power, as well as his flowing mane.</p>
-        <p><em>"Thump once for what was lost. Thump twice for what is here. Thump thrice for what is coming." - Common Carrovian morning prayer</em></p>
-        <div class="worshipers"><span class="tag">Rabbitfolk (Carrovia)</span><span class="tag">Horsefolk (Iron-Tusk)</span><span class="tag">Farmers</span><span class="tag">Midwives</span><span class="tag">Travelers</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0a2018;">🌿</div>
-        <div class="god-names">
-          <div class="god-name">The Still Pool</div>
-          <div class="god-epithet">Lady of the Quiet Water</div>
-          <!-- Eldath -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Revered as a peaceful otter floating in an ancient, reflective lake, the Still Pool is the goddess of peace, sanctuary, and hidden places. Her shrines are built beside ponds and slow rivers, never on moving water. She is the patron deity of Whiskerburrow, and her clergy will tell you that their philosophy of community and careful listening  reflects her nature perfectly. To harm someone who has claimed sanctuary at one of her shrines is considered a grave sin.</p>
-        <p><em>Whiskerburrow scholars debate endlessly whether the Still Pool predates the Great Awakening, or whether the Awakening itself was her doing, a gift of quiet understanding poured into every creature.</em></p>
-        <div class="worshipers"><span class="tag">Otterfolk (Whiskerburrow)</span><span class="tag">Scholars</span><span class="tag">Healers</span><span class="tag">Pacifists</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0f1f0a;">🌾</div>
-        <div class="god-names">
-          <div class="god-name">The Great Sow</div>
-          <div class="god-epithet">Mother of Plenty</div>
-          <!-- Chauntea -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Carved into the every grain silo in Iron-Tusk and Whiskerburrow, the Great Sow is depicted as a large boar whose belly is always full and whose hooves bless every field. She demands labor, patience, and callused hands, but those who work the land faithfully are never without her favor. Her festivals are lively, raucous, and involve enormous communal feasts.</p>
-        <p><em>"You don't pray to the Great Sow. You plant, grow, and harvest, and she notices."</em></p>
-        <div class="worshipers"><span class="tag">Boarfolk (Iron-Tusk)</span><span class="tag">Mousefolk (Whiskerburrow)</span><span class="tag">Farmers</span><span class="tag">Brewers</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0f1f0a;">❤️</div>
-        <div class="god-names">
-          <div class="god-name">The Love Bird</div>
-          <div class="god-epithet">Protector of Beauty and Passion</div>
-          <!-- Sune -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Depicted as two swans interlocked, their necks forming the shape of a heart. The Love Bird is a goddess of beauty in all its forms. Be they sights, sounds, smells, tastes, or feelings, the experience of pleasure is her domain. The feeling of love at first sight is said to be a direct divine intervention of the love bird, caused by an arrow shot by her cherrubic swan archers. Newlyweds of every nation and species give an offering of silks, perfumes, and beautiful trinkets to her temples to bless their marriage.</p>
-        <p><em>"Beauty is more than skin deep; it issues from the core of one's being and shows one's fair (or foul) face to the world." - Lovebirdian saying.</em></p>
-        <div class="worshipers"><span class="tag">Loving couples</span><span class="tag">Birdfolk</span><span class="tag">Artists</span><span class="tag">Priests</span></div>
-      </div>
-    </div>
-    
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#2a1520;">🦚</div>
-        <div class="god-names">
-          <div class="god-name">The Prismatic Peahen</div>
-          <div class="god-epithet">Goddess of Pride and Party Animals</div>
-          <!-- Lliira -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Depicted as a peafowl of such magnificent color that early temple murals had to be repainted twice because artists kept running out of pigment. Although her colors and plumage outshine even the most resplendant peacock, she is understood to be a peahen. This aspect has made her beloved by queer animalfolk across Everden, and a symbol of pride, acceptance, and understanding. Her clergy, called Party Animals, believe that pride, properly understood, is not a sin at all, but a form of worship. They're well-loved most everywhere for their love of bright, colorful parties and parades, held to celebrate even the most humdrum of occasions.</p>
-        <p><em>"Wait, it's the one month anniversary of your 25th birthday? Why didn't you say so sooner? Sounds like it's time to PAAAAARTY!" - Something you're likely to hear if you're friends with a Party Animal</em></p>
-        <div class="worshipers"><span class="tag">Party lovers</span><span class="tag">Performers</span><span class="tag">Queer folk</span><span class="tag">Anyone who has ever made an entrance</span></div>
-      </div>
-    </div>
-
-  </div>
-
-
-
-  <div class="section-label">Knowledge, Craft and Commerce</div>
-  <div class="god-grid">
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0e1825;">📜</div>
-        <div class="god-names">
-          <div class="god-name">The Ink-Nosed One</div>
-          <div class="god-epithet">Keeper of the Written Word</div>
-          <!-- Deneir -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>A small, perpetually distracted mouse with an ink-stained snout and spectacles made from smoothed glass. The Ink-Nosed One is the patron of scribes, cartographers, and anyone whose life depends on the written word. The Whiskerburrow Archive considers itself his temple, and their Archivists are his clergy. He is said to have hidden pieces of the Smooth One's history in plain sight, waiting for someone clever enough to read them.</p>
-        <div class="worshipers"><span class="tag">Mousefolk (Whiskerburrow)</span><span class="tag">Mages</span><span class="tag">Cartographers</span><span class="tag">Awakening Scholars</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#221a05;">🪙</div>
-        <div class="god-names">
-          <div class="god-name">The Golden Collars</div>
-          <div class="god-epithet">Patron of the Worthy Deal</div>
-          <!-- Wuakeen -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Depicted as a regal two-headed creature with one cat head and one dog head. She is the goddess of honest commerce, fair trade, and the social contract. Her temples look much like banks, because they are banks. Merchants swear their contracts before her priests, and debts acknowledged under her seal are considered sacred obligations. The Dual Monarchs of Petsburg are her stewards, though the Church takes pains to remain above politics. The nation of Goldcollar takes it's name from her.</p>
-        <p><em>She makes no distinction between the wealthy merchant and the market mouse, only between those who honor their deals and those who do not.</em></p>
-        <div class="worshipers"><span class="tag">Catfolk (Goldcollar)</span><span class="tag">Dogfolk (Goldcollar)</span><span class="tag">Merchants</span><span class="tag">Bankers</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#1a1025;">🦊</div>
-        <div class="god-names">
-          <div class="god-name">Cunning Reynard</div>
-          <div class="god-epithet">The Fox Who Walks Between</div>
-          <!-- Mask -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Although some in Everden malign him as a god of thieves, he is more a god of the space between truth and lie, of cleverness and trickery. Reynard is a lean red fox in a green cloak, always smiling, always up to something. His worship is officially tolerated in Goldcollar, where lawyers quietly maintain a small shrine in most courthouses, and openly celebrated in Moonhowl, where cunning is survival. He has no formal temples, only back rooms, whisper-networks, and the smile shared between people who both know they are being clever at each other.</p>
-        <div class="worshipers"><span class="tag">Foxfolk (Moonhowl)</span><span class="tag">Spies</span><span class="tag">Catfolk</span><span class="tag">Lawyers</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#1a1510;">🥾</div>
-        <div class="god-names">
-          <div class="god-name">Puss-in-Boots</div>
-          <div class="god-epithet">The Cat Who Made His Own Luck</div>
-          <!-- Tymora -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Where Reynard works in shadows and half-truths, Puss-in-Boots operates entirely in the open, with complete audacity. He is depicted as a swaggering cat in tall boots and a wide-brimmed hat, rapier sword at his hip, and he is celebrated for his dashing mortal deeds before ascending to godhood. He holds domain over good fortune, skill, victory, and adventurers. He is the patron of the ambitious poor, the self-made, and anyone who has ever refused to accept the status quo. His followers believe that confidence and conviction are their own form of magic. Devotees have no interest in lies. Their texts say he prefers to tell people exactly what he intends and then do it before they have a chance to tell him no.</p>
-        <p><em>"He never pretended to be something he wasn't. He simply insisted on becoming it." - Pusserian saying</em></p>
-        <div class="worshipers"><span class="tag">Catfolk (Goldcollar)</span><span class="tag">Rogues</span><span class="tag">Gamblers</span><span class="tag">The ambitious poor</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0a1a18;">🦜</div>
-        <div class="god-names">
-          <div class="god-name">The First Voice</div>
-          <div class="god-epithet">He Who Spoke and Was Heard</div>
-          <!-- Oghma -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>The god who granted animalkind their voices after the Great Awakening, or so his followers say. He is depicted as a parrot of every color perched on a branch that stretches across the entire sky. The First Voice governs language, lore, and the beauty of music and dance. His clergy are called Listeners, and they collect oral histories obsessively. There is a deep rivalry between his Listeners and the Ink-Nosed One's Archivists over what forms of recorded knowledge are more important.</p>
-        <div class="worshipers"><span class="tag">Birdfolk</span><span class="tag">Bards</span><span class="tag">Historians</span><span class="tag">Linguists</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section-label">Iron, the Hunt, and Justice</div>
-  <div class="god-grid">
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#1f1010;">⚔️</div>
-        <div class="god-names">
-          <div class="god-name">The Forge Boar</div>
-          <div class="god-epithet">He Who Does Not Yield</div>
-          <!-- Tempus -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Often depicted as a massive boar with a scarred eyes and a broken tusk reforged in black iron, giving the nation of Iron-Tusk it's name. He is the god of honorable warfare, the forge, and the will to endure. His clergy are called Tuskers, warrior priests who wield hammers and blades. They consider retreat a theological question requiring intense deliberation. He respects strength and despises cowardice, but has no love for cruelty. He is said to have given the first horse their iron shoes, enabling the great cavalry charges that made other nations respect the military might of Boar and Horsefolk.</p>
-        <div class="worshipers"><span class="tag">Boarfolk (Iron-Tusk)</span><span class="tag">Horsefolk (Iron-Tusk)</span><span class="tag">Soldiers</span><span class="tag">Smiths</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0d1a0d;">🐺</div>
-        <div class="god-names">
-          <div class="god-name">Shakiri</div>
-          <div class="god-epithet">First Hunter, Last Witness</div>
-          <!-- Mielikki -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>A beautiful she-wolf who moves with a deliberate grace. Shakiri is the patron of hunters, rangers, and those who venture into the wild places where the Silent still roam in great and dangerous numbers. Her teachings are simple: take only what is needed, honor the kill, and waste nothing. Moonhowl's young hunters dedicate their first successful Silent hunt to her. She also governs the difficult question of what separates the Awakened from the Silent, a topic her clergy address with nuance.</p>
-        <p><em>"There's a she wolf in your closet. Let it out so it can breathe" - Ancient Shakirian saying regarding realeasing your inner strength.</em></p>
-        <div class="worshipers"><span class="tag">Wolffolk (Moonhowl)</span><span class="tag">Rangers</span><span class="tag">Hunters</span><span class="tag">Druids</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0e1520;">⚖️</div>
-        <div class="god-names">
-          <div class="god-name">The Blind Hound</div>
-          <div class="god-epithet">He Who Judges</div>
-          <!-- Tyr -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Depicted as a long haired white dog with a blindfold across his eyes and one paw missing, the Blind Hound is the god of justice. The missing paw is not a wound his followers mourn, it's believed he gave it willingly to seal away something dangerous, and he would do it again. His devotees are judges, city watchfolk, and paladins, who must parse the separation between morality and law, the difference between the letter of the law and the spirit. He is not a gentle god, and his justice upon the wicked can be brutal. Worshipers of The Blind Hound are often looked at with distrust or scorn by those with more nuanced views on ethics and justice.</p>
-        <p><em>"A good dog is a hammer in the hand of The Blind One" - Common criticism of the Hound's followers.</em></p>
-        <div class="worshipers"><span class="tag">Caninefolk (Goldcollar)</span><span class="tag">City Watch</span><span class="tag">Judges</span><span class="tag">Paladins</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section-label">Sun, Moon and Primal Forces</div>
-  <div class="god-grid">
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#221800;">☀️</div>
-        <div class="god-names">
-          <div class="god-name">The Blinding Crest</div>
-          <div class="god-epithet">Lord of the Unveiled Sky</div>
-          <!-- Amaunator -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Whereas the Dawnthumper is the sun as hope and beginning, the Blinding Crest is the sun as law and judgment. He is depicted as a massive frilled lizard with scales of glimmering gold and eyes too bright to look at directly. The people of Sunreach believe the Smooth Ones vanished because they built their towers so tall they blocked his light. His temples are open to the sky, and his rites are performed at high noon. His clergy can be intense company.</p>
-        <p><em>Theologians in Whiskerburrow believe the Dawnthumper and the Blinding Crest are the same divine entity, simply perceived differently across cultures. The clergy of both gods find this suggestion blasphemous.</em></p>
-        <div class="worshipers"><span class="tag">Lizardfolk (Sunreach)</span><span class="tag">Toadfolk (Sunreach)</span><span class="tag">Sun Priests</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#141020;">🌕</div>
-        <div class="god-names">
-          <div class="god-name">The Lunar Queen</div>
-          <div class="god-epithet">She Who Lights the Night</div>
-          <!-- Selune -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>Depicted as a luminous white moth drifting across a night sky, trailing moon-dust from her wings. She is the goddess of the moon, navigation, and the comfort of darkness. It is said that her moon-dust created the stars in the sky, and sailors use those stars to navigate, and night-shift workers whisper thanks when the moon is full. She has a devoted following among wolf-kin and dogfolk, who howl insticively at the full moon as a form of worship.</p>
-        <p><em>She and the Night Queen are considered theological opposites, and devotees of the Lunar Queen have an intense dislike of the Night Queen.</em></p>
-        <div class="worshipers"><span class="tag">Wolffolk (Moonhowl)</span><span class="tag">Sailors</span><span class="tag">Night Travelers</span><span class="tag">Midwives</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section-label">Death, Shadows, and Darker Powers</div>
-  <div class="god-grid">
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#141414;">🪦</div>
-        <div class="god-names">
-          <div class="god-name">The Patient Badger</div>
-          <div class="god-epithet">He Who Waits at the End of Every Tunnel</div>
-          <!-- Kelemvor -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>An enormous, still badger seated in a chamber of black stone, lantern in one great paw and scales in the other. He is not feared, merely respected, much as one respects the coming of winter. The Patient Badger judges the dead fairly and without emotion. His clergy are the undertakers, gravediggers, and hospice keepers of Everden, and among the most unfairly disliked clerics in any city. He has jurisdiction over the undead, which he considers an abomination against the natural order, and he acts on that opinion with some force.</p>
-        <div class="worshipers"><span class="tag">Badgerfolk (Whiskerburrow)</span><span class="tag">Gravediggers</span><span class="tag">Judges</span><span class="tag">Molefolk</span></div>
-      </div>
-    </div>
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#1f0f0f;">🌑</div>
-        <div class="god-names">
-          <div class="god-name">The Night Queen</div>
-          <div class="god-epithet">Lady of Silken Ruin</div>
-          <!-- Shar -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>A black cat dressed in violet silk, half-hidden in shadow. The Night Queen is the goddess of secrets kept too long, grief that has rotted into turmoil, and the comfort of despair. She is not entirely evil; her clergy provide genuine solace to those in mourning, and she claims domain over secrets hidden by the darkness. However, her darkest teachings concern loss, and the idea that what is gone is in some ways more real than what remains. Her faith has grown more popular in Carrovia in recent years.</p>
-        <p><em>She and the Lunar Queen are considered theological opposites, though scholars note they serve some of the same mourners. Devotees despise followers of the Lunar Queen.</em></p>
-        <div class="worshipers"><span class="tag">Catfolk (some, in secret)</span><span class="tag">Grieving Nobility</span><span class="tag">Spies</span><span class="tag">Carrovia (recent surge)</span></div>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="section-label">Outlawed and Feared</div>
-  <div class="god-grid">
-
-    <div class="god-card" onclick="this.classList.toggle('open')">
-      <div class="god-card-header">
-        <div class="god-icon" style="background:#0f0f0f;">🐍</div>
-        <div class="god-names">
-          <div class="god-name">The Viper Beneath</div>
-          <div class="god-epithet">He Who Ate the Smooth Ones</div>
-          <!-- Bhaal -->
-        </div>
-        <span class="god-chevron">▾</span>
-      </div>
-      <div class="god-body">
-        <p>No one worships the Viper Beneath openly, and his name is not uttered in polite company. The theology is simple but terrible: he is not a god of murder so much as a god of inevitability, the belief that all things end in death. His cult has no temples, only cells. The only confirmed sign of his influence is the shape of a serpent, carved into the scene of a grizzly killing.</p>
-        <div class="worshipers"><span class="tag">Outlawed (all nations)</span><span class="tag">Hidden Cells</span><span class="tag">Nihilists</span></div>
-      </div>
-    </div>
-
-    <div class="section-label" style="margin-top:44px;">Other Powers</div>
-    <div class="nation-card" style="max-width:640px;">
-      <p class="nation-desc" style="margin:0;">The gods listed here are the most widely known across Everden, but they are not the only powers worthy of worship (or making a deal for power with). Local spirits, ancient beings, forgotten names, and stranger things exist at the edges of the known world. If none of the listed gods feel right for your character, talk to me and we can work something out together.</p>
-    </div>
-
-  </div>
-</div>
-
-<!-- ══════════════════════════════
-     SECTION: LANGUAGES
-══════════════════════════════ -->
-<div id="sec-languages" class="section-wrap">
-  <div class="section-label" style="margin-top:0;">Languages of Everden</div>
-  <p style="color:var(--muted);font-size:.93rem;margin-bottom:24px;line-height:1.7;">Everden has it's own set of languages. Use these instead of the PHB language list during character creation. <b>Your character knows Collartongue and ONE other language from this list.</b> Your class and other features may give you additional languages, such as Druidic or Thieves' Cant.</p>
-
-  <div class="lang-grid">
-
-    <div class="lang-card" style="border-color:#2a3a1a;">
-      <div class="lang-name">Collartongue</div>
-      <div class="lang-script">Script: Repurposed Smooth One lettering - Common to all</div>
-      <p class="lang-desc">The common trade tongue of Goldcollar and most of the civilized world. It evolved from several older languages over centuries of commerce. Every character speaks this by default. If someone in Everden speaks one language, it is this one.</p>
-      <div class="lang-restrict">Treat Collartongue like Common during character creation.</div>
-    </div>
-
-    <div class="lang-card">
-      <div class="lang-name">Whispersqueak</div>
-      <div class="lang-script">Script: Flowing cursive</div>
-      <p class="lang-desc">The native tongue of Carrovia and Whiskerburrow, spoken by rabbits, mice, and most small prey-folk. Used by academics, poets, and keepers of Great Awakening lore. It carries more vocabulary for concepts of memory, loss, and community than any other language in Everden.</p>
-    </div>
-
-    <div class="lang-card">
-      <div class="lang-name">Ironmouth</div>
-      <div class="lang-script">Script: Runic</div>
-      <p class="lang-desc">The language of boars, horses, and the industrial folk of Iron-Tusk. Clipped, efficient, and loud. Foreigners often describe it as sounding permanently impatient. Its runic script was designed to be carved into metal, and most Ironmouth signage still is.</p>
-    </div>
-
-    <div class="lang-card">
-      <div class="lang-name">Scalese</div>
-      <div class="lang-script">Script: Pictographic</div>
-      <p class="lang-desc">Spoken by lizards, toads, and the ancient peoples of Sunreach. One of the oldest living languages in Everden, with roots that may predate the Awakening itself. Its pictographic script is found on ruin walls throughout the jungle, some of it predating anything scholars can reliably date.</p>
-    </div>
-
-    <div class="lang-card">
-      <div class="lang-name">Howltongue</div>
-      <div class="lang-script">Script: None (oral tradition only)</div>
-      <p class="lang-desc">The language of wolves, foxes, and the nomadic peoples of Moonhowl. Heavily tonal, making it notoriously difficult for outsiders to learn. A wrong pitch can change a greeting into an insult. Most Moonhowl folk use collartongue for writing, but only if strictly necessary.</p>
-    </div>
-
-    <div class="lang-card">
-      <div class="lang-name">Plumesong</div>
-      <div class="lang-script">Script: Musical Notation</div>
-      <p class="lang-desc">Spoken by birds of all kinds. Contains sounds that no non-avian throat can fully reproduce, meaning most non-speakers learn only a rough approximation. Native speakers can always tell when they are being spoken to by an outsider, and they find it charming in the way that is almost condescending.</p>
-    </div>
-
-    <div class="lang-card restricted">
-      <div class="lang-name">Smoothtalk</div>
-      <div class="lang-script">Script: Classical Roman-style lettering</div>
-      <p class="lang-desc">A dead language. The writing of the Smooth Ones, found today only in ruin inscriptions and crumbling ancient texts. Nobody speaks it natively or knows for certain what it actually sounded like. Scholars reconstruct it's pronunciation from best guesses and argue about it constantly.</p>
-      <div class="lang-restrict">Requires 14 Intelligence or higher to learn.</div>
-    </div>
-
-  </div>
-</div>
-
-<script>
-/* ── NAV ── */
-function showSection(id, btn){
-  document.querySelectorAll('.section-wrap').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('sec-'+id).classList.add('active');
-  if(btn) btn.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-
-/* ── RACES ── */
 const races=[
 {id:0,name:"Lapine",animal:"Rabbit / hare",size:"Small or Medium",speed:35,traits:[
 {n:"Keen Senses",d:"You have proficiency in the Perception skill."},
@@ -1374,7 +1482,170 @@ const races=[
 {n:"Uncanny Curiosity",d:"You have proficiency in the Investigation skill. You have advantage on Intelligence (Investigation) checks to examine objects, mechanisms, or documents you can physically handle."}
 ],feat:"Skulker or Alert",lore:"Feline-folk are infuriatingly self-possessed. Serene in crisis, curious at the worst moments, and possessed of an independence that their allies sometimes call unhelpful. Domestic cat-folk are urban sophisticates who move through cities like shadows; wilder cat-folk such as lynx or bobcat lineages tend toward solitary ranger lives deep in unclaimed territory."}
 ];
+</script>
+</head>
+<body>
 
+<!-- NAV -->
+<nav class="nav">
+  <button class="nav-btn active" onclick="showSection('nations',this)">Nations</button>
+  <button class="nav-btn" onclick="showSection('races',this)">Races</button>
+  <button class="nav-btn" onclick="showSection('pantheon',this)">Panthereon</button>
+  <button class="nav-btn" onclick="showSection('languages',this)">Languages</button>
+</nav>
+
+<!-- ══════════════════════════════
+     SECTION: NATIONS
+══════════════════════════════ -->
+<div id="sec-nations" class="section-wrap active">
+  <div class="hero">
+    <div class="hero-eyebrow" id="hero-eyebrow"></div>
+    <h1 class="hero-title" id="hero-title"></h1>
+    <p class="hero-sub" id="hero-sub"></p>
+  </div>
+
+  <div class="section-label" id="nations-grid-label"></div>
+  <div class="nation-grid" id="nation-grid"></div>
+
+  <div id="nation-notes"></div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION: RACES
+══════════════════════════════ -->
+<div id="sec-races" class="section-wrap">
+  <div class="search-wrap">
+    <input class="search" id="search" placeholder="Search races..." onkeyup="renderRaces()" />
+  </div>
+  <div class="race-grid" id="race-grid"></div>
+  <div class="detail" id="race-detail"></div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION: PANTHEON
+══════════════════════════════ -->
+<div id="sec-pantheon" class="section-wrap">
+  <p id="pantheon-intro"></p>
+  <div id="pantheon-mount"></div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION: LANGUAGES
+══════════════════════════════ -->
+<div id="sec-languages" class="section-wrap">
+  <div class="section-label" style="margin-top:0;" id="languages-label"></div>
+  <p style="color:var(--muted);font-size:.93rem;margin-bottom:24px;line-height:1.7;" id="languages-intro"></p>
+  <div class="lang-grid" id="lang-grid"></div>
+</div>
+
+</body>
+
+<script>
+/* ── NAV ── */
+function showSection(id, btn){
+  document.querySelectorAll('.section-wrap').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn) btn.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── HERO ── */
+function renderHero(){
+  document.getElementById('hero-eyebrow').textContent = CONTENT.hero.eyebrow;
+  document.getElementById('hero-title').textContent = CONTENT.hero.title;
+  document.getElementById('hero-sub').innerHTML = CONTENT.hero.sub;
+}
+
+/* ── NATIONS ── */
+function renderNations(){
+  document.getElementById('nations-grid-label').textContent = CONTENT.nationsGridLabel;
+
+  document.getElementById('nation-grid').innerHTML = CONTENT.nations.map(n => `
+    <div class="nation-card">
+      <div class="nation-card-top">
+        <div>
+          <div class="nation-name">${n.name}</div>
+          <div class="nation-subtitle">${n.subtitle}</div>
+        </div>
+        <div class="nation-badge">${n.badge}</div>
+      </div>
+      <p class="nation-desc">${n.desc[0]}</p>
+      <div class="nation-values">
+        ${n.values.map(v=>`<span class="tag">${v}</span>`).join('')}
+      </div>
+      <p class="nation-desc" style="margin:12px 0 0;">${n.desc[1]}</p>
+      <div class="settlements">
+        ${n.settlements.map(s=>`
+        <div class="settlement" onclick="this.classList.toggle('open')">
+          <div class="settlement-header">
+            <span class="settlement-name">${s.name}</span>
+            <div class="settlement-tags">${s.tags.map(t=>`<span class="settlement-tag${t.capital?' capital':''}">${t.text}</span>`).join('')}</div>
+            <span class="settlement-chevron">▾</span>
+          </div>
+          <div class="settlement-body">${s.body}</div>
+        </div>`).join('')}
+      </div>
+      <div class="nation-leader" style="margin-top:14px;">${n.leaderLabel}<span>${n.leaderText}</span></div>
+    </div>
+  `).join('');
+
+  document.getElementById('nation-notes').innerHTML = CONTENT.nationNotes.map(note => `
+    <div class="section-label" style="margin-top:44px;">${note.label}</div>
+    <div class="nation-card" style="max-width:640px;">
+      <p class="nation-desc" style="margin:0;">${note.text}</p>
+    </div>
+  `).join('');
+}
+
+/* ── PANTHEON ── */
+function renderPantheon(){
+  document.getElementById('pantheon-intro').textContent = CONTENT.pantheon.intro;
+
+  document.getElementById('pantheon-mount').innerHTML = CONTENT.pantheon.groups.map((group, gi) => `
+    <div class="section-label"${gi===0 ? ' style="margin-top:10;"' : ''}>${group.title}</div>
+    <div class="god-grid">
+      ${group.gods.map(god => `
+      <div class="god-card" onclick="this.classList.toggle('open')">
+        <div class="god-card-header">
+          <div class="god-icon" style="background:${god.iconBg};">${god.icon}</div>
+          <div class="god-names">
+            <div class="god-name">${god.name}</div>
+            <div class="god-epithet">${god.epithet}</div>
+            <!-- ${god.original} -->
+          </div>
+          <span class="god-chevron">▾</span>
+        </div>
+        <div class="god-body">
+          ${god.paragraphs.map(p=>`<p>${p}</p>`).join('')}
+          <div class="worshipers">${god.worshipers.map(w=>`<span class="tag">${w}</span>`).join('')}</div>
+        </div>
+      </div>`).join('')}
+    </div>
+  `).join('') + `
+    <div class="section-label" style="margin-top:44px;">Other Powers</div>
+    <div class="nation-card" style="max-width:640px;">
+      <p class="nation-desc" style="margin:0;">${CONTENT.pantheon.otherPowersText}</p>
+    </div>
+  `;
+}
+
+/* ── LANGUAGES ── */
+function renderLanguages(){
+  document.getElementById('languages-label').textContent = CONTENT.languagesLabel;
+  document.getElementById('languages-intro').innerHTML = CONTENT.languages.intro;
+
+  document.getElementById('lang-grid').innerHTML = CONTENT.languages.list.map(l => `
+    <div class="lang-card${l.extraClass ? ' '+l.extraClass : ''}"${l.style ? ` style="${l.style}"` : ''}>
+      <div class="lang-name">${l.name}</div>
+      <div class="lang-script">${l.script}</div>
+      <p class="lang-desc">${l.desc}</p>
+      ${l.restrict ? `<div class="lang-restrict">${l.restrict}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+/* ── RACES ── */
 function showGrid(){
   document.getElementById('race-grid').style.display='grid';
   const d=document.getElementById('race-detail');
@@ -1434,7 +1705,10 @@ function renderRaces(){
   `).join('');
 }
 
+renderHero();
+renderNations();
+renderPantheon();
+renderLanguages();
 renderRaces();
 </script>
-</body>
 </html>
