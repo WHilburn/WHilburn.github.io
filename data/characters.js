@@ -12,13 +12,13 @@ CONTENT.characters = {
         "iconBg": "#221a05",
         "icon": "👑",
         "paragraphs": [
-          "Goldcollar's throne seats two, and the arrangement works better than anyone expected. Queen Daisy, of an old Golden Retriever lineage, is beloved for a warmth that appears entirely genuine and a memory for names that appears entirely supernatural. King Wrinkles, a Sphinx Cat of considerable age and no fur whatsoever, is renowned for a shrewdness so cold that merchants have been known to lower their own prices mid-sentence under his gaze.",
-          "Between them they balance Goldcollar's twin appetites for generosity and profit. Court gossip holds that no proposal survives dinner with both of them unchanged: Daisy finds what is kind in it, Wrinkles finds what is profitable, and what emerges is usually both."
+          "Goldcollar's throne seats two, and the arrangement works surprisingly well, leading to them being called the Council of Two. Queen Daisy, of an old Golden Retriever lineage, is beloved for her warmth and a memory for names that shocks even the lowliest castle servant, who she chats with regularly (perhaps too often). King Wrinkles, a Sphinx Cat with no fur whatsoever (but a love of thick cloaks and robes to accommodate), is renowned for having a gaze so piercing that merchants have been known to lower their own prices mid-sentence. Despite being a King and Queen, the two are not a couple; they each have their own spouses and lines of succession. Previously the Dual Throne has been held by two Kings or two Queens.",
+          "Between them they balance Goldcollar's twin appetites for generosity and commerce. Court gossip holds that Daisy and Wrinkles have something of a good-cop-bad-cop routine when dealing with proposals: Daisy butters guests up, and Wrinkles knocks them down with shrewdness. Daisy is said by some to be just as good a manipulator as Wrinkles, and many believe she merely hides behind a genial persona."
         ]
       },
       {
         "name": "Count Barnaby von Hop",
-        "enabled": true,
+        "enabled": false,
         "title": "Count of Carrovia",
         "location": "Hopswall, Carrovia",
         "iconBg": "#141020",
@@ -30,7 +30,7 @@ CONTENT.characters = {
       },
       {
         "name": "The Forge Council",
-        "enabled": true,
+        "enabled": false,
         "title": "Governing Body of Iron-Tusk",
         "location": "Greygorge, Iron-Tusk",
         "iconBg": "#1f1010",
@@ -42,7 +42,7 @@ CONTENT.characters = {
       },
       {
         "name": "The Sun Council",
-        "enabled": true,
+        "enabled": false,
         "title": "Ritual Keepers of Sunreach",
         "location": "Solanthis, Sunreach",
         "iconBg": "#221800",
