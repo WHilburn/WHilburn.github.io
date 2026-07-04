@@ -220,7 +220,7 @@ CONTENT.nations = [
               "text": "River Port"
             }
           ],
-          "body": "A cheerful little settlement on the Slowwater River, Rivermouse exports more smoked fish than any other town in Whiskerburrow. The annual Rivermouse Smoking Festival draws visitors from every nation and is universal agreed to be a very good time."
+          "body": "A cheerful little settlement on the Sapwater River, Rivermouse exports more smoked fish than any other town in Whiskerburrow. The annual Rivermouse Smoking Festival draws visitors from every nation and is universal agreed to be a very good time."
         },
         {
           "name": "Mayhill",
