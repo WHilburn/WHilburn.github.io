@@ -495,6 +495,32 @@ body{
   color:#f5c842;
 }
 
+/* ══════════════════════════════
+   SECTION 5: CHARACTERS
+══════════════════════════════ */
+.char-location{
+  flex-shrink:0;
+  background:#1e2730;
+  border:1px solid #32404d;
+  color:var(--accent);
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+.patron-type{
+  flex-shrink:0;
+  background:#241a2e;
+  border:1px solid #3e3050;
+  color:#c4a5f2;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width:700px){
   body{ padding:0; }
@@ -1329,6 +1355,64 @@ const CONTENT = {
         ]
       }
     ],
+    "patrons": {
+      "label": "Warlock Patrons",
+      "intro": "Not every power in Everden asks for worship. Some prefer a signature. The beings below are not gods, and no temples are raised to them, but each has been known to lend power to mortals willing to strike a bargain. If you are building a warlock, these are the patrons most often whispered about, though stranger arrangements are always possible.",
+      "list": [
+        {
+          "type": "Archfey",
+          "iconBg": "#0e2213",
+          "icon": "🦌",
+          "name": "The Antlered King",
+          "epithet": "Lord of the Silent Court",
+          "original": "Oberon",
+          "paragraphs": [
+            "Somewhere behind the oldest forests, where the seasons all happen at once, an immense stag holds court on a throne of living roots. The Antlered King is older than the Awakening, older perhaps than the Smooth Ones, and his subjects are the Silent: every beast that never woke is, by his reckoning, a citizen of his twilight kingdom. He regards the Awakened with the amused fascination of a king watching his subjects wander off and declare themselves foreign nations. Some in his court say the Great Awakening was simply a door he left open. He has never confirmed this, and he enjoys that enormously.",
+            "His bargains are courteous, binding, and paid in strange currency: a favorite memory, the color of your dreams, the promise of a dance at a festival that has not happened yet. He is not cruel, but his priorities are not mortal ones, and his warlocks learn to be very careful with words like \"forever\" and \"anything.\""
+          ],
+          "seekers": ["Moonhowl shamans", "Wanderers of deep forests", "Those the Silent follow", "Anyone who slept in a fey ring"]
+        },
+        {
+          "type": "Devil",
+          "iconBg": "#220d0d",
+          "icon": "✒️",
+          "name": "The Grinning Stoat",
+          "epithet": "The Gentleman of the Fine Print",
+          "original": "Asmodeus",
+          "paragraphs": [
+            "Where the Golden Collars blesses the honest deal, the Grinning Stoat perfects the other kind: the deal that is honest right up until you read it twice. He appears as an immaculately dressed stoat in a waistcoat of shifting silk, with a smile that has one or two more teeth than seems strictly necessary. His contracts are famously, scrupulously fair. He has never once broken the letter of an agreement, a fact he mentions often and his former clients mention never.",
+            "The Stoat trades in the things people swear they will never miss: years, luck, voices, the affection of an old friend, the warm spot at the end of the bed. His warlocks receive exactly what they asked for, delivered promptly and in full. The trouble, as always, is what they asked for."
+          ],
+          "seekers": ["The desperate", "The ambitious poor", "Goldcollar social climbers", "Debtors out of options"]
+        },
+        {
+          "type": "Celestial",
+          "iconBg": "#231d08",
+          "icon": "🐉",
+          "name": "The Dawnscale",
+          "epithet": "The Last Kind Dragon",
+          "original": "Bahamut",
+          "paragraphs": [
+            "The dragons of Everden do not speak, and nobody has survived asking them why. But in dawn dreams, some mortals meet one that does: a dragon of pale gold light, old beyond reckoning, who carries a grief too large to name. The Dawnscale is said to have loved the Smooth Ones, and to have watched them go, and to have decided that whatever walks upright next would not go unguarded. Whether it is truly a dragon, a god wearing a dragon's shape, or something older than both is a debate that has ended several friendships in Denhollow's theology department.",
+            "It asks little of its warlocks: mend what you can, light what you must, and be kind to the Silent, for they are somebody's cousins. Its power arrives as warmth in the chest and light in the palms, and those who carry it say the grief comes with it, just a little, like heat off a hearth."
+          ],
+          "seekers": ["Healers", "Guardians of the small", "Pilgrims who dreamed at dawn", "Those who tend the Silent"]
+        },
+        {
+          "type": "Great Old One",
+          "iconBg": "#101018",
+          "icon": "🌀",
+          "name": "The Unquiet Choir",
+          "epithet": "The Minds That Remain",
+          "original": "Tharizdun / The Elder Elemental Eye",
+          "paragraphs": [
+            "At the center of a storm that scholars name the Elder Elemental Eye, something turns. It is not one mind. It is all of them: the countless unresting minds of the Smooth Ones, neither dead nor alive, swirling around the Eye like leaves in a whirlpool and screaming across each other in a chorus of alien, conflicting wants. Build it again. Take it apart. Come home. Never come back. Remember us. Forget. No single voice in the Choir agrees with any other, and yet the whole of it drifts, slowly and unmistakably, toward some vast purpose that no mortal mind has been able to parse. The unsettling part, theologians agree, is that nothing about that purpose appears to be evil. It appears to be important.",
+            "Its warlocks do not make bargains so much as get noticed. They hear fragments: half a blueprint, a word of Smoothtalk they were never taught, the absolute certainty that a particular door in a particular ruin should not be opened, or should be, immediately. Most of them seem fine. Nearly all of them seem fine."
+          ],
+          "seekers": ["Ruin-delvers", "Smoothtalk scholars", "The Awakening-obsessed", "Those who hear it humming"]
+        }
+      ]
+    },
     "otherPowersText": "The gods listed here are the most widely known across Everden, but they are not the only powers worthy of worship (or making a deal for power with). Local spirits, ancient beings, forgotten names, and stranger things exist at the edges of the known world. If none of the listed gods feel right for your character, talk to me and we can work something out together."
   },
   "languages": {
@@ -1389,6 +1473,57 @@ const CONTENT = {
         "script": "Script: Classical Roman-style lettering",
         "desc": "A dead language. The writing of the Smooth Ones, found today only in ruin inscriptions and crumbling ancient texts. Nobody speaks it natively or knows for certain what it actually sounded like. Scholars reconstruct it's pronunciation from best guesses and argue about it constantly.",
         "restrict": "Requires 14 Intelligence or higher to learn."
+      }
+    ]
+  },
+  "characters": {
+    "enabled": true,
+    "label": "Characters of Everden",
+    "intro": "The folk below are some of the most talked-about figures in Everden. Click on a character to learn more. A card can be a single person or a whole group, and this list will grow as the campaign does.",
+    "list": [
+      {
+        "name": "Queen Daisy & King Wrinkles",
+        "title": "The Dual Monarchs of Goldcollar",
+        "location": "Petsburg, Goldcollar",
+        "iconBg": "#221a05",
+        "icon": "👑",
+        "paragraphs": [
+          "Goldcollar's throne seats two, and the arrangement works better than anyone expected. Queen Daisy, of an old Golden Retriever lineage, is beloved for a warmth that appears entirely genuine and a memory for names that appears entirely supernatural. King Wrinkles, a Sphinx Cat of considerable age and no fur whatsoever, is renowned for a shrewdness so cold that merchants have been known to lower their own prices mid-sentence under his gaze.",
+          "Between them they balance Goldcollar's twin appetites for generosity and profit. Court gossip holds that no proposal survives dinner with both of them unchanged: Daisy finds what is kind in it, Wrinkles finds what is profitable, and what emerges is usually both."
+        ]
+      },
+      {
+        "name": "Count Barnaby von Hop",
+        "title": "Count of Carrovia",
+        "location": "Hopswall, Carrovia",
+        "iconBg": "#141020",
+        "icon": "🐇",
+        "paragraphs": [
+          "There was a time when the Count of Carrovia was the most visible noble in Everden: the autumn festivals of Hopswall were his personal pride, and his swift knights rode escort for any traveler who asked. That time has passed. The festivals are quietly cancelled, the castle gates close before dark, and appointments with the Count are not being granted, to ambassadors, to old friends, to anyone.",
+          "What is known is only this: the mist at Carrovia's borders arrived during his rule, he has never once addressed it publicly, and the few staff who have left his service decline to discuss their former employer in a way that suggests generous severance, genuine fear, or both."
+        ]
+      },
+      {
+        "name": "The Forge Council",
+        "title": "Governing Body of Iron-Tusk",
+        "location": "Greygorge, Iron-Tusk",
+        "iconBg": "#1f1010",
+        "icon": "⚒️",
+        "paragraphs": [
+          "Iron-Tusk is not ruled so much as operated. The Forge Council is a body of boar and horse guildmasters, each representing one of the nation's great industries, meeting in the Iron Hall beneath banners that nobody has bothered to decorate. They are headed by the Grand Tusk, an office held by whichever councilor the others distrust least, which its current holder has described as the only honest election in Everden.",
+          "The Council is blunt, slow to spend, and ruthlessly practical, which makes its recent behavior all the more interesting: three tunnels at Sootpass sealed by official order, an artificers' report delivered directly to the Grand Tusk, and a line item in the public budget labeled only \"containment\" that no councilor will explain."
+        ]
+      },
+      {
+        "name": "The Sun Council",
+        "title": "Ritual Keepers of Sunreach",
+        "location": "Solanthis, Sunreach",
+        "iconBg": "#221800",
+        "icon": "☀️",
+        "paragraphs": [
+          "The Sun Council does not campaign, legislate, or explain. Its members, ancient ritual keepers drawn from the lizardfolk and toadfolk lineages of Sunreach, meet at the highest point of the Solanthis temple complex at noon, every day, without exception. The rituals they keep predate written history, and when asked what would happen if a session were missed, council members give the same answer they give to most questions, which is nothing.",
+          "Outsiders find the Council maddening; Sunreach finds it comforting. Whatever the keepers are doing up there every noon, the nation has outlasted empires while doing it, and in Sunreach that is considered a complete argument."
+        ]
       }
     ]
   }
@@ -1488,6 +1623,7 @@ const races=[
 <nav class="nav">
   <button class="nav-btn active" onclick="showSection('nations',this)">Nations</button>
   <button class="nav-btn" onclick="showSection('races',this)">Races</button>
+  <button class="nav-btn" id="nav-characters" onclick="showSection('characters',this)">Characters</button>
   <button class="nav-btn" onclick="showSection('pantheon',this)">Panthereon</button>
   <button class="nav-btn" onclick="showSection('languages',this)">Languages</button>
 </nav>
@@ -1517,6 +1653,15 @@ const races=[
   </div>
   <div class="race-grid" id="race-grid"></div>
   <div class="detail" id="race-detail"></div>
+</div>
+
+<!-- ══════════════════════════════
+     SECTION: CHARACTERS
+══════════════════════════════ -->
+<div id="sec-characters" class="section-wrap">
+  <div class="section-label" style="margin-top:0;" id="characters-label"></div>
+  <p style="color:var(--muted);font-size:.93rem;margin-bottom:24px;line-height:1.7;" id="characters-intro"></p>
+  <div class="god-grid" id="char-grid"></div>
 </div>
 
 <!-- ══════════════════════════════
@@ -1621,11 +1766,60 @@ function renderPantheon(){
       </div>`).join('')}
     </div>
   `).join('') + `
+    <div class="section-label" style="margin-top:44px;">${CONTENT.pantheon.patrons.label}</div>
+    <p style="color:var(--muted);font-size:.93rem;margin-bottom:14px;line-height:1.7;">${CONTENT.pantheon.patrons.intro}</p>
+    <div class="god-grid">
+      ${CONTENT.pantheon.patrons.list.map(p => `
+      <div class="god-card" onclick="this.classList.toggle('open')">
+        <div class="god-card-header">
+          <div class="god-icon" style="background:${p.iconBg};">${p.icon}</div>
+          <div class="god-names">
+            <div class="god-name">${p.name}</div>
+            <div class="god-epithet">${p.epithet}</div>
+            <!-- ${p.original} -->
+          </div>
+          <span class="patron-type">${p.type}</span>
+          <span class="god-chevron">▾</span>
+        </div>
+        <div class="god-body">
+          ${p.paragraphs.map(par=>`<p>${par}</p>`).join('')}
+          <div class="worshipers">${p.seekers.map(s=>`<span class="tag">${s}</span>`).join('')}</div>
+        </div>
+      </div>`).join('')}
+    </div>
     <div class="section-label" style="margin-top:44px;">Other Powers</div>
     <div class="nation-card" style="max-width:640px;">
       <p class="nation-desc" style="margin:0;">${CONTENT.pantheon.otherPowersText}</p>
     </div>
   `;
+}
+
+/* ── CHARACTERS ── */
+function renderCharacters(){
+  // To hide the Characters tab, set "enabled": false on "characters" in CONTENT above.
+  if(!CONTENT.characters.enabled){
+    document.getElementById('nav-characters').style.display='none';
+    return;
+  }
+  document.getElementById('characters-label').textContent = CONTENT.characters.label;
+  document.getElementById('characters-intro').innerHTML = CONTENT.characters.intro;
+
+  document.getElementById('char-grid').innerHTML = CONTENT.characters.list.map(c => `
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:${c.iconBg};">${c.icon}</div>
+        <div class="god-names">
+          <div class="god-name">${c.name}</div>
+          <div class="god-epithet">${c.title}</div>
+        </div>
+        <span class="char-location">${c.location}</span>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        ${c.paragraphs.map(p=>`<p>${p}</p>`).join('')}
+      </div>
+    </div>
+  `).join('');
 }
 
 /* ── LANGUAGES ── */
@@ -1705,6 +1899,7 @@ function renderRaces(){
 
 renderHero();
 renderNations();
+renderCharacters();
 renderPantheon();
 renderLanguages();
 renderRaces();
