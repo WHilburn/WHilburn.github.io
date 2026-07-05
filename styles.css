@@ -18,7 +18,9 @@
 html{ scroll-behavior:smooth; }
 
 body{
+  min-height:100vh;
   background:linear-gradient(to bottom,#101214,#171a1f);
+  background-attachment:fixed;
   color:var(--text);
   font-family:Inter,system-ui,sans-serif;
   line-height:1.5;
