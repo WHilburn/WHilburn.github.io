@@ -40,10 +40,10 @@ CONTENT.pantheon.patrons = {
           "epithet": "The Source of all Rainbows",
           "original": "Unicorn",
           "paragraphs": [
-            "In their dreams, some mortals meet a fantastical horse of impossible sparkling colors. Some describe her with a horn, some with wings, and others describe her as having both, but all describe her as being kind, gentle, and having an overflowing heart. The Rainbowed Horn is said to have loved the Smooth Ones, and to have watched them go, and to have decided that whatever walks upright next would not go unguarded. Those familiar with her believe she still walks the mortal world, somewhere deep within the forests of Everden, the last of her kind.",
-            "She asks little of her warlocks: mend what you can, light what you must, and be kind to the Silent, for they are somebody's cousins. Its power arrives as warmth in the chest and light in the palms, and those who carry it say the grief comes with it, just a little, like heat off a hearth."
+            "In their dreams, some mortals meet a fantastical horse of impossible sparkling colors. Some describe her with a horn, some with wings, and others describe her as having both, but all describe her as being kind, gentle, and having an overflowing heart. The Rainbowed Horn is said to have loved the Smooth Ones, and to have watched them go, and to have decided that whatever walks upright next would not go unguarded. Those familiar with her believe she still walks the mortal world, somewhere deep within the forests of Everden, the last of her kind. It's said she only makes herself known to those with the purest hearts.",
+            "She asks little of her warlocks: mend what you can, light what you must, and be kind to the Silent, for they are somebody's cousins. Her power arrives as warmth in the chest and light in the palms, and those who carry it feel the grief comes with it."
           ],
-          "seekers": ["Healers", "Guardians of the small", "Pilgrims who dreamed at dawn", "Protectors of the Silent"]
+          "seekers": ["Healers", "Guardians of the small", "The pure-hearted", "Protectors of the Silent"]
         },
         {
           "type": "Great Old One",
