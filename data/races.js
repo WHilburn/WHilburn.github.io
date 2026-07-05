@@ -370,7 +370,7 @@ const races = [
       },
       {
         "n": "Nine Lives",
-        "d": "When you are reduced to 0 Hit Points but not killed outright, you can set your Hit Points to 9 instead. You can't use this trait again until you finish a Long Rest. You may only use this trait 9 times total, ever."
+        "d": "When you are reduced to 0 Hit Points but not killed outright, you may choose to set your Hit Points to 9 instead. You can't use this trait again until you finish a Long Rest. You may only use this trait 9 times total, ever."
       },
       {
         "n": "Darkvision",
