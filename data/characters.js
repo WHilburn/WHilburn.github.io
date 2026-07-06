@@ -47,7 +47,7 @@ CONTENT.characters = {
         "iconBg": "#221800",
         "icon": "☀️",
         "paragraphs": [
-          "The Sun Council does not campaign, legislate, or explain. Its members, ancient ritual keepers drawn from the lizardfolk and toadfolk lineages of Sunreach, meet at the highest point of the Solanthis temple complex at noon, every day, without exception. The rituals they keep predate written history, and when asked what would happen if a session were missed, council members give the same answer they give to most questions, which is nothing.",
+          "The Sun Council does not campaign or explain, and it's decision making process is incredibly opaque. Its members, ancient ritual keepers drawn from the reptilefolk and amphibianfolk high clergy of Sunreach, meet at the highest point of the Solanthis temple complex at noon, every day. The rituals they keep honor most every god in the pantheon.",
           "Outsiders find the Council maddening; Sunreach finds it comforting. Whatever the keepers are doing up there every noon, the nation has outlasted empires while doing it, and in Sunreach that is considered a complete argument."
         ]
       }
