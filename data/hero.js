@@ -9,3 +9,13 @@ CONTENT.hero = {
 
 CONTENT.nationsGridLabel = "The Great Powers";
 CONTENT.languagesLabel = "Languages of Everden";
+
+/* Set any tab below to false to hide it (and its nav button) entirely. */
+CONTENT.tabs = {
+  "nations": true,
+  "races": true,
+  "characters": true,
+  "pantheon": true,
+  "languages": true,
+  "lore": true
+};

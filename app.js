@@ -115,11 +115,6 @@ function renderPantheon(){
 
 /* ── CHARACTERS ── */
 function renderCharacters(){
-  // To hide the Characters tab, set "enabled": false on "characters" in CONTENT above.
-  if(!CONTENT.characters.enabled){
-    document.getElementById('nav-characters').style.display='none';
-    return;
-  }
   document.getElementById('characters-label').textContent = CONTENT.characters.label;
   document.getElementById('characters-intro').innerHTML = CONTENT.characters.intro;
 
@@ -156,9 +151,47 @@ function renderLanguages(){
   `).join('');
 }
 
+/* ── LORE & MYSTERIES ── */
+function renderLore(){
+  document.getElementById('lore-label').textContent = CONTENT.lore.label;
+  document.getElementById('lore-intro').innerHTML = CONTENT.lore.intro;
+
+  function loreCard(l, badgeClass){
+    return `
+      <div class="god-card" onclick="this.classList.toggle('open')">
+        <div class="god-card-header">
+          <div class="god-icon" style="background:${l.iconBg};">${l.icon}</div>
+          <div class="god-names">
+            <div class="god-name">${l.title}</div>
+            <div class="god-epithet">${l.teaser}</div>
+          </div>
+          <span class="${badgeClass}">${l.status}</span>
+          <span class="god-chevron">▾</span>
+        </div>
+        <div class="god-body">
+          ${l.paragraphs.map(p=>`<p>${p}</p>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  document.getElementById('lore-mount').innerHTML = `
+    <div class="section-label" style="margin-top:10;">${CONTENT.lore.knownLore.label}</div>
+    <p style="color:var(--muted);font-size:.93rem;margin-bottom:14px;line-height:1.7;">${CONTENT.lore.knownLore.intro}</p>
+    <div class="god-grid">
+      ${CONTENT.lore.knownLore.list.filter(l=>l.enabled!==false).map(l=>loreCard(l,'lore-fact')).join('')}
+    </div>
+    <div class="section-label" style="margin-top:44px;">${CONTENT.lore.mysteries.label}</div>
+    <p style="color:var(--muted);font-size:.93rem;margin-bottom:14px;line-height:1.7;">${CONTENT.lore.mysteries.intro}</p>
+    <div class="god-grid">
+      ${CONTENT.lore.mysteries.list.filter(l=>l.enabled!==false).map(l=>loreCard(l,'lore-status')).join('')}
+    </div>
+  `;
+}
+
 /* ── RACES ── */
 function showGrid(){
   document.getElementById('race-grid').style.display='grid';
+  document.getElementById('other-races-section').style.display='';
   const d=document.getElementById('race-detail');
   d.classList.remove('active');
   d.innerHTML='';
@@ -168,6 +201,7 @@ function showGrid(){
 function showDetail(id){
   const r=races.find(x=>x.id===id);
   document.getElementById('race-grid').style.display='none';
+  document.getElementById('other-races-section').style.display='none';
   const detail=document.getElementById('race-detail');
   detail.classList.add('active');
   detail.innerHTML=`
@@ -216,9 +250,51 @@ function renderRaces(){
   `).join('');
 }
 
+function renderOtherRaces(){
+  document.getElementById('other-races-label').textContent = CONTENT.otherRaces.label;
+  document.getElementById('other-races-intro').innerHTML = CONTENT.otherRaces.intro;
+
+  document.getElementById('other-races-grid').innerHTML = CONTENT.otherRaces.list.filter(r=>r.enabled!==false).map(r => `
+    <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card-header">
+        <div class="god-icon" style="background:${r.iconBg};">${r.icon}</div>
+        <div class="god-names">
+          <div class="god-name">${r.name}</div>
+          <div class="god-epithet">${r.subtitle}</div>
+        </div>
+        <span class="god-chevron">▾</span>
+      </div>
+      <div class="god-body">
+        ${r.paragraphs.map(p=>`<p>${p}</p>`).join('')}
+        <div class="worshipers">${r.tags.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ── TAB VISIBILITY ── */
+// Hides the nav button + section for any tab set to false in CONTENT.tabs (see data/hero.js),
+// and falls back to the first remaining enabled tab if the currently active one got hidden.
+function applyTabVisibility(){
+  const ids = Object.keys(CONTENT.tabs);
+  ids.forEach(id => {
+    const btn = document.getElementById('nav-'+id);
+    if(btn) btn.style.display = CONTENT.tabs[id] === false ? 'none' : '';
+  });
+  const activeBtn = document.querySelector('.nav-btn.active');
+  const activeHidden = !activeBtn || activeBtn.style.display === 'none';
+  if(activeHidden){
+    const fallbackId = ids.find(id => CONTENT.tabs[id] !== false);
+    if(fallbackId) showSection(fallbackId, document.getElementById('nav-'+fallbackId));
+  }
+}
+
 renderHero();
 renderNations();
 renderCharacters();
 renderPantheon();
 renderLanguages();
+renderLore();
 renderRaces();
+renderOtherRaces();
+applyTabVisibility();

@@ -10,11 +10,12 @@
 
 <!-- NAV -->
 <nav class="nav">
-  <button class="nav-btn active" onclick="showSection('nations',this)">Nations</button>
-  <button class="nav-btn" onclick="showSection('races',this)">Playable Races</button>
+  <button class="nav-btn active" id="nav-nations" onclick="showSection('nations',this)">Nations</button>
+  <button class="nav-btn" id="nav-races" onclick="showSection('races',this)">Races</button>
   <button class="nav-btn" id="nav-characters" onclick="showSection('characters',this)">Characters</button>
-  <button class="nav-btn" onclick="showSection('pantheon',this)">Panthereon & Patrons</button>
-  <button class="nav-btn" onclick="showSection('languages',this)">Languages</button>
+  <button class="nav-btn" id="nav-pantheon" onclick="showSection('pantheon',this)">Panthereon</button>
+  <button class="nav-btn" id="nav-languages" onclick="showSection('languages',this)">Languages</button>
+  <button class="nav-btn" id="nav-lore" onclick="showSection('lore',this)">Lore</button>
 </nav>
 
 <!-- ══════════════════════════════
@@ -42,6 +43,12 @@
   </div>
   <div class="race-grid" id="race-grid"></div>
   <div class="detail" id="race-detail"></div>
+
+  <div id="other-races-section">
+    <div class="section-label" style="margin-top:44px;" id="other-races-label"></div>
+    <p style="color:var(--muted);font-size:.93rem;margin-bottom:24px;line-height:1.7;" id="other-races-intro"></p>
+    <div class="god-grid" id="other-races-grid"></div>
+  </div>
 </div>
 
 <!-- ══════════════════════════════
@@ -70,6 +77,14 @@
   <div class="lang-grid" id="lang-grid"></div>
 </div>
 
+<!-- ══════════════════════════════
+     SECTION: LORE & MYSTERIES
+══════════════════════════════ -->
+<div id="sec-lore" class="section-wrap">
+  <div class="section-label" style="margin-top:0;" id="lore-label"></div>
+  <p style="color:var(--muted);font-size:.93rem;margin-bottom:24px;line-height:1.7;" id="lore-intro"></p>
+  <div id="lore-mount"></div>
+</div>
 
 <script src="data/hero.js"></script>
 <script src="data/nations.js"></script>
@@ -79,6 +94,8 @@
 <script src="data/languages.js"></script>
 <script src="data/characters.js"></script>
 <script src="data/races.js"></script>
+<script src="data/other-races.js"></script>
+<script src="data/lore.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

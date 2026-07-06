@@ -520,6 +520,32 @@ body{
   white-space:nowrap;
 }
 
+/* ══════════════════════════════
+   SECTION 6: LORE & MYSTERIES
+══════════════════════════════ */
+.lore-fact{
+  flex-shrink:0;
+  background:#0f2116;
+  border:1px solid #1f4a2e;
+  color:#7fd8a0;
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+.lore-status{
+  flex-shrink:0;
+  background:#241d0a;
+  border:1px solid #4a3a12;
+  color:var(--gold);
+  padding:4px 10px;
+  border-radius:999px;
+  font-size:.72rem;
+  font-weight:600;
+  white-space:nowrap;
+}
+
 /* ── RESPONSIVE ── */
 @media (max-width:700px){
   body{ padding:0; }
