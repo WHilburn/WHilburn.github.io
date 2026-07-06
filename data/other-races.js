@@ -32,7 +32,7 @@ CONTENT.otherRaces = {
       "name": "Crustacean",
       "subtitle": "Crabs, Lobsters",
       "paragraphs": [
-        "In any waterfront town you'll find crustacean-folk working the docks, and for good reason: a crab-folk have impressive strength, and their shells can shrug off a dropped crate that would break bones, and their claws come in handy in a variety of tasks. Many Lobster-folk are work in the mercantile trade, running warehouses and negotiating shipping contracts with the same patience they'd use to wait out a molt. You're also likely to find them aboard trade ships.",
+        "In any waterfront town you'll find crustacean-folk working the docks, and for good reason: crab-folk have impressive strength, their shells can shrug off a dropped crate that would break bones, and their claws come in handy for a variety of tasks. Many Lobster-folk find work in the mercantile trade, running warehouses and negotiating shipping contracts with the same patience they'd use to wait out a molt. You're also likely to find them aboard trade ships.",
         "Crustacean-folk are famously long-lived, and its considered extremely rude to ask one directly how many shells they've outgrown."
       ],
       "tags": ["Goldcollar coast", "Dockworkers", "Long-Lived"]
@@ -57,7 +57,7 @@ CONTENT.otherRaces = {
       "subtitle": "Monkeys, Chimps, Gorillas, Orangutans",
       "paragraphs": [
         "In the jungles of Sunreach live animalfolk unlike any other in Everden, at home high in the canopy where the reptilefolk and toadfolk who dominate the nation rarely bother to climb. Monkey and chimp lineages tend to move in tight, lively troupes and are quick with both wit and dexterity, while gorilla and orangutan lineages are more often found alone or in small family groups, making good livings elsewhere as bodyguards when a negotiation calls for someone very large to stand quietly in the corner.",
-        "Primate-folk are Everden's best natural climbers, as well as some of the best storytellers."
+        "Primate-folk are Everden's best natural climbers, as well as some of the best storytellers. Some believe they share a connection to the smooth ones, but this is seen as a crackpot theory, after all, they're the least smooth skinned people in Everden."
       ],
       "tags": ["Sunreach jungles", "Canopy-Dwellers", "Ruin-Divers"]
     },
