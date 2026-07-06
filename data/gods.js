@@ -1,4 +1,3 @@
-/* Everden Player Guide — the pantheon: intro text, "Other Powers" note, and gods grouped by domain. */
 CONTENT.pantheon = {};
 CONTENT.pantheon.intro = "The people of Everden worship a large variety of gods and goddesses. Click on a god to learn more.";
 CONTENT.pantheon.otherPowersText = "The gods listed here are the most widely known across Everden, but they are not the only powers worthy of worship (or making a deal for power with). Local spirits, ancient beings, forgotten names, and stranger things exist at the edges of the known world. If none of the listed gods feel right for your character, talk to me and we can work something out together.";

@@ -1,4 +1,3 @@
-/* Everden Player Guide — standalone notes under the Nations tab (the Silent, Magic, Monsters, etc). */
 CONTENT.nationNotes = [
     {
       "label": "A Note on the Silent",

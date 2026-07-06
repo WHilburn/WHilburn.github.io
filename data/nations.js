@@ -1,4 +1,3 @@
-/* Everden Player Guide — the six nations and their settlements. */
 CONTENT.nations = [
     {
       "name": "Goldcollar",
@@ -382,7 +381,7 @@ CONTENT.nations = [
               "text": "Egyyt's Territory"
             }
           ],
-          "body": "A fortified outpost at the edge of Sunreach's great desert, Dustgate is the last reliable source of water, shelter, and information before the desert becomes nigh-impenetrable. It sits within viewing distance of one of Egyyt's favored resting sites: a Smooth One structure half-buried in sand that the dragon has occupied for as long as anyone can remember. Every few years, some mage or scholar attempts to approach the dragon to speak with it. Every time, the dragon says nothing and puffs the pesky inquirer off the platform into the sands below."
+          "body": "A fortified outpost at the edge of Sunreach's great desert, Dustgate is the last reliable source of water, shelter, and information before the desert becomes nigh-impenetrable. It sits within viewing distance of one of Egyyt's favored resting sites: a Smooth One structure half-buried in sand that the dragon has occupied for as long as anyone can remember. Every few years, some mage or scholar attempts to approach the dragon to speak with it. Every time, the dragon says nothing and puffs the pesky inquirer off the platform into the sands below, usually unharmed, but minus their pride."
         },
         {
           "name": "Flycatch",

@@ -1,4 +1,3 @@
-/* Everden Player Guide — playable races. Set "enabled": false on any entry to hide it. */
 const races = [
   {
     "id": 0,

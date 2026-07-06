@@ -1,4 +1,3 @@
-/* Everden Player Guide — hero banner and section labels (page chrome, not tied to one tab). */
 const CONTENT = {};
 
 CONTENT.hero = {

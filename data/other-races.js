@@ -1,7 +1,6 @@
-/* Everden Player Guide — non-playable races shown on the Races tab: lore and flavor only, no mechanical traits. Set "enabled": false on any entry to hide it. */
 CONTENT.otherRaces = {
   "label": "Other Peoples of Everden",
-  "intro": "Not every people of Everden is available as a player race, but that doesn't mean they don't have a place in the world. These folk exist in the setting's fiction; if you're interested in playing one, talk to me and maybe we can figure out a way to make it work.",
+  "intro": "Not every species in Everden is available as a player race, but that doesn't mean they don't have a place in the world. These folk exist in the setting, so if you're interested in playing one, talk to me and maybe we can figure out a way to make it work.",
   "list": [
     {
       "enabled": true,

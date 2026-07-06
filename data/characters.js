@@ -1,4 +1,3 @@
-/* Everden Player Guide — Characters tab entries. To hide the whole tab, set CONTENT.tabs.characters to false in data/hero.js. Set "enabled": false on any single entry below to hide just that card. */
 CONTENT.characters = {
     "label": "Characters of Everden",
     "intro": "The folk below are some of the most talked-about figures in Everden. Click on a character to learn more. A card can be a single person or a whole group, and this list will grow as the campaign does.",

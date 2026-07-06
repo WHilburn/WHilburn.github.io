@@ -1,4 +1,3 @@
-/* Everden Player Guide — warlock patrons, shown on the Panthereon tab below the gods. */
 CONTENT.pantheon.patrons = {
       "label": "Warlock Patrons",
       "intro": "Not every power in Everden asks for worship. Some prefer a signature. The beings below are not gods, knowledge of them is more limited, and no temples are built to honor them, but each has been known to lend power to mortals willing to strike a bargain. If you are building a warlock, these are the patrons most often whispered about, though stranger arrangements are always possible.",
