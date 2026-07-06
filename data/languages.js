@@ -55,6 +55,15 @@ CONTENT.languages = {
         "script": "Script: Musical Notation",
         "desc": "Spoken by birds of all kinds. Contains sounds that no non-avian throat can fully reproduce, meaning most non-speakers learn only a rough approximation. Native speakers can always tell when they are being spoken to by an outsider, and they find it charming in the way that is almost condescending.",
         "restrict": null
+      },      
+      {
+        "extraClass": "",
+        "enabled": true,
+        "style": "",
+        "name": "Bubblese",
+        "script": "Script: Concentric circles arranged precisely",
+        "desc": "A language spoken very rarely by the terrestrial folk of Everden, but universally by the various aquatic residents of it's rivers, lakes, and seas, who have their own societies. Typically the only land-folk who learn this language (or fish folk who learn Collartongue) are merchants. Language scholars of Whiskerburrow have noted Bubblese language has a variety of dialects depending on the body of water.",
+        "restrict": null
       },
       {
         "extraClass": "restricted",

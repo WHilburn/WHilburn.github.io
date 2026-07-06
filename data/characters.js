@@ -29,26 +29,26 @@ CONTENT.characters = {
       },
       {
         "name": "The Forge Council",
-        "enabled": false,
+        "enabled": true,
         "title": "Governing Body of Iron-Tusk",
         "location": "Greygorge, Iron-Tusk",
         "iconBg": "#1f1010",
         "icon": "⚒️",
         "paragraphs": [
-          "Iron-Tusk is not ruled so much as operated. The Forge Council is a body of boar and horse guildmasters, each representing one of the nation's great industries, meeting in the Iron Hall beneath banners that nobody has bothered to decorate. They are headed by the Grand Tusk, an office held by whichever councilor the others distrust least, which its current holder has described as the only honest election in Everden.",
-          "The Council is blunt, slow to spend, and ruthlessly practical, which makes its recent behavior all the more interesting: three tunnels at Sootpass sealed by official order, an artificers' report delivered directly to the Grand Tusk, and a line item in the public budget labeled only \"containment\" that no councilor will explain."
+          "The Forge Council is a body of boar and horse guildmasters (and one very intimidating squirrel with an eyepatch and a prostetic arm), each representing one of the Iron-Tusk's main industries, meeting in the Iron Hall of New Pork city at a grand round table that is so wide that one must shout to be heard across it. They are headed by the Grand Tusk, an office held by whichever councilor the others distrust least, which its current holder has described as the only honest election in Everden.",
+          "The Council is practical before any other concern, which makes its recent behavior all the more interesting: three tunnels at Sootpass sealed by official order, an artificers' report delivered directly to the Grand Tusk, and a line item in the public budget labeled only \"redacted\" that no councilor will comment on publicly."
         ]
       },
       {
         "name": "The Sun Council",
-        "enabled": false,
+        "enabled": true,
         "title": "Ritual Keepers of Sunreach",
         "location": "Solanthis, Sunreach",
         "iconBg": "#221800",
         "icon": "☀️",
         "paragraphs": [
-          "The Sun Council does not campaign or explain, and it's decision making process is incredibly opaque. Its members, ancient ritual keepers drawn from the reptilefolk and amphibianfolk high clergy of Sunreach, meet at the highest point of the Solanthis temple complex at noon, every day. The rituals they keep honor most every god in the pantheon.",
-          "Outsiders find the Council maddening; Sunreach finds it comforting. Whatever the keepers are doing up there every noon, the nation has outlasted empires while doing it, and in Sunreach that is considered a complete argument."
+          "The Sun Council does not campaign or explain, and it's decision making process is infamously opaque. Its members, ancient ritual keepers drawn from the reptilefolk and amphibianfolk high clergy of Sunreach, meet at the highest point of the Solanthis temple complex at noon, every day. The rituals they keep honor most every god in the pantheon.",
+          "Outsiders on Sunreach find the Council maddening, but many citizens find it comforting. Whatever the keepers are doing up there every noon, the nation has outlasted empires and avoided most major conflicts while doing it."
         ]
       }
     ]
