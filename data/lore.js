@@ -68,7 +68,7 @@ CONTENT.lore = {
         "teaser": "A dispute that has ended dinners, marriages, and one court case.",
         "status": "Philosophical Dispute",
         "paragraphs": [
-          "Some Silent beasts can be taught, with enough time, or magic, to produce words: parrots that were born long after the Awakening and some clever corvids have been known to speak, and silent gorillas have even learned to use sign language. Sometimes the pets of mages or other animals that spend a lot of time near magical fonts develop the gift of gab. None of them, however, develop the physiological changes that make Awakened animalfolk different from their silent cousins, however. Far from offering a answer to what exactly the awakening was, these cases seem to only complicate the debate further.",
+          "Some Silent beasts can be taught, with enough time, or magic, to produce words: parrots that were born long after the Awakening and some clever corvids have been known to speak, and silent gorillas have even learned to use sign language. Sometimes the pets of mages or other animals that spend a lot of time near magical fonts develop the gift of gab. None of them, however, develop the physiological changes that make Awakened animalfolk different from their silent cousins. Far from offering a answer to what exactly the awakening was, these cases seem to only complicate the debate further.",
           "The dispute stopped being purely academic the day a Moonhowl hunter tried to enter her talking hound as a witness in a poaching dispute. The court declined. The hound, witnesses agree, seemed to take it personally."
         ]
       },
