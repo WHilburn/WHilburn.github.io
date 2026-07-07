@@ -25,7 +25,8 @@ CONTENT.lore = {
         "teaser": "The line every nation draws the same way, more or less.",
         "status": "Common Knowledge",
         "paragraphs": [
-          "Not every animal woke up during the Awakening, and the difference between Awakened folk and Silent beasts is something every child learns early: Awakened folk speak, reason, create, and are due the same basic respect regardless of species (this last part is not as universal a belief as would be nice). Silent animals do not do these things, and are treated as part of the natural world rather than participants in it."
+          "Not every animal woke up during the Awakening, and the difference between Awakened folk and Silent beasts is something every child learns early: Awakened folk speak, reason, create, and are due the same basic respect regardless of species (this last part is not as universal a belief as would be nice). Silent animals do not do these things, and are treated as part of the natural world rather than participants in it.",
+          "Perhaps more noticeably, awakened animalfolk look much different from their silent versions. Mousefolk for example stand around 3 feet tall upright, while their silent cousins aren't even 3 inches long. Horsefolk have hands with dexterous fingers and two hooved feet, allowing them to produce immaculate works in Iron-Tusk. All such animalfolk have some degree of changes to their physiology that allow them to build and use tools. Perhaps the animalfolk with the smallest differences from their silent cousins are Primatefolk, leading to rumors they are somehow the descendants of Smooth Ones."
         ]
       },
       {
@@ -69,6 +70,31 @@ CONTENT.lore = {
         "paragraphs": [
           "Some Silent beasts can be taught, with enough time, or magic, to produce words: parrots that were born long after the Awakening and some clever corvids have been known to speak, and silent gorillas have even learned to use sign language. Sometimes the pets of mages or other animals that spend a lot of time near magical fonts develop the gift of gab. None of them, however, develop the physiological changes that make Awakened animalfolk different from their silent cousins, however. These cases have led to a variety of",
           "The dispute stopped being purely academic the day a Moonhowl hunter tried to enter her talking hound as a witness in a poaching dispute. The court declined. The hound, witnesses agree, seemed to take it personally."
+        ]
+      },
+      {
+        "enabled": true,
+        "icon": "👺",
+        "iconBg": "#1a0f14",
+        "title": "Monsters lurking in the dark",
+        "teaser": "Not everything dangerous is Silent.",
+        "status": "Confirmed, Not Well Understood",
+        "paragraphs": [
+          "Not everything that lurks in a Smooth One ruin, a deep cave, or an unlit cellar is Silent, Awakened, or even properly alive. Adventurers who spend enough time underground learn to distrust suspiciously ornate chests, a lesson mimics have taught the hard way for generations. They know to prod suspicious floors before stepping on them, since a gelatinous cube is patient and famously undiscerning about what it dissolves, and that a displacer beast can cloak itself in illusion mere inches from you. Rust monsters, carrion crawlers, and worse round out the usual bestiary. Whether these things are native to the deep world, leftover Smooth One wildlife, or something the ruins themselves produce is a question that has nobody has been able to answer.",
+          ""
+        ]
+      },
+{
+        "enabled": true,
+        "icon": "🎭",
+        "iconBg": "#1a0f14",
+        "title": "The Semi-Awakened",
+        "teaser": "Not everything that stands upright is a person.",
+        "status": "Confirmed, Contested",
+        "paragraphs": [
+          "Somewhere between the Silent and the Awakened sits an uncomfortable middle category most scholars would rather not think too hard about. Small, feral, quick-breeding lizard-kin called Skitterscale infest ruin warrens in every nation, cunning enough to set snares and speak in a hissing pidgin, but never quite people by any Awakened nation's legal definition. Guttersnipes, their rat-kin equivalent, raid farms and caravans in ragged, disorganized bands and are, depressingly, smarter than most people want to admit. Similar feral cousins turn up among boar-kin and a handful of other species.",
+          "What Skitterscale, Guttersnipes, and their kin actually are is a source of great debate. Some theologians argue they are Awakened that lost whatever the Great Awakening gave everyone else. Others insist they were never Awakened at all, just unusually clever Silent beasts who happened to end up halfway there.",
+          "Some have advocated for kinder treatment for Skitterscale and Guttersnipes, and feel the term Semi Awakened is offensive. Attempts to contact these tribes peacefully often do not go well, as they tend to attack outsiders on sight. However, there are rumors of Skitterscale separated from their tribes that have been seen living peacefully alongside Awakened folks in small groups, away from society."
         ]
       }
     ]
