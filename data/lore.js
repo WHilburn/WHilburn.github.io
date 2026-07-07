@@ -89,7 +89,7 @@ CONTENT.lore = {
         "icon": "🎭",
         "iconBg": "#1a0f14",
         "title": "The Semi-Awakened",
-        "teaser": "Not everything that stands upright is a person.",
+        "teaser": "Is everything that stands upright Awakened?",
         "status": "Confirmed, Contested",
         "paragraphs": [
           "Somewhere between the Silent and the Awakened sits an uncomfortable middle category most scholars would rather not think too hard about. Small, feral, quick-breeding lizard-kin called Skitterscale infest ruin warrens in every nation, cunning enough to set snares and speak in a hissing pidgin, but never quite people by any Awakened nation's legal definition. Guttersnipes, their rat-kin equivalent, raid farms and caravans in ragged, disorganized bands and are, depressingly, smarter than most people want to admit. Similar feral cousins turn up among boar-kin and a handful of other species.",
