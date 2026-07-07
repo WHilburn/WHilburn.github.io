@@ -61,7 +61,7 @@ CONTENT.languages = {
         "style": "",
         "name": "Bubblese",
         "script": "Script: Concentric circles arranged precisely",
-        "desc": "A language used by the various aquatic residents of it's rivers, lakes, and seas, who have their own societies, but spoken very rarely by the terrestrial folk of Everden. Typically the only land-folk who learn this language (or fish folk who learn Collartongue) are merchants. Language scholars of Whiskerburrow have noted Bubblese language has a variety of dialects depending on the body of water.",
+        "desc": "A language used by the various aquatic residents of Everden's rivers, lakes, and seas, who have their own societies, but spoken very rarely by the terrestrial folk of Everden. Typically the only land-folk who learn this language (or fish folk who learn Collartongue) are merchants. Language scholars of Whiskerburrow have noted the Bubblese language has a variety of dialects depending on the body of water.",
         "restrict": null
       },
       {
