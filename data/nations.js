@@ -6,7 +6,7 @@ CONTENT.nations = [
       "badge": "The Heart of Everden",
       "desc": [
         "A sophisticated union of cats and dogs, though home to many folk. The masters of trade, luxury, and diplomacy, Goldcollar is the closest thing Everden has to a cosmopolitan heart. Its capital, Petsburg, is a waterfront city where fortunes are made and lost over a single evening's dinner.",
-        "Home to multiple mage colleges and a thriving market for enchanted goods. Artificers sell their wares openly in Petsburg, and magic items scavenged from ruins fetch high prices at auction. The surrounding countryside hides old Smooth One structures beneath overgrown hills, drawing adventurers and treasure hunters, as well as bandits and plunderers."
+        "Home to multiple mage colleges, including the Petsburg Academy of Wizardry, and a thriving market for enchanted goods. Artificers sell their wares openly in Petsburg, and magic items scavenged from ruins fetch high prices at auction. The surrounding countryside hides old Smooth One structures beneath overgrown hills, drawing adventurers and treasure hunters, as well as bandits and plunderers."
       ],
       "values": [
         "Elegance",
