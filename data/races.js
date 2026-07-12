@@ -17,7 +17,7 @@ const races = [
       },
       {
         "n": "Leaping Lunge",
-        "d": "Your long jump and high jump distance is tripled."
+        "d": "Your long jump and high jump distance is doubled."
       },
       {
         "n": "Darkvision",
@@ -201,7 +201,7 @@ const races = [
     "traits": [
       {
         "n": "Natural Armor",
-        "d": "You have tough, scaly skin. When unarmored, your AC equals 13 + your Dexterity modifier. You can use a shield and still benefit from this trait (this does not stack with unarmored defense skills from classes like barbarian and monk)."
+        "d": "You have tough, scaly skin. When you aren't wearing any armor, your base Armor Class equals 12 plus your Dexterity modifier. You can use a Shield and still gain this benefit (this does not stack with unarmored defense skills from classes like barbarian and monk)."
       },
       {
         "n": "Wall Crawler",
