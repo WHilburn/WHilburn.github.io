@@ -4,6 +4,7 @@ const races = [
     "enabled": true,
     "name": "Lapine",
     "animal": "Rabbit / hare",
+    "icons": ["🐰"],
     "size": "Small or Medium",
     "speed": 35,
     "traits": [
@@ -36,6 +37,7 @@ const races = [
     "enabled": true,
     "name": "Murinae",
     "animal": "Mouse / rat / squirrel",
+    "icons": ["🐭","🐿️"],
     "size": "Small (Mouse) or Medium (Rat and Squirrel)",
     "speed": 30,
     "traits": [
@@ -68,6 +70,7 @@ const races = [
     "enabled": true,
     "name": "Vulpine",
     "animal": "Fox / wolf",
+    "icons": ["🦊","🐺"],
     "size": "Medium",
     "speed": 30,
     "traits": [
@@ -100,6 +103,7 @@ const races = [
     "enabled": true,
     "name": "Musteline",
     "animal": "Badger / mole / otter / weasel",
+    "icons": ["🦡","🦦"],
     "size": "Small or Medium",
     "speed": 30,
     "traits": [
@@ -132,6 +136,7 @@ const races = [
     "enabled": true,
     "name": "Avian",
     "animal": "Crow / owl / sparrow / peacock",
+    "icons": ["🐦‍⬛","🦉","🐦","🦚"],
     "size": "Small or Medium",
     "speed": 30,
     "traits": [
@@ -164,6 +169,7 @@ const races = [
     "enabled": true,
     "name": "Ranine",
     "animal": "Frog / toad",
+    "icons": ["🐸"],
     "size": "Small or Medium",
     "speed": 30,
     "traits": [
@@ -196,6 +202,7 @@ const races = [
     "enabled": true,
     "name": "Lacertine",
     "animal": "Lizard / gecko / skink",
+    "icons": ["🦎"],
     "size": "Medium",
     "speed": 30,
     "traits": [
@@ -228,6 +235,7 @@ const races = [
     "enabled": true,
     "name": "Ursine",
     "animal": "Bear",
+    "icons": ["🐻"],
     "size": "Medium (tall)",
     "speed": 30,
     "traits": [
@@ -260,6 +268,7 @@ const races = [
     "enabled": true,
     "name": "Equine",
     "animal": "Horse",
+    "icons": ["🐴"],
     "size": "Medium (tall)",
     "speed": 35,
     "traits": [
@@ -292,6 +301,7 @@ const races = [
     "enabled": true,
     "name": "Cervine",
     "animal": "Deer / boar",
+    "icons": ["🦌","🐗"],
     "size": "Medium",
     "speed": 30,
     "traits": [
@@ -324,6 +334,7 @@ const races = [
     "enabled": true,
     "name": "Canine",
     "animal": "Dog",
+    "icons": ["🐕"],
     "size": "Medium",
     "speed": 30,
     "traits": [
@@ -356,6 +367,7 @@ const races = [
     "enabled": true,
     "name": "Feline",
     "animal": "Cat",
+    "icons": ["🐈"],
     "size": "Small or Medium",
     "speed": 35,
     "traits": [
@@ -382,5 +394,170 @@ const races = [
     ],
     "feat": "Skulker or Alert",
     "lore": "Feline-folk are infuriatingly self-possessed. Serene in crisis, curious at the worst moments, and possessed of an independence that their allies sometimes call unhelpful. Domestic cat-folk are urban sophisticates who move through cities like shadows; wilder cat-folk such as lynx or bobcat lineages tend toward solitary ranger lives deep in unclaimed territory."
+  },
+  {
+    "id": 12,
+    "enabled": true,
+    "name": "Chiropteran",
+    "animal": "Bat",
+    "icons": ["🦇"],
+    "size": "Small or Medium",
+    "speed": 30,
+    "traits": [
+      {
+        "n": "Echolocation",
+        "d": "While you aren't deafened, you have Blindsight with a range of 20 feet."
+      },
+      {
+        "n": "Darkvision",
+        "d": "You have Darkvision with a range of 60 feet."
+      },
+      {
+        "n": "Wing Membranes",
+        "d": "When you fall at least 10 feet above the ground, you can use your Reaction to extend your wing membranes and glide horizontally a number of feet equal to your walking speed, taking no damage from the fall. You determine the direction of the glide."
+      },
+      {
+        "n": "Sonic Screech",
+        "d": "As a Bonus Action, you can emit a piercing screech at one creature within 30 feet of you. That creature must succeed on a Constitution saving throw (DC = 8 + your Proficiency Bonus + your Constitution modifier) or be Deafened and have disadvantage on attack rolls until the end of your next turn. Once you use this trait, you can't use it again until you finish a Short or Long Rest."
+      },
+      {
+        "n": "Keen Hearing",
+        "d": "You have advantage on Wisdom (Perception) checks that rely on hearing."
+      }
+    ],
+    "feat": "Skulker or Mobile",
+    "lore": "Bat-folk are creatures of dusk and deep places, as at home hanging from the rafters of a Whiskerburrow library after hours as they are roosting in the crypts and mist-shrouded belfries of Carrovia. They are surprisingly social once you get past their nocturnal schedule, favoring dense, chattering colonies over solitary living, and their famously excellent hearing makes them prized messengers and lookouts in any nation willing to keep sensible hours. Carrovia's recent troubles have done wonders for the local bat-folk population's reputation as an unofficial night watch, whether or not the Count has ever formally thanked them for it."
+  },
+  {
+    "id": 13,
+    "enabled": true,
+    "name": "Serpentine",
+    "animal": "Snake",
+    "icons": ["🐍"],
+    "size": "Small or Medium",
+    "speed": 30,
+    "traits": [
+      {
+        "n": "Darkvision",
+        "d": "You have Darkvision with a range of 60 feet."
+      },
+      {
+        "n": "Poison Resilience",
+        "d": "You have advantage on saving throws you make to avoid or end the Poisoned condition on yourself. You also have resistance to poison damage."
+      },
+      {
+        "n": "Venomous Bite",
+        "d": "You have sharp fangs that you can use to make unarmed strikes. When you hit with them, the strike deals 1d4 piercing damage plus 1d4 poison damage, instead of the bludgeoning damage normal for an unarmed strike."
+      },
+      {
+        "n": "Serpentine Spellcasting",
+        "d": "You know the Poison Spray cantrip. You can also cast Animal Friendship an unlimited number of times with this trait, but you can target only silent snakes with it. Intelligence, Wisdom, or Charisma is your spellcasting ability for these spells when you cast them with this trait (choose when you select this race)."
+      },
+      {
+        "n": "Beguiling Tongue",
+        "d": "You have proficiency in the Deception or Persuasion skill (your choice)."
+      }
+    ],
+    "feat": "Actor or Magic Initiate",
+    "lore": "Snake-folk communities can be found in Sunreach's desert and jungle interiors, keeping mostly to themselves, in part because the coiled-serpent sigil associated with the outlawed cult of the Viper Beneath has made casual introductions harder than they should be for a people who had nothing to do with choosing that symbol. Those who do get to know a Serpentine family tend to describe them as dryly funny and big fans of hot places. Sunreach's Sun Council has, on more than one occasion, quietly intervened on behalf of Serpentine communities facing suspicion they did nothing to earn."
+  },
+  {
+    "id": 14,
+    "enabled": true,
+    "name": "Primate",
+    "animal": "Monkey / chimp / gorilla / orangutan",
+    "icons": ["🐒","🦍","🦧"],
+    "size": "Small or Medium",
+    "speed": 30,
+    "traits": [
+      {
+        "n": "Canopy Climber",
+        "d": "You have a Climb speed equal to your walking speed."
+      },
+      {
+        "n": "Dexterous Feet",
+        "d": "As a Bonus Action, you can use your feet to manipulate an object, open or close a door or container, or pick up or set down a Tiny object."
+      },
+      {
+        "n": "Nimble Swinger (Monkey/Chimp) OR Powerful Frame (Gorilla/Orangutan)",
+        "d": "Monkey/Chimp: You can move through the space of a creature one size larger than you without provoking an Opportunity Attack, and vine-choked or rubble-strewn terrain costs you no extra movement. Gorilla/Orangutan: You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift, and you have advantage on Strength (Athletics) checks made to climb or grapple."
+      },
+      {
+        "n": "Bracing Reflex",
+        "d": "The instincts that keep you safe in the high canopy heighten your reactions elsewhere too. When you take damage, you can use your Reaction to roll a d6, add your Proficiency Bonus to the number rolled, and reduce the damage you take by that total (minimum 0 damage). You can use this trait a number of times equal to your Proficiency Bonus, and you regain all expended uses when you finish a Long Rest."
+      },
+      {
+        "n": "Natural Storyteller",
+        "d": "You have proficiency in the Performance or Persuasion skill (your choice)."
+      }
+    ],
+    "feat": "Athlete or Actor",
+    "lore": "In the jungles of Sunreach live animalfolk unlike any other in Everden, at home high in the canopy where the reptilefolk and toadfolk who dominate the nation rarely bother to climb. Monkey and chimp lineages tend to move in tight, lively troupes and are quick with both wit and dexterity, while gorilla and orangutan lineages are more often found alone or in small family groups, making good livings elsewhere as bodyguards when a negotiation calls for someone very large to stand quietly in the corner. Primate-folk are Everden's best natural climbers, as well as some of the best storytellers. Some believe they share a connection to the smooth ones, but this is seen as a crackpot theory, after all, they're the least smooth skinned people in Everden."
+  },
+  {
+    "id": 15,
+    "enabled": true,
+    "name": "Chelonian",
+    "animal": "Turtle / tortoise",
+    "icons": ["🐢"],
+    "size": "Small or Medium",
+    "speed": 30,
+    "traits": [
+      {
+        "n": "Claws",
+        "d": "You have claws that you can use to make unarmed strikes. When you hit with them, the strike deals 1d6 + your Strength modifier slashing damage, instead of the bludgeoning damage normal for an unarmed strike."
+      },
+      {
+        "n": "Hold Breath",
+        "d": "You can hold your breath for up to 1 hour."
+      },
+      {
+        "n": "Natural Armor",
+        "d": "Your shell provides you a base Armor Class of 15. Your Dexterity modifier doesn't affect this number. You can't wear light, medium, or heavy armor, but you can still benefit from a shield."
+      },
+      {
+        "n": "Nature's Intuition",
+        "d": "You gain proficiency in one of the following skills of your choice: Animal Handling, Medicine, Nature, Perception, Stealth, or Survival."
+      },
+      {
+        "n": "Shell Defense",
+        "d": "You can withdraw into your shell as an Action. Until you emerge, you gain a +4 bonus to your AC, and you have advantage on Strength and Constitution saving throws. While in your shell, you are Prone, your Speed is 0 and can't increase, you have disadvantage on Dexterity saving throws, you can't take Reactions, and the only action you can take is a Bonus Action to emerge from your shell."
+      }
+    ],
+    "feat": "Tough or Sentinel",
+    "lore": "Turtle-folk rarely settle anywhere permanently, and the ones who do tend to pick somewhere ancient, such as a mountain pass too remote for most trade caravans to bother with. Chelonian communities are small, very long-lived, and treated with respect by nearly everyone. It's believed that any given turtle-folk might live long enough to remember your deeds and either repay your kindness to your descendants, or your cruelty. Chelonians are the longest-lived people of any known mortal race, and receiving wisdom from one is said to be life changing."
+  },
+  {
+    "id": 16,
+    "enabled": true,
+    "name": "Racyonid",
+    "animal": "Raccoon / tanuki / possum",
+    "icons": ["🦝", "🍁"],
+    "size": "Small or Medium",
+    "speed": 30,
+    "traits": [
+      {
+        "n": "Clever Paws",
+        "d": "You have proficiency in the Sleight of Hand skill."
+      },
+      {
+        "n": "Darkvision",
+        "d": "You have Darkvision with a range of 60 feet."
+      },
+      {
+        "n": "Iron Stomach",
+        "d": "You have advantage on saving throws against poison or sickness caused by eating spoiled, rotten, or otherwise ill-advised food, and such food never makes you sick."
+      },
+      {
+        "n": "Trash Sense",
+        "d": "You have advantage on Wisdom (Perception) checks made to find hidden or discarded objects, valuables, or food, and you can always tell whether food is safe to eat."
+      },
+      {
+        "n": "Masked Bandit (Raccoon) OR Shapeshifter's Trick (Tanuki) OR Feigned Death (Possum)",
+        "d": "Raccoon: You have advantage on ability checks made to pick locks or disarm traps, and you can use thieves' tools even if you lack proficiency with them. Tanuki: You can cast Disguise Self once without expending a spell slot, using Charisma as your spellcasting ability. You regain the ability to do so when you finish a Long Rest. Possum: As an Action, you can fall unconscious and appear dead for up to 10 minutes, or until you take damage or choose to end the effect (no action required). While feigning death this way, you have resistance to all damage, and creatures have disadvantage on checks made to determine that you aren't actually dead. Once you use this trait, you can't use it again until you finish a Short or Long Rest."
+      }
+    ],
+    "feat": "Skulker or Actor",
+    "lore": "Procyonid-folk turned up in Whiskerburrow generations ago and simply never left, charming (and infuriating) their badger and mouse neighbors in roughly equal measure. Raccoon lineages are the classic troublemakers: quick-fingered, endlessly curious, and constitutionally unable to walk past an unlocked door or an unattended pie. Tanuki lineages lean into the family reputation for trickery on purpose, delighting in elaborate pranks and the occasional convincing disguise, while possum lineages are the quiet, easily startled cousins who would rather flop over and play dead than deal with a confrontation, a strategy that works more often than it has any right to. All three share an inexplicable fondness for trash, treasure, and the fine line between the two."
   }
 ];

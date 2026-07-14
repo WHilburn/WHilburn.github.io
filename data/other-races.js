@@ -4,18 +4,6 @@ CONTENT.otherRaces = {
   "list": [
     {
       "enabled": true,
-      "icon": "🐍",
-      "iconBg": "#101a10",
-      "name": "Serpentine",
-      "subtitle": "Snakes",
-      "paragraphs": [
-        "Snake-folk communities can be found in Sunreach's desert and jungle interiors, keeping mostly to themselves, in part because the coiled-serpent sigil associated with the outlawed cult of the Viper Beneath has made casual introductions harder than they should be for a people who had nothing to do with choosing that symbol.",
-        "Those who do get to know a Serpentine family tend to describe them as dryly funny and big fans of hot places. Sunreach's Sun Council has, on more than one occasion, quietly intervened on behalf of Serpentine communities facing suspicion they did nothing to earn."
-      ],
-      "tags": ["Sunreach", "Reclusive", "Unfairly Feared"]
-    },
-    {
-      "enabled": true,
       "icon": "🐟",
       "iconBg": "#0a1a22",
       "name": "Piscine",
@@ -36,30 +24,6 @@ CONTENT.otherRaces = {
         "Crustacean-folk are famously long-lived, and its considered extremely rude to ask one directly how many shells they've outgrown."
       ],
       "tags": ["Goldcollar coast", "Dockworkers", "Long-Lived"]
-    },
-    {
-      "enabled": true,
-      "icon": "🐢",
-      "iconBg": "#141d10",
-      "name": "Chelonian",
-      "subtitle": "Turtles, Tortoises",
-      "paragraphs": [
-        "Turtle-folk rarely settle anywhere permanently, and the ones who do tend to pick somewhere ancient, such as a mountain pass too remote for most trade caravans to bother with. Chelonian communities are small, very long-lived, and treated with respect by nearly everyone. It's believed that any given turtle-folk might live long enough to remember your deeds and either repay your kindness to your descendants, or your cruelty.",
-        "Chelonians are the longest-lived people of any known mortal race, and receiving wisdom from one is said to be life changing."
-      ],
-      "tags": ["Nomadic", "Ancient", "Ruin-Adjacent"]
-    },
-    {
-      "enabled": true,
-      "icon": "🐒",
-      "iconBg": "#160f1c",
-      "name": "Primate",
-      "subtitle": "Monkeys, Chimps, Gorillas, Orangutans",
-      "paragraphs": [
-        "In the jungles of Sunreach live animalfolk unlike any other in Everden, at home high in the canopy where the reptilefolk and toadfolk who dominate the nation rarely bother to climb. Monkey and chimp lineages tend to move in tight, lively troupes and are quick with both wit and dexterity, while gorilla and orangutan lineages are more often found alone or in small family groups, making good livings elsewhere as bodyguards when a negotiation calls for someone very large to stand quietly in the corner.",
-        "Primate-folk are Everden's best natural climbers, as well as some of the best storytellers. Some believe they share a connection to the smooth ones, but this is seen as a crackpot theory, after all, they're the least smooth skinned people in Everden."
-      ],
-      "tags": ["Sunreach jungles", "Canopy-Dwellers", "Ruin-Divers"]
     },
     {
       "enabled": false,

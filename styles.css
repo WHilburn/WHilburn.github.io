@@ -295,6 +295,19 @@ body{
   gap:12px;
   margin-bottom:12px;
 }
+.card-heading{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  min-width:0;
+}
+.card-icons{
+  flex-shrink:0;
+  font-size:1.6rem;
+  line-height:1.1;
+  white-space:nowrap;
+}
+.card-icons-lg{ font-size:2.2rem; }
 .card-name{ font-size:1.25rem; font-weight:700; }
 .card-animal{ color:var(--muted); font-size:.92rem; }
 .speed{

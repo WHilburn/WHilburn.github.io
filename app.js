@@ -208,9 +208,12 @@ function showDetail(id){
     <button class="back" onclick="showGrid()">← Back to all races</button>
     <div class="detail-card">
       <div class="detail-header">
-        <div>
-          <div class="detail-title">${r.name}</div>
-          <div class="detail-sub">${r.animal} · ${r.size} · ${r.speed} ft speed</div>
+        <div class="card-heading">
+          <div class="card-icons card-icons-lg">${(r.icons||[]).join(' ')}</div>
+          <div>
+            <div class="detail-title">${r.name}</div>
+            <div class="detail-sub">${r.animal} · ${r.size} · ${r.speed} ft speed</div>
+          </div>
         </div>
         <div class="pills"><div class="pill">${r.traits.length} Traits</div></div>
       </div>
@@ -238,7 +241,10 @@ function renderRaces(){
   grid.innerHTML=filtered.map(r=>`
     <div class="card" onclick="showDetail(${r.id})">
       <div class="card-top">
-        <div><div class="card-name">${r.name}</div><div class="card-animal">${r.animal}</div></div>
+        <div class="card-heading">
+          <div class="card-icons">${(r.icons||[]).join(' ')}</div>
+          <div><div class="card-name">${r.name}</div><div class="card-animal">${r.animal}</div></div>
+        </div>
         <div class="speed">${r.speed} ft</div>
       </div>
       <div class="pills"><div class="pill">${r.size}</div><div class="pill">${r.traits.length} traits</div></div>
