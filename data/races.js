@@ -399,9 +399,9 @@ const races = [
     "id": 12,
     "enabled": true,
     "name": "Chiropteran",
-    "animal": "Bat",
+    "animal": "Bat (Microbat or Megabat)",
     "icons": ["🦇"],
-    "size": "Small or Medium",
+    "size": "Small (Microbat) or Medium (Megabat)",
     "speed": 30,
     "traits": [
       {
@@ -426,7 +426,7 @@ const races = [
       }
     ],
     "feat": "Skulker or Mobile",
-    "lore": "Bat-folk are creatures of dusk and deep places, as at home hanging from the rafters of a Whiskerburrow library after hours as they are roosting in the crypts and mist-shrouded belfries of Carrovia. They are surprisingly social once you get past their nocturnal schedule, favoring dense, chattering colonies over solitary living, and their famously excellent hearing makes them prized messengers and lookouts in any nation willing to keep sensible hours. Carrovia's recent troubles have done wonders for the local bat-folk population's reputation as an unofficial night watch, whether or not the Count has ever formally thanked them for it."
+    "lore": "Bat-folk are nocturnal folk who feel just as at home hanging from the rafters of a Whiskerburrow library as they are roosting in mist-shrouded belfries of Carrovia. They are surprisingly social if you can match their nocturnal schedule, favoring dense, chattering colonies over solitary living, and their famously excellent hearing makes them prized guards and lookouts in any nation. While some Diurnal animalfolk do not enjoy the noise created by a people who are mostly active at night, savvy business owners know that batfolk can single-wingedly support a city's nightlife."
   },
   {
     "id": 13,
@@ -447,7 +447,7 @@ const races = [
       },
       {
         "n": "Venomous Bite",
-        "d": "You have sharp fangs that you can use to make unarmed strikes. When you hit with them, the strike deals 1d4 piercing damage plus 1d4 poison damage, instead of the bludgeoning damage normal for an unarmed strike."
+        "d": "You have sharp fangs that you can use to make unarmed strikes. When you hit with them, the strike deals 1d4 piercing damage instead of the bludgeoning damage normal for an unarmed strike. Once per short rest you can add 1d6 poison damage to an unarmed strike."
       },
       {
         "n": "Serpentine Spellcasting",
@@ -459,7 +459,7 @@ const races = [
       }
     ],
     "feat": "Actor or Magic Initiate",
-    "lore": "Snake-folk communities can be found in Sunreach's desert and jungle interiors, keeping mostly to themselves, in part because the coiled-serpent sigil associated with the outlawed cult of the Viper Beneath has made casual introductions harder than they should be for a people who had nothing to do with choosing that symbol. Those who do get to know a Serpentine family tend to describe them as dryly funny and big fans of hot places. Sunreach's Sun Council has, on more than one occasion, quietly intervened on behalf of Serpentine communities facing suspicion they did nothing to earn."
+    "lore": "Snake-folk communities can be found in Sunreach's desert and jungle interiors, keeping mostly to themselves, in part because the serpent sigil associated with the outlawed cult of the Viper Beneath has made introductions harder than they should be for a people who had nothing to do with choosing that symbol. Those who do get to know a Serpentine family tend to describe them as dryly funny and big fans of hot places. Sunreach's Sun Council has, on more than one occasion, quietly intervened on behalf of Serpentine communities facing suspicion they did nothing to earn."
   },
   {
     "id": 14,
@@ -467,7 +467,7 @@ const races = [
     "name": "Primate",
     "animal": "Monkey / chimp / gorilla / orangutan",
     "icons": ["🐒","🦍","🦧"],
-    "size": "Small or Medium",
+    "size": "Small (Chimp) or Medium (All Others)",
     "speed": 30,
     "traits": [
       {
