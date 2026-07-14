@@ -533,7 +533,7 @@ const races = [
     "name": "Racyonid",
     "animal": "Raccoon / tanuki / possum",
     "icons": ["🦝", "🍁"],
-    "size": "Small or Medium",
+    "size": "Small",
     "speed": 30,
     "traits": [
       {
@@ -549,16 +549,16 @@ const races = [
         "d": "You have advantage on saving throws against poison or sickness caused by eating spoiled, rotten, or otherwise ill-advised food, and such food never makes you sick."
       },
       {
-        "n": "Trash Sense",
-        "d": "You have advantage on Wisdom (Perception) checks made to find useful junk, hidden objects, or food, and you can always tell whether food is safe to eat."
+        "n": "Pack Tactics",
+        "d": "You have advantage on an attack roll against a creature if at least one of your allies is within 5 feet of the creature and the ally isn't incapacitated."
       },
       {
         "n": "Scrap Contraption (Raccoon) OR Trickster's Guise (Tanuki) OR Feigned Death (Possum)",
-        "d": "Raccoon: Given ten minutes and a pile of junk or scrap, you can cobble together a simple, temporary Contraption, such as a noisemaker, a small trap, or a crude tool. It functions until you finish your next Long Rest, at which point it falls apart. You can have only one Contraption active at a time. Tanuki: You can cast Disguise Self once without expending a spell slot, using Charisma as your spellcasting ability. You regain the ability to do so when you finish a Long Rest. Possum: As an Action, you can fall unconscious and appear dead for up to 10 minutes, or until you take damage or choose to end the effect (no action required). While feigning death this way, you have resistance to all damage, and creatures have disadvantage on checks made to determine that you aren't actually dead. Once you use this trait, you can't use it again until you finish a Short or Long Rest."
+        "d": "Raccoon: Given ten minutes and a pile of junk or scrap, you can cobble together a simple, temporary Contraption, such as a noisemaker, a small trap, or a crude tool. It functions until you finish your next Long Rest, at which point it falls apart. You can have only one Contraption active at a time. Tanuki: You can cast Alter Self once without expending a spell slot, using Charisma as your spellcasting ability. You regain the ability to do so when you finish a Long Rest. Possum: As a Reaction to shocking situations or taking damage, or an Action at any time, you can cast Feign Death targeting yourself, needing no components. Once you use this trait, you can't use it again until you finish a Short or Long Rest."
       }
     ],
     "feat": "Crafter or Actor",
-    "lore": "Racyonid-folk turned up in Whiskerburrow generations ago and simply never left, charming (and occasionally exasperating) their badger and mouse neighbors in roughly equal measure. Raccoon lineages are the tinkerers of the family, endlessly curious and rarely without some half-finished contraption built from spare parts, scrap metal, and whatever else they managed to drag home that week. Tanuki lineages lean fully into the family reputation for trickery, delighting in elaborate pranks and the occasional very convincing disguise. Possum lineages are the quiet, easily startled cousins who would rather flop over and play dead than deal with a confrontation, a strategy that works more often than it has any right to. All three share an inexplicable fondness for trash, treasure, and the fine line between the two."
+    "lore": "Racyonid-folk are scattered all over, and are known for charming and exasperating their neighbors in equal measure. Raccoon lineages are the tinkerers and collectors, endlessly curious and rarely without some half-finished contraption built from spare parts, scrap metal, and whatever else they managed to drag home that week. Tanuki lineages lean fully into the family reputation for trickery, delighting in elaborate pranks and tapping into ancestral magics to disguise themselves. Possum lineages are the quiet, easily startled cousins who would rather flop over and play dead than deal with a confrontation, a strategy that works more often than you might expect it to. All three share an inexplicable fondness for trash and shiny things."
   },
   {
     "id": 17,
@@ -591,6 +591,6 @@ const races = [
       }
     ],
     "feat": "Tough or Grappler",
-    "lore": "Elephant-folk are rare enough that most Awakened have only ever seen one from a respectful distance, and old enough by the time they're taken seriously that most of what's said about them is filtered through decades of built-up patience. Proboscideans favor slow, deliberate lives measured in centuries rather than years, and caravans across every nation have been known to hire on a single elephant-folk elder as much for their unshakeable calm as for their memory, which is exactly as reliable as the old jokes claim. They are rarely in a hurry, and even more rarely wrong about something they've decided to remember."
+    "lore": "Elephant-folk favor slow, deliberate lives that rival turtle-folk in lifespans, and caravans across every nation have been known to hire on a single elephant-folk elder as much for their unshakeable calm as for their memory, which is exactly as reliable as the old jokes claim. They are rarely in a hurry, and even more rarely wrong about something they've decided to remember. Some claim to have an innate, genetic fear of mouse-folk, but most claim this is just an overblown paranoia of accidentally stepping on people much smaller than yourself."
   }
 ];
