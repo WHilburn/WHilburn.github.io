@@ -559,5 +559,38 @@ const races = [
     ],
     "feat": "Crafter or Actor",
     "lore": "Racyonid-folk turned up in Whiskerburrow generations ago and simply never left, charming (and occasionally exasperating) their badger and mouse neighbors in roughly equal measure. Raccoon lineages are the tinkerers of the family, endlessly curious and rarely without some half-finished contraption built from spare parts, scrap metal, and whatever else they managed to drag home that week. Tanuki lineages lean fully into the family reputation for trickery, delighting in elaborate pranks and the occasional very convincing disguise. Possum lineages are the quiet, easily startled cousins who would rather flop over and play dead than deal with a confrontation, a strategy that works more often than it has any right to. All three share an inexplicable fondness for trash, treasure, and the fine line between the two."
+  },
+  {
+    "id": 17,
+    "enabled": true,
+    "name": "Proboscidean",
+    "animal": "Elephant",
+    "icons": ["🐘"],
+    "size": "Medium (tall)",
+    "speed": 30,
+    "traits": [
+      {
+        "n": "Powerful Build",
+        "d": "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+      },
+      {
+        "n": "Serene Mind",
+        "d": "You have advantage on saving throws against being Charmed or Frightened."
+      },
+      {
+        "n": "Natural Armor",
+        "d": "You have thick, leathery skin. When you aren't wearing armor, your AC equals 12 + your Constitution modifier. You can use a shield and still benefit from this trait (this does not stack with unarmored defense skills from classes like barbarian and monk)."
+      },
+      {
+        "n": "Trunk",
+        "d": "You can use your trunk to grasp objects and creatures. It has a reach of 5 feet and can lift a number of pounds equal to five times your Strength score. You can use it to lift, drop, hold, push, or pull an object or a creature, open or close a door or container, Grapple a creature, or make an unarmed strike, but it can't wield weapons or shields, use tools or magic items, or perform the somatic components of a spell."
+      },
+      {
+        "n": "Keen Smell",
+        "d": "Thanks to your sensitive trunk, you have advantage on Wisdom (Perception), Wisdom (Survival), and Intelligence (Investigation) checks that involve smell."
+      }
+    ],
+    "feat": "Tough or Grappler",
+    "lore": "Elephant-folk are rare enough that most Awakened have only ever seen one from a respectful distance, and old enough by the time they're taken seriously that most of what's said about them is filtered through decades of built-up patience. Proboscideans favor slow, deliberate lives measured in centuries rather than years, and caravans across every nation have been known to hire on a single elephant-folk elder as much for their unshakeable calm as for their memory, which is exactly as reliable as the old jokes claim. They are rarely in a hurry, and even more rarely wrong about something they've decided to remember."
   }
 ];
