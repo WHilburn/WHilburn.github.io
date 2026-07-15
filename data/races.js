@@ -334,7 +334,7 @@ const races = [
     "enabled": true,
     "name": "Canine",
     "animal": "Dog",
-    "icons": ["🐕"],
+    "icons": ["🐶"],
     "size": "Medium",
     "speed": 30,
     "traits": [
@@ -367,7 +367,7 @@ const races = [
     "enabled": true,
     "name": "Feline",
     "animal": "Cat",
-    "icons": ["🐈"],
+    "icons": ["😼"],
     "size": "Small or Medium",
     "speed": 35,
     "traits": [
