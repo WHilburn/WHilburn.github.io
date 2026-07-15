@@ -179,7 +179,7 @@ const races = [
       },
       {
         "n": "Leaping Lunge",
-        "d": "Your long jump and high jump distance is tripled."
+        "d": "Your long jump and high jump distance is doubled."
       },
       {
         "n": "Sticky Tongue",
