@@ -84,7 +84,7 @@ CONTENT.lore = {
           ""
         ]
       },
-{
+      {
         "enabled": true,
         "icon": "🎭",
         "iconBg": "#1a0f14",
@@ -95,6 +95,29 @@ CONTENT.lore = {
           "Somewhere between the Silent and the Awakened sits an uncomfortable middle category most scholars would rather not think too hard about. Small, feral, quick-breeding lizard-kin called Skitterscale infest ruin warrens in every nation, cunning enough to set snares and speak in a hissing pidgin, but not quite considered people by any nation's legal definition. Guttersnipes, their rat-kin equivalent, raid farms and caravans in ragged, disorganized bands and are smarter than most people want to admit. Similar feral cousins turn up among boar-kin and a handful of other species.",
           "What Skitterscale, Guttersnipes, and their kin actually are is a source of great debate. Some theologians argue they are Awakened that lost whatever the Great Awakening gave everyone else. Others insist they were never Awakened at all, just unusually clever Silent beasts who happened to end up halfway there.",
           "Some have advocated for kinder treatment for Skitterscale and Guttersnipes, and feel the term Semi-Awakened is offensive. Attempts to contact these tribes peacefully often do not go well, as they tend to attack outsiders on sight. However, there are rumors of Skitterscale separated from their tribes that have been seen living peacefully alongside Awakened folks in small groups, away from society."
+        ]
+      },
+      {
+        "enabled": true,
+        "icon": "❓",
+        "iconBg": "#1a0f14",
+        "title": "The Unwoken",
+        "teaser": "Did some animal species never awake?",
+        "status": "Contested",
+        "paragraphs": [
+          "It's been confirmed that all awakened animalfolks seem to have a silent animal counterpart species, but the reverse is not always true. Everden is comprised of tons of animalfolk species, but there are even more species of silent animals that are not known to have an awakened counterpart species, such as whales, platypus, capybara, herons, and vultures. Most conspicuously absent are awakened insectfolk, which leading awakening scholars claim are an impossibility, as insects are too mindless to evolve into anything greater, or that they are simply not animals and were never eligible to awaken.",
+          "Other animal species, only known of through fossils and recovered Smooth One texts and illustrations, seem to have gone extinct entirely. Some researches have made claims that somewhere out there, these animalfolk and their awakened cousins may exist still."
+        ]
+      },
+      {
+        "enabled": true,
+        "icon": "☁️",
+        "iconBg": "#1a0f14",
+        "title": "Creatures that live in the clouds",
+        "teaser": "Is there intelligent life way up high?",
+        "status": "Crackpot conspiracy",
+        "paragraphs": [
+          "The birdfolk of Everden have limited flight abilities, but talented mages and wielders of magic items that grant flight have claimed incredible, massive winged creatures not only live in the clouds, but build massive castles in them. Scholars will tell you this is complete nonsense."
         ]
       }
     ]
