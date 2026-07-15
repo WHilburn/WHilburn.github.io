@@ -162,7 +162,7 @@ const races = [
       }
     ],
     "feat": "Observant (owl/crow) or Healer (sparrow)",
-    "lore": "Avian-kind soar above the concerns of ground-bound folk, sometimes literally. Crow-folk are treasure-hunters and talespinners, fascinated by shiny objects and secret lore. Owl-folk are scholars and seers, moving through the night with uncanny silence. Sparrow-folk are the most sociable, building vast communal roosts and renowned for their generosity. Peacocks are known for their bright, colorful performances and parades, as well as their irresistible charms."
+    "lore": "Avian-kind soar above the concerns of ground-bound folk, sometimes literally. Crow-folk are treasure-hunters and talespinners, fascinated by shiny objects and secret lore. Owl-folk are scholars and seers, moving through the night with uncanny silence. Sparrow-folk are the most sociable, building vast communal roosts and renowned for their generosity. Peacocks are known for their bright, colorful performances and parades, as well as their irresistible charms. None of them, however, enjoy the nigh-unlimited flight of their silent counterparts."
   },
   {
     "id": 5,
@@ -546,7 +546,7 @@ const races = [
       },
       {
         "n": "Iron Stomach",
-        "d": "You have advantage on saving throws against poison or sickness caused by eating spoiled, rotten, or otherwise ill-advised food, and such food never makes you sick."
+        "d": "You have resistance to poison damage. Additionally, you have advantage on saving throws against poison or sickness caused by eating spoiled, rotten, or otherwise ill-advised food."
       },
       {
         "n": "Pack Tactics",
