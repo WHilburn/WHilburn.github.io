@@ -252,25 +252,8 @@ CONTENT.pantheon.groups = [
         ]
       },
       {
-        "title": "Sun, Moon and Primal Forces",
+        "title": "Sun, Moon and Magical Forces",
         "gods": [
-          {
-            "iconBg": "#011a38",
-            "enabled": true,
-            "icon": "🪄",
-            "name": "The Hat Hider",
-            "epithet": "Mother of all Magic",
-            "original": "Mystra",
-            "paragraphs": [
-              "Depicted as a rabbit emerging from the hole of an upturned top-hat, the Hat Hider is said to be the guardian and source of all magic in the known world. She is said to be a manifestation of the Cosmic Balance, maintaining order in the world of magic by correcting great inequalities when things go askew. As the Weave itself is her domain, she holds great control over what magics mortals are capable of, and it is believed by some that she has become more strict in recent times about what magics are allowed on the material plane. Some scholars believe that only her magic could have been powerful enough to affect a change as incredible as the Great Awakening, and therefore, she must have existed prior to it.",
-              "<em>\"I speak into your Weave my supplication and faith, and hope the magics I hold are pleasing to your eye.\”— A basic prayer to the Hat Hider</em>"
-            ],
-            "worshipers": [
-              "Bards",
-              "Wizards",
-              "Seekers of Arcane Lore"
-            ]
-          },
           {
             "iconBg": "#221800",
             "enabled": true,
@@ -304,6 +287,23 @@ CONTENT.pantheon.groups = [
               "Sailors",
               "Night Travelers",
               "Midwives"
+            ]
+          },
+          {
+            "iconBg": "#011a38",
+            "enabled": true,
+            "icon": "🪄",
+            "name": "The Hat Hider",
+            "epithet": "Mother of all Magic",
+            "original": "Mystra",
+            "paragraphs": [
+              "Depicted as a rabbit emerging from the hole of an upturned top-hat, the Hat Hider is said to be the guardian and source of all magic in the known world. She is said to be a manifestation of the Cosmic Balance, maintaining order in the world of magic by correcting great inequalities when things go askew. As the Weave itself is her domain, she holds great control over what magics mortals are capable of, and it is believed by some that she has become more strict in recent times about what magics are allowed on the material plane. Some scholars believe that only her magic could have been powerful enough to affect a change as incredible as the Great Awakening, and therefore, she must have existed prior to it.",
+              "<em>\"I speak into your Weave my supplication and faith, and hope the magics I hold are pleasing to your eye.\”— A basic prayer to the Hat Hider</em>"
+            ],
+            "worshipers": [
+              "Bards",
+              "Wizards",
+              "Seekers of Arcane Lore"
             ]
           }
         ]
