@@ -221,6 +221,7 @@ CONTENT.pantheon.groups = [
             "original": "Mielikki",
             "paragraphs": [
               "A beautiful she-wolf who moves with a deliberate grace. Shakiri is the patron of hunters, rangers, and those who venture into the wild places where the Silent still roam in great and dangerous numbers. Her teachings are simple: take only what is needed, honor the kill, and waste nothing. Moonhowl's young hunters dedicate their first successful Silent hunt to her. She also governs the difficult question of what separates the Awakened from the Silent, a topic her clergy address with nuance.",
+              "Despite governing the hunt, her clergy are staunch advocates of peace, and their mantra is \"No Fighting, no fighting.\" Any violence that is not for purpose of securing the safety of the village or providing sustenance is viewed as rotting to one's soul.",
               "<em>\"There's a she wolf in your closet. Let it out so it can breathe\" - Ancient Shakirian saying regarding realeasing your inner strength.</em>"
             ],
             "worshipers": [
