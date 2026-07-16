@@ -28,10 +28,19 @@
     <p class="hero-sub" id="hero-sub"></p>
   </div>
 
+  <div class="map-wrap">
+    <img src="Everden%20Map.jpg" alt="Map of Everden" class="map-thumb" onclick="openMapLightbox()" />
+  </div>
+
   <div class="section-label" id="nations-grid-label"></div>
   <div class="nation-grid" id="nation-grid"></div>
 
   <div id="nation-notes"></div>
+</div>
+
+<div class="map-lightbox" id="map-lightbox" onclick="closeMapLightbox()">
+  <button class="map-lightbox-close" onclick="closeMapLightbox()" aria-label="Close map">✕</button>
+  <img src="Everden%20Map.jpg" alt="Map of Everden (full size)" onclick="event.stopPropagation()" />
 </div>
 
 <!-- ══════════════════════════════

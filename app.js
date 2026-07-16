@@ -8,6 +8,17 @@ function showSection(id, btn){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
+/* ── MAP ── */
+function openMapLightbox(){
+  document.getElementById('map-lightbox').classList.add('active');
+}
+function closeMapLightbox(){
+  document.getElementById('map-lightbox').classList.remove('active');
+}
+document.addEventListener('keydown', e => {
+  if(e.key === 'Escape') closeMapLightbox();
+});
+
 /* ── HERO ── */
 function renderHero(){
   document.getElementById('hero-eyebrow').textContent = CONTENT.hero.eyebrow;
