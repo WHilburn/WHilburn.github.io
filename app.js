@@ -1,4 +1,31 @@
 /* Everden Player Guide — rendering logic. Content lives in the data/ folder. */
+/* ── EXPANDABLE CARDS ── */
+// Toggling on click closes the card the instant the mouse button is released,
+// which makes it impossible to drag-select and copy flavor text. Skip the
+// toggle if the click was actually the tail end of a text selection.
+function toggleCard(e, el){
+  if (window.getSelection().toString().length > 0) return;
+  el.classList.toggle('open');
+}
+
+function copyCardText(e, btn){
+  e.stopPropagation();
+  const card = btn.closest('.god-card, .settlement');
+  const bodyEl = card.querySelector('.god-body, .settlement-body');
+  const titleEl = card.querySelector('.god-name, .settlement-name');
+  const paragraphs = [...bodyEl.querySelectorAll('p')];
+  const bodyText = paragraphs.length
+    ? paragraphs.map(p=>p.textContent.trim()).join('\n\n')
+    : bodyEl.textContent.trim();
+  const text = titleEl ? `${titleEl.textContent.trim()}\n\n${bodyText}` : bodyText;
+  navigator.clipboard.writeText(text).then(()=>{
+    const orig = btn.textContent;
+    btn.textContent = '✓ Copied';
+    btn.classList.add('copied');
+    setTimeout(()=>{ btn.textContent = orig; btn.classList.remove('copied'); }, 1300);
+  });
+}
+
 /* ── NAV ── */
 function showSection(id, btn){
   document.querySelectorAll('.section-wrap').forEach(s=>s.classList.remove('active'));
@@ -46,10 +73,11 @@ function renderNations(){
       <p class="nation-desc" style="margin:12px 0 0;">${n.desc[1]}</p>
       <div class="settlements">
         ${n.settlements.filter(s=>s.enabled!==false).map(s=>`
-        <div class="settlement" onclick="this.classList.toggle('open')">
+        <div class="settlement" onclick="toggleCard(event,this)">
           <div class="settlement-header">
             <span class="settlement-name">${s.name}</span>
             <div class="settlement-tags">${s.tags.map(t=>`<span class="settlement-tag${t.capital?' capital':''}">${t.text}</span>`).join('')}</div>
+            <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
             <span class="settlement-chevron">▾</span>
           </div>
           <div class="settlement-body">${s.body}</div>
@@ -79,7 +107,7 @@ function renderPantheon(){
     <div class="section-label"${gi===0 ? ' style="margin-top:10;"' : ''}>${group.title}</div>
     <div class="god-grid">
       ${group.gods.map(god => `
-      <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card" onclick="toggleCard(event,this)">
         <div class="god-card-header">
           <div class="god-icon" style="background:${god.iconBg};">${god.icon}</div>
           <div class="god-names">
@@ -87,6 +115,7 @@ function renderPantheon(){
             <div class="god-epithet">${god.epithet}</div>
             <!-- ${god.original} -->
           </div>
+          <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
           <span class="god-chevron">▾</span>
         </div>
         <div class="god-body">
@@ -100,7 +129,7 @@ function renderPantheon(){
     <p style="color:var(--muted);font-size:.93rem;margin-bottom:14px;line-height:1.7;">${CONTENT.pantheon.patrons.intro}</p>
     <div class="god-grid">
       ${CONTENT.pantheon.patrons.list.filter(p=>p.enabled!==false).map(p => `
-      <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card" onclick="toggleCard(event,this)">
         <div class="god-card-header">
           <div class="god-icon" style="background:${p.iconBg};">${p.icon}</div>
           <div class="god-names">
@@ -109,6 +138,7 @@ function renderPantheon(){
             <!-- ${p.original} -->
           </div>
           <span class="patron-type">${p.type}</span>
+          <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
           <span class="god-chevron">▾</span>
         </div>
         <div class="god-body">
@@ -130,7 +160,7 @@ function renderCharacters(){
   document.getElementById('characters-intro').innerHTML = CONTENT.characters.intro;
 
   document.getElementById('char-grid').innerHTML = CONTENT.characters.list.filter(c=>c.enabled!==false).map(c => `
-    <div class="god-card" onclick="this.classList.toggle('open')">
+    <div class="god-card" onclick="toggleCard(event,this)">
       <div class="god-card-header">
         <div class="god-icon" style="background:${c.iconBg};">${c.icon}</div>
         <div class="god-names">
@@ -138,6 +168,7 @@ function renderCharacters(){
           <div class="god-epithet">${c.title}</div>
         </div>
         <span class="char-location">${c.location}</span>
+        <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
         <span class="god-chevron">▾</span>
       </div>
       <div class="god-body">
@@ -169,7 +200,7 @@ function renderLore(){
 
   function loreCard(l, badgeClass){
     return `
-      <div class="god-card" onclick="this.classList.toggle('open')">
+      <div class="god-card" onclick="toggleCard(event,this)">
         <div class="god-card-header">
           <div class="god-icon" style="background:${l.iconBg};">${l.icon}</div>
           <div class="god-names">
@@ -177,6 +208,7 @@ function renderLore(){
             <div class="god-epithet">${l.teaser}</div>
           </div>
           <span class="${badgeClass}">${l.status}</span>
+          <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
           <span class="god-chevron">▾</span>
         </div>
         <div class="god-body">
@@ -272,13 +304,14 @@ function renderOtherRaces(){
   document.getElementById('other-races-intro').innerHTML = CONTENT.otherRaces.intro;
 
   document.getElementById('other-races-grid').innerHTML = CONTENT.otherRaces.list.filter(r=>r.enabled!==false).map(r => `
-    <div class="god-card" onclick="this.classList.toggle('open')">
+    <div class="god-card" onclick="toggleCard(event,this)">
       <div class="god-card-header">
         <div class="god-icon" style="background:${r.iconBg};">${r.icon}</div>
         <div class="god-names">
           <div class="god-name">${r.name}</div>
           <div class="god-epithet">${r.subtitle}</div>
         </div>
+        <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
         <span class="god-chevron">▾</span>
       </div>
       <div class="god-body">

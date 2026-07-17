@@ -288,6 +288,23 @@ body{
   color: var(--gold);
   background: #1a1500;
 }
+.copy-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 7px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: .15s;
+  white-space: nowrap;
+}
+.copy-btn:hover { color: var(--text); border-color: #3b4450; }
+.copy-btn.copied { color: #4ade80; border-color: #1f4a2a; }
+.god-card.open .copy-btn, .settlement.open .copy-btn { display: inline-block; }
 .settlement-chevron {
   color: var(--muted);
   font-size: .8rem;
