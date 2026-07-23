@@ -150,7 +150,7 @@ const races = [
       },
       {
         "n": "Corvid Cunning (Crow) OR Owl's Wisdom (Owl) OR Flock Instinct (Sparrow) OR Distracting Plumage (Peacock)",
-        "d": "Crow: You can mimic the voice of any creature you have heard within the past day, and you have advantage on History checks to recall information. Owl: You have advantage on Wisdom (Insight) checks and can cast Detect Magic once per Long Rest without a spell slot (Wisdom is your spellcasting modifier). Sparrow: When you use the Help action, the target gains a bonus to their d20 roll equal to your Proficiency Bonus. Peacock: When an ally you can see is being attacked, as a reaction you can unfurl your peacock plumage, imposing disadvantage on the attack. You can do this only once during an encounter."
+        "d": "Crow: You can mimic the voice of any creature you have heard within the past day, and you have advantage on History checks to recall events that you experienced. Owl: You have proficiency in the Insight skill and can cast Detect Magic once per Long Rest without a spell slot (Wisdom is your spellcasting modifier). Sparrow: When you use the Help action, the target gains a bonus to their d20 roll equal to your Proficiency Bonus. Peacock: When an ally you can see is being attacked, as a reaction you can unfurl your peacock plumage, imposing disadvantage on the attack. You can do this only once during an encounter."
       },
       {
         "n": "Skywise",
