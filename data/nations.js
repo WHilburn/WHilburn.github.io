@@ -104,7 +104,7 @@ CONTENT.nations = [
       "badge": "The East",
       "desc": [
         "Once known for its swift knights and beautiful meadows, this kingdom of rabbits and ravens was the setting of many fairy tales, the birthplace of many heroes of Everden, and a shining jewel of culture. However, the land has grown cold and insular in recent years. A thick mist now hugs its borders, and travelers who cross into Carrovia rarely speak warmly of the experience. The mists have created countless difficulties for the nation's people, strangling their resources, and dimming the light in the eyes of many a Carrovian.",
-        "The mists at Carrovia's borders are not natural, and locals whisper that stranger things walk the autumn woods after dark. Undead have been sighted near old ruins in the eastern reaches, and the Count's court has grown quiet on the subject. Those who investigate rarely file a complete report."
+        "The mists at Carrovia's borders are not natural, and locals whisper that stranger things walk the autumn woods after dark. Undead have been sighted near old ruins in the eastern reaches, and the Count's court has grown quiet on the subject. The few reports filed on the topic by people from outside the nation have been scarce on details."
       ],
       "values": [
         "Tradition",
@@ -140,7 +140,7 @@ CONTENT.nations = [
               "text": "Mist-Touched"
             }
           ],
-          "body": "The last town before the mist thickens into split-pea soup. Travelers passing through Thistle does are likely to find lanterns, rope, and maps that are increasingly out of date for sale at a typical shop. The residents have a habit of not asking questions about travelers coming or going."
+          "body": "The last town before the mist thickens into split-pea soup. Travelers passing through Thistle are likely to find lanterns, rope, and maps that are increasingly out of date for sale at a typical shop, as well as items for hunting the monsters that lurk deeper in the mists. The residents have a habit of not asking questions about travelers coming or going."
         },
         {
           "name": "Ashfen",
