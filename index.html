@@ -29,7 +29,7 @@
   </div>
 
   <div class="map-wrap">
-    <img src="Everden%20Map.jpg" alt="Map of Everden" class="map-thumb" onclick="openMapLightbox()" />
+    <img src="Everden%20Map.jpg" alt="Map of Everden" class="map-thumb" onclick="openImageLightbox('Everden%20Map.jpg','Map of Everden')" />
   </div>
 
   <div class="section-label" id="nations-grid-label"></div>
@@ -38,9 +38,9 @@
   <div id="nation-notes"></div>
 </div>
 
-<div class="map-lightbox" id="map-lightbox" onclick="closeMapLightbox()">
-  <button class="map-lightbox-close" onclick="closeMapLightbox()" aria-label="Close map">✕</button>
-  <img src="Everden%20Map.jpg" alt="Map of Everden (full size)" onclick="event.stopPropagation()" />
+<div class="map-lightbox" id="map-lightbox" onclick="closeImageLightbox()">
+  <button class="map-lightbox-close" onclick="closeImageLightbox()" aria-label="Close map">✕</button>
+  <img id="map-lightbox-img" src="" alt="" onclick="event.stopPropagation()" />
 </div>
 
 <!-- ══════════════════════════════

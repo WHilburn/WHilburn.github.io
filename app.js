@@ -35,15 +35,18 @@ function showSection(id, btn){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* ── MAP ── */
-function openMapLightbox(){
+/* ── IMAGE LIGHTBOX ── */
+function openImageLightbox(src, alt){
+  const img = document.getElementById('map-lightbox-img');
+  img.src = src;
+  img.alt = alt || '';
   document.getElementById('map-lightbox').classList.add('active');
 }
-function closeMapLightbox(){
+function closeImageLightbox(){
   document.getElementById('map-lightbox').classList.remove('active');
 }
 document.addEventListener('keydown', e => {
-  if(e.key === 'Escape') closeMapLightbox();
+  if(e.key === 'Escape') closeImageLightbox();
 });
 
 /* ── HERO ── */
@@ -80,7 +83,10 @@ function renderNations(){
             <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
             <span class="settlement-chevron">▾</span>
           </div>
-          <div class="settlement-body">${s.body}</div>
+          <div class="settlement-body">
+            ${s.image ? `<img src="${s.image}" alt="Map of ${s.name}" class="settlement-map-thumb" onclick="event.stopPropagation(); openImageLightbox('${s.image}','Map of ${s.name}')" />` : ''}
+            ${s.body}
+          </div>
         </div>`).join('')}
       </div>
       <div class="nation-leader" style="margin-top:14px;">${n.leaderLabel}<span>${n.leaderText}</span></div>

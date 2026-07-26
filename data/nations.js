@@ -17,6 +17,7 @@ CONTENT.nations = [
         {
           "name": "Petsburg",
           "enabled": true,
+          "image": "Petsburg.webp",
           "tags": [
             {
               "capital": true,
