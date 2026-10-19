@@ -648,10 +648,11 @@ body{
   white-space:nowrap;
 }
 .calendar-lists{
-  display:grid;
-  grid-template-columns:1fr 1fr;
+  display:flex;
+  flex-direction:column;
   gap:24px;
   margin-bottom:10px;
+  text-align:center;
 }
 .calendar-list-title{
   font-size:.8rem;
@@ -662,6 +663,7 @@ body{
 .calendar-chip-list{
   display:flex;
   flex-wrap:wrap;
+  justify-content:center;
   gap:8px;
 }
 .calendar-image{
@@ -686,7 +688,7 @@ body{
   body{ padding:0; }
   .section-wrap{ padding:20px 14px 50px; }
   .race-grid, .nation-grid, .lang-grid{ grid-template-columns:1fr; gap:14px; }
-  .calendar-lists{ grid-template-columns:1fr; gap:16px; }
+  .calendar-lists{ gap:16px; }
   .card{ padding:18px; }
   .detail-card{ padding:20px; border-radius:20px; }
   .detail-title{ font-size:2rem; }

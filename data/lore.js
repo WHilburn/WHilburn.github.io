@@ -6,7 +6,9 @@ CONTENT.lore = {
     "image": "Everden%20Calendar.webp",
     "intro": "The standard year is 360 days long and consists of twelve twenty-eight-day months (each month divided into four seven-day weeks) and four six-day lunar festivals (Needfest, Growfest, Richfest, and Brewfest). The midwinter festival of Needfest is considered the start of the year.",
     "months": ["Jaguary", "Foxuary", "Marcheetah", "Aperil", "Mayfly", "Junco", "Jayly", "Aardvust", "Serpentember", "Octopober", "Newtvember", "Deercember"],
+    "monthHues": [205, 225, 165, 135, 105, 75, 48, 38, 28, 16, 355, 250],
     "days": ["Monkeyday", "Toucansday", "Weaselday", "Tortoiseday", "Flyday", "Salmonday", "Swansday"],
+    "dayHues": [0, 30, 55, 130, 185, 225, 285],
     "festivals": [
       {
         "icon": "❄️",

@@ -224,6 +224,7 @@ function renderLore(){
   }
 
   const cal = CONTENT.lore.calendar;
+  const hueStyle = h => `color:hsl(${h} 75% 72%);background:hsl(${h} 45% 14%);border-color:hsl(${h} 45% 32%);`;
   const calendarHtml = `
     <div class="section-label" style="margin-top:10;">${cal.label}</div>
     <img src="${cal.image}" alt="A calendar of Everden's year" class="calendar-image" onclick="openImageLightbox('${cal.image}','A calendar of Everden\\'s year')" />
@@ -231,11 +232,11 @@ function renderLore(){
     <div class="calendar-lists">
       <div class="calendar-list-block">
         <div class="calendar-list-title">Months of the Year</div>
-        <div class="calendar-chip-list">${cal.months.map((m,i)=>`<span class="tag">${i+1}. ${m}</span>`).join('')}</div>
+        <div class="calendar-chip-list">${cal.months.map((m,i)=>`<span class="tag" style="${hueStyle(cal.monthHues[i])}">${i+1}. ${m}</span>`).join('')}</div>
       </div>
       <div class="calendar-list-block">
         <div class="calendar-list-title">Days of the Week</div>
-        <div class="calendar-chip-list">${cal.days.map(d=>`<span class="tag">${d}</span>`).join('')}</div>
+        <div class="calendar-chip-list">${cal.days.map((d,i)=>`<span class="tag" style="${hueStyle(cal.dayHues[i])}">${d}</span>`).join('')}</div>
       </div>
     </div>
     <div class="calendar-list-title" style="margin-top:24px;">The Four Festivals</div>
