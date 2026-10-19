@@ -25,7 +25,7 @@ CONTENT.lore = {
         "season": "Spring",
         "paragraphs": [
           "Growfest arrives as the winter frost thaws in spring, and it marks relief from the cold winter months. Seeds are blessed by local clergy, and fields are plowed amid music and noise meant to wake up mother nature. Children in some nations are given a seedling of their own to plant and tend through the year. Whiskerburrow's agricultural colleges treat the festival as a critical time, publishing the year's planting almanac to coincide with it.",
-          "Carrovia's mist-choked farmland makes Growfest feel more like a plea than a celebration these days, though the old traditions are kept alive as best as they can be. Whereas once there were many beautiful orchards, farmers have had to pivot to root crops such as carrots and parsnips, and some even cultivating mushrooms and wetland crops."
+          "Carrovia's mist-choked farmland makes Growfest feel more like a cry for help than a celebration these days, though the old traditions are kept alive as best as they can be. Whereas once there were many beautiful orchards, farmers have had to pivot to root crops such as carrots and parsnips, and some even cultivating mushrooms and wetland crops."
         ]
       },
       {
