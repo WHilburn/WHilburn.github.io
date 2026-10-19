@@ -1,6 +1,55 @@
 CONTENT.lore = {
   "label": "Lore & Mysteries",
   "intro": "Not everything about Everden fits neatly into a nation, a god, or a species. Some of it is common knowledge nobody bothers to write down. Some of it isn't confirmed at all. Click on an entry to learn more.",
+  "calendar": {
+    "label": "The Calendar of Everden",
+    "image": "Everden%20Calendar.webp",
+    "intro": "The standard year is 360 days long and consists of twelve twenty-eight-day months (each month divided into four seven-day weeks) and four six-day lunar festivals (Needfest, Growfest, Richfest, and Brewfest). The midwinter festival of Needfest is considered the start of the year.",
+    "months": ["Jaguary", "Foxuary", "Marcheetah", "Aperil", "Mayfly", "Junco", "Jayly", "Aardvust", "Serpentember", "Octopober", "Newtvember", "Deercember"],
+    "days": ["Monkeyday", "Toucansday", "Weaselday", "Tortoiseday", "Flyday", "Salmonday", "Swansday"],
+    "festivals": [
+      {
+        "icon": "❄️",
+        "iconBg": "#0d1a24",
+        "title": "Needfest",
+        "season": "Winter, New Year",
+        "paragraphs": [
+          "Needfest falls at the dead center of winter, marking the start of a new year. For six days, communities across Everden are expected to look after whoever has the least. Pantries are shared, minor debts are quietly forgiven, bridges are mended, and most nations observe some version of a public meal where no one is turned away regardless of means. In some nations, children expect visits from the mythical Polar Bear patron of the season, Santa Claws, who brings gifts to well behaves children.",
+          "Goldcollar marks the festival with the Dual Monarchs personally serving food in the soup kitchens. While children in Goldcollar wish to Santa Claws for toys and games, the most common wish of Carrovian children now is for sunny days. In Moonhowl, Needfest is the one time of year every pack sets aside old grudges to share hunting grounds without dispute."
+        ]
+      },
+      {
+        "icon": "🌱",
+        "iconBg": "#101a10",
+        "title": "Growfest",
+        "season": "Spring",
+        "paragraphs": [
+          "Growfest arrives as the winter frost thaws, and it marks relief from the cold winter months. Seeds are blessed by local clergy, and fields are plowed amid music and noise meant to wake up mother nature. Children in some nations are given a seedling of their own to plant and tend through the year. Whiskerburrow's agricultural colleges treat the festival as a critical time, publishing the year's planting almanac to coincide with it.",
+          "Carrovia's mist-choked farmland makes Growfest feel more like a plea than a celebration these days, though the old traditions are kept alive as best as they can be. Whereas once there were many beautiful orchards, farmers have had to pivot to root crops such as carrots and parsnips, and some even cultivating mushrooms and wetland crops."
+        ]
+      },
+      {
+        "icon": "💰",
+        "iconBg": "#241d0a",
+        "title": "Richfest",
+        "season": "Summer",
+        "paragraphs": [
+          "Richfest kicks off at the height of summer, when roads are clearest and trade flows easily. It functions as equal parts festival and market fair, and is the greatest enabler of cultural exchange across Everden. Caravans time their routes around it, and mercantile guilds settle their books. It's considered good luck to make at least one purchase you don't strictly need from a booth selling a charming handmade good. Petsburg's Richfest market is the largest commercial event in Everden, drawing trader and merchants from every nation.",
+          "Iron-Tusk treats the festival somewhat differently, as more of a craftsmanship showcase than a trade fair, with the Forge Council hosting many contests awarding lucrative contracts to whichever smith unveils the most impressive commission of the year. Moonhowl mostly ignores the festival entirely nowadays, as if to spite their neighboring Iron-Tusk after the war, despite having celebrated it before."
+        ]
+      },
+      {
+        "icon": "🍺",
+        "iconBg": "#241a0a",
+        "title": "Brewfest",
+        "season": "Autumn",
+        "paragraphs": [
+          "Brewfest lands just after the harvest comes in, and it's exactly what it sounds like. Grain that isn't stored for winter gets fermented, and the result is shared freely through six days of communal feasting and drinking. It's widely considered the loudest and least formal of the four festivals, and the one most likely to still be going at sunrise in nations with fewer scruples about public decorum.",
+          "Fangclash's Brewfest celebrations famously morph into impromptu arena exhibitions between warriors who have had too much to drink and have something to prove. In Whiskerburrow's Three Tree City the festival is much more restrained, though its scholars will argue, at length and with copious citations, whose family ale recipes are the most historically accurate."
+        ]
+      }
+    ]
+  },
   "knownLore": {
     "label": "Common Knowledge",
     "intro": "Facts that any Awakened citizen, regardless of nation, would recognize without needing a scholar to explain it.",

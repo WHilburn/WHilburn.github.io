@@ -162,7 +162,7 @@ body{
 .section-label{
   text-transform:uppercase;
   letter-spacing:.08em;
-  font-size:.78rem;
+  font-size:1.05rem;
   color:var(--muted);
   margin-bottom:14px;
   margin-top:36px;
@@ -647,12 +647,46 @@ body{
   font-weight:600;
   white-space:nowrap;
 }
+.calendar-lists{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  margin-bottom:10px;
+}
+.calendar-list-title{
+  font-size:.8rem;
+  font-weight:700;
+  color:var(--text);
+  margin-bottom:10px;
+}
+.calendar-chip-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.calendar-image{
+  display:block;
+  max-height:480px;
+  margin:0 auto 20px;
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+  box-shadow:var(--shadow);
+  cursor:zoom-in;
+  transition:.18s ease;
+}
+.calendar-image:hover{ transform:translateY(-3px); border-color:#3b4450; }
+.section-divider{
+  border:none;
+  border-top:1px solid var(--border);
+  margin:44px 0;
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width:700px){
   body{ padding:0; }
   .section-wrap{ padding:20px 14px 50px; }
   .race-grid, .nation-grid, .lang-grid{ grid-template-columns:1fr; gap:14px; }
+  .calendar-lists{ grid-template-columns:1fr; gap:16px; }
   .card{ padding:18px; }
   .detail-card{ padding:20px; border-radius:20px; }
   .detail-title{ font-size:2rem; }
@@ -662,6 +696,7 @@ body{
   .nav-btn{ padding:12px 14px; font-size:.78rem; }
   .hero{ padding:36px 16px 28px; }
   .map-thumb{ max-height:160px; }
+  .calendar-image{ max-height:220px; }
   .map-lightbox{ padding:16px; }
   .map-lightbox-close{ top:12px; right:12px; }
 }

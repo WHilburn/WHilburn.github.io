@@ -223,13 +223,50 @@ function renderLore(){
       </div>`;
   }
 
-  document.getElementById('lore-mount').innerHTML = `
-    <div class="section-label" style="margin-top:10;">${CONTENT.lore.knownLore.label}</div>
+  const cal = CONTENT.lore.calendar;
+  const calendarHtml = `
+    <div class="section-label" style="margin-top:10;">${cal.label}</div>
+    <img src="${cal.image}" alt="A calendar of Everden's year" class="calendar-image" onclick="openImageLightbox('${cal.image}','A calendar of Everden\\'s year')" />
+    <p style="color:var(--muted);font-size:.93rem;margin-bottom:18px;line-height:1.7;">${cal.intro}</p>
+    <div class="calendar-lists">
+      <div class="calendar-list-block">
+        <div class="calendar-list-title">Months of the Year</div>
+        <div class="calendar-chip-list">${cal.months.map((m,i)=>`<span class="tag">${i+1}. ${m}</span>`).join('')}</div>
+      </div>
+      <div class="calendar-list-block">
+        <div class="calendar-list-title">Days of the Week</div>
+        <div class="calendar-chip-list">${cal.days.map(d=>`<span class="tag">${d}</span>`).join('')}</div>
+      </div>
+    </div>
+    <div class="calendar-list-title" style="margin-top:24px;">The Four Festivals</div>
+    <div class="god-grid" style="margin-top:10px;">
+      ${cal.festivals.map(f=>`
+      <div class="god-card" onclick="toggleCard(event,this)">
+        <div class="god-card-header">
+          <div class="god-icon" style="background:${f.iconBg};">${f.icon}</div>
+          <div class="god-names">
+            <div class="god-name">${f.title}</div>
+            <div class="god-epithet">${f.season}</div>
+          </div>
+          <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
+          <span class="god-chevron">▾</span>
+        </div>
+        <div class="god-body">
+          ${f.paragraphs.map(p=>`<p>${p}</p>`).join('')}
+        </div>
+      </div>`).join('')}
+    </div>
+  `;
+
+  document.getElementById('lore-mount').innerHTML = calendarHtml + `
+    <hr class="section-divider" />
+    <div class="section-label" style="margin-top:0;">${CONTENT.lore.knownLore.label}</div>
     <p style="color:var(--muted);font-size:.93rem;margin-bottom:14px;line-height:1.7;">${CONTENT.lore.knownLore.intro}</p>
     <div class="god-grid">
       ${CONTENT.lore.knownLore.list.filter(l=>l.enabled!==false).map(l=>loreCard(l,'lore-fact')).join('')}
     </div>
-    <div class="section-label" style="margin-top:44px;">${CONTENT.lore.mysteries.label}</div>
+    <hr class="section-divider" />
+    <div class="section-label" style="margin-top:0;">${CONTENT.lore.mysteries.label}</div>
     <p style="color:var(--muted);font-size:.93rem;margin-bottom:14px;line-height:1.7;">${CONTENT.lore.mysteries.intro}</p>
     <div class="god-grid">
       ${CONTENT.lore.mysteries.list.filter(l=>l.enabled!==false).map(l=>loreCard(l,'lore-status')).join('')}
