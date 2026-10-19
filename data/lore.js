@@ -14,7 +14,7 @@ CONTENT.lore = {
         "title": "Needfest",
         "season": "Winter, New Year",
         "paragraphs": [
-          "Needfest falls at the dead center of winter, marking the start of a new year. For six days, communities across Everden are expected to look after whoever has the least. Pantries are shared, minor debts are quietly forgiven, bridges are mended, and most nations observe some version of a public meal where no one is turned away regardless of means. In some nations, children expect visits from the mythical Polar Bear patron of the season, Santa Claws, who brings gifts to well behaves children.",
+          "Needfest falls in the middle of winter, marking the start of a new year. For six days, communities across Everden are expected to look after whoever has the least. Pantries are shared, minor debts are quietly forgiven, bridges are mended, and most nations observe some version of a public meal where no one is turned away regardless of means. In some nations, children expect visits from the mythical Polar Bear patron of the season, Santa Claws, who brings gifts to well behaves children.",
           "Goldcollar marks the festival with the Dual Monarchs personally serving food in the soup kitchens. While children in Goldcollar wish to Santa Claws for toys and games, the most common wish of Carrovian children now is for sunny days. In Moonhowl, Needfest is the one time of year every pack sets aside old grudges to share hunting grounds without dispute."
         ]
       },
@@ -24,7 +24,7 @@ CONTENT.lore = {
         "title": "Growfest",
         "season": "Spring",
         "paragraphs": [
-          "Growfest arrives as the winter frost thaws, and it marks relief from the cold winter months. Seeds are blessed by local clergy, and fields are plowed amid music and noise meant to wake up mother nature. Children in some nations are given a seedling of their own to plant and tend through the year. Whiskerburrow's agricultural colleges treat the festival as a critical time, publishing the year's planting almanac to coincide with it.",
+          "Growfest arrives as the winter frost thaws in spring, and it marks relief from the cold winter months. Seeds are blessed by local clergy, and fields are plowed amid music and noise meant to wake up mother nature. Children in some nations are given a seedling of their own to plant and tend through the year. Whiskerburrow's agricultural colleges treat the festival as a critical time, publishing the year's planting almanac to coincide with it.",
           "Carrovia's mist-choked farmland makes Growfest feel more like a plea than a celebration these days, though the old traditions are kept alive as best as they can be. Whereas once there were many beautiful orchards, farmers have had to pivot to root crops such as carrots and parsnips, and some even cultivating mushrooms and wetland crops."
         ]
       },
