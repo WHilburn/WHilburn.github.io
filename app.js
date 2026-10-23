@@ -168,16 +168,19 @@ function renderCharacters(){
   document.getElementById('char-grid').innerHTML = CONTENT.characters.list.filter(c=>c.enabled!==false).map(c => `
     <div class="god-card" onclick="toggleCard(event,this)">
       <div class="god-card-header">
-        <div class="god-icon" style="background:${c.iconBg};">${c.icon}</div>
+        ${c.icons && c.icons.length
+          ? `<div class="char-tokens">${c.icons.map(src=>`<img class="char-token" src="${encodeURI(src)}" alt="${c.name} token" />`).join('')}</div>`
+          : `<div class="god-icon" style="background:${c.iconBg};">${c.icon}</div>`}
         <div class="god-names">
           <div class="god-name">${c.name}</div>
           <div class="god-epithet">${c.title}</div>
         </div>
-        <span class="char-location">${c.location}</span>
+        ${c.location ? `<span class="char-location">${c.location}</span>` : ''}
         <button class="copy-btn" onclick="copyCardText(event,this)">📋 Copy</button>
         <span class="god-chevron">▾</span>
       </div>
       <div class="god-body">
+        ${c.images && c.images.length ? `<div class="char-gallery">${c.images.map(src=>`<img class="char-image" src="${encodeURI(src)}" alt="${c.name}" onclick="event.stopPropagation(); openImageLightbox(this.src, this.alt)" />`).join('')}</div>` : ''}
         ${c.paragraphs.map(p=>`<p>${p}</p>`).join('')}
       </div>
     </div>
