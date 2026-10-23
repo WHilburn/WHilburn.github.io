@@ -94,7 +94,7 @@ CONTENT.characters = {
     {
       "name": "Belle",
       "enabled": true,
-      "title": "Howley's Long Lost Sister",
+      "title": "Howley's Long Lost Sister?",
       "location": "Petsburg",
       "iconBg": "#1b1f24",
       "icon": "👤",
