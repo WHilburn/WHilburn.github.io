@@ -152,7 +152,8 @@ CONTENT.characters = {
         "charimages/images/Shanks.jpg"
       ],
       "paragraphs": [
-        "An enigmatic criminal doing business in Petsburg. The Rescue Rangers initially encountered him after decrypting a clue intended as a honeypot by the guard as a trap meant to catch him, but he allowed the Rescue Rangers to spring the trap for him instead. Since then, Finn has reached out and formed something of an alliance with shanks, but there's still much you do not know about the cat burglar."
+        "An enigmatic criminal doing business in Petsburg. The Rescue Rangers initially encountered him after decrypting a clue intended as a honeypot by the guard as a trap meant to catch him, but he allowed the Rescue Rangers to spring the trap for him instead. Since then, Finn has reached out and formed something of an alliance with shanks, but there's still much you do not know about the cat burglar.",
+        "What is he stealing, and why? Who are his associates? What does he want with you now? Find out next time on Dragon Ball Z."
       ]
     },
     {
@@ -292,7 +293,7 @@ CONTENT.characters = {
     {
       "name": "Whinney Houston",
       "enabled": true,
-      "title": "[dummy text]",
+      "title": "THE Horse",
       "location": "Petsburg",
       "iconBg": "#1b1f24",
       "icon": "👤",
@@ -301,7 +302,8 @@ CONTENT.characters = {
       ],
       "images": [],
       "paragraphs": [
-        "What is there to say about Whinney Houston? She is a horse. THE horse. She also made an appearance at the Mariah Canary memorial concert, where she performed a beautiful duet version of 'I Will Always Love You' that left not a dry eye in the house... until it was interupted."
+        "What is there to say about Whinney Houston? She is a horse. THE horse. She also made an appearance at the Mariah Canary memorial concert, where she performed a beautiful duet version of 'I Will Always Love You' that left not a dry eye in the house... until it was interupted.",
+        "Can you tell I'm running out of things to say about pop divas?"
       ]
     },
     {
