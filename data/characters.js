@@ -186,7 +186,7 @@ CONTENT.characters = {
       ],
       "images": [],
       "paragraphs": [
-        "These star-crossed lovers from the rival Mangione and Bean crime families never had much love for the crime life anyways, and largely thanks to that, they fell in love and quickly got hitched. Garbanzo was estranged from his parents for his refusal to pick up the mantle of mob boss, but is still loves by his siblings, who gladly accepted the wedding invite. Mario later found out at the wedding that his mother was none too pleased with this romantic arrangement, as she had hired assassins to kill Garbanzo on the altar. This plot was, fortunately, thwarted by the Rescue Rangers, who not only carried out the ceremony, but beheaded the assassins.",
+        "These star-crossed lovers from the rival Mangione and Bean crime families never had much love for the crime life anyways, and largely thanks to that lack of allegiance, they fell in love and quickly got hitched. Garbanzo was estranged from his parents for his refusal to pick up the mantle of mob boss, but is still loves by his siblings, who gladly accepted the wedding invite. Mario later found out at the wedding that his mother was none too pleased with this romantic arrangement, as she had hired assassins to kill Garbanzo on the altar. This plot was, fortunately, thwarted by the Rescue Rangers, who not only carried out the ceremony, but beheaded the assassins.",
         "Well known for their love of male strippers and dancing at the local gay bear bar, Grizzlies."
       ]
     },
@@ -239,7 +239,7 @@ CONTENT.characters = {
         "charimages/images/Nicki Miraj.png"
       ],
       "paragraphs": [
-        "Nicki Miraj was once an up-and-comer in the Petsburg music scene, known for her fast and witty rap stylings. This, however, is not always enough to truly make it big. That all changes when she started donning the pink wing that changer her forever. Her verses got faster and nastier, her rhetoric became repugnant, and she frequently resorted to violence and vandalism when she did not get her way. With her new attitude came booming success, as she amassed a small army of deeply deplorable fans who supported her. She started feuding with any celebrity that had a problem with her, most notably Mariah Canary. This culminated in her planting mimics in the songbird's dressing room, which ultimately cause her to meet her end.",
+        "Nicki Miraj was once an up-and-comer in the Petsburg music scene, known for her fast and witty rap stylings. This, however, is not always enough to truly make it big. That all changed when she started donning the pink wing that changed her forever. Her verses got faster and nastier, her rhetoric became repugnant, and she frequently resorted to violence and vandalism when she did not get her way. With her new attitude came booming success, as she amassed a small army of deeply deplorable fans who supported her every nasty move. She started feuding with any celebrity that had a problem with her, most notably Mariah Canary. This culminated in her planting mimics in the songbird's dressing room, which ultimately cause her to meet her grizzly end.",
         "She later struck at the memorial concert for the songbird, where she got one last laugh at the performer she called her rival, before the Rescue Rangers struck her down. Afterwards, Finn absorbed the malevolent energy from Nicki's pink wig, making it clear there was something about it that had led her down that path."
       ]
     },
