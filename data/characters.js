@@ -318,7 +318,7 @@ CONTENT.characters = {
       ],
       "images": [],
       "paragraphs": [
-        "Long thought dead, Howley encountered the moose known as White Antlers at the memorial concert, where he shielded Howley from a sword blow that would have ended his life, loosing an antler in the process, white as the driven snow. The antlers, unmistakable the exact shape of Howley's father Connell's anters, certainly make it seem as if this moose is his long lost father.",
+        "Long thought dead, Howley encountered the moose known as White Antlers at the memorial concert, where he shielded Howley from a sword blow that would have ended his life, losing an antler in the process. The antlers, while white as the driven snow, were unmistakably the exact shape of Howley's father Connell's anters, certainly making it seem as if this moose is his long lost father.",
         "Belle seems to believe White Antlers is a warlock, and she has been trying her best to track him down and find the truth of what happened during that blizzard."
       ]
     }
