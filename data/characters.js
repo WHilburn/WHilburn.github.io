@@ -321,6 +321,26 @@ CONTENT.characters = {
         "Long thought dead, Howley encountered the moose known as White Antlers at the memorial concert, where he shielded Howley from a sword blow that would have ended his life, losing an antler in the process. The antlers, while white as the driven snow, were unmistakably the exact shape of Howley's father Connell's anters, certainly making it seem as if this moose is his long lost father. The glowing red eyes peering out from under the hood, not quite so much.",
         "Belle seems to believe White Antlers is a warlock, and she has been trying her best to track him down and find the truth of what happened during that blizzard."
       ]
+    },
+    {
+      "name": "Yasha Constantin",
+      "enabled": true,
+      "title": "Sal's future boyfriend???",
+      "location": "Petsburg",
+      "iconBg": "#1b1f24",
+      "icon": "🐻",
+      "icons": [
+        "charimages/icons/Yasha.png"
+      ],
+      "images": [
+        "charimages/images/Yasha.png",
+        "charimages/images/Yasha2.webp"
+      ],
+      "paragraphs": [
+        "Yasha, once a nameless bear dockworker NPC, was promoted to 'lovable, sqeezable heartthrob' when Sal Ryefeld, on his first day in the city, saved Yasha from the brink of death after he was stabbed by an attacking sahuagin at the docks. What do you mean 'I want the character descriptions to be written from an in-universe perspective'? Ugh, everyone's a critic...",
+        "Yasha lives in Petsburg with his mother, Sasha, who has a strong moonhowl accent that her son did not inherit. She delights in Yasha bringing visitors, who she happily feeds to the point of bloating while she regales them with stories from 'the old country'. Yasha, on the other hand, has adapted to city life well, plying his ample bear strength to work at the docks, but seems to dream of doing something more exciting with his life.",
+        "Yasha's interests include lifting heavy objects, playing the violin poorly, baking, partying, watercolor painting, and decoupage. He recently put his decoupage skills to work to make Sal an adorable wooden bear sharm for his sword, papered over with newspaper clippings depicting Sal's heroics."
+      ]
     }
   ]
 };
