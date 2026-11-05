@@ -339,7 +339,7 @@ CONTENT.characters = {
       "paragraphs": [
         "Yasha, once a nameless bear dockworker NPC, was promoted to 'lovable, sqeezable heartthrob' when Sal Ryefeld, on his first day in the city, saved Yasha from the brink of death after he was stabbed by an attacking sahuagin at the docks. What do you mean 'I want the character descriptions to be written from an in-universe perspective'? Ugh, everyone's a critic...",
         "Yasha lives in Petsburg with his mother, Sasha, who has a strong moonhowl accent that her son did not inherit. She delights in Yasha bringing visitors, who she happily feeds to the point of bloating while she regales them with stories from 'the old country'. Yasha, on the other hand, has adapted to city life well, plying his ample bear strength to work at the docks, but seems to dream of doing something more exciting with his life.",
-        "Yasha's interests include lifting heavy objects, playing the violin poorly, baking, partying, watercolor painting, and decoupage. He recently put his decoupage skills to work to make Sal an adorable wooden bear sharm for his sword, papered over with newspaper clippings depicting Sal's heroics."
+        "Yasha's interests include lifting heavy objects, playing the violin poorly, baking, partying, watercolor painting, and decoupage. He recently put his decoupage skills to work to make Sal an adorable wooden bear charm for his sword, papered over with newspaper clippings depicting Sal's heroics."
       ]
     }
   ]
